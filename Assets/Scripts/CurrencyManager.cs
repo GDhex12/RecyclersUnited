@@ -2,10 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CurrencyManager : MonoBehaviour
 {
     [SerializeField] long currencyAmount = 0;
+    [SerializeField] TextMeshProUGUI currencyUI;
+
+    public static CurrencyManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -20,13 +29,14 @@ public class CurrencyManager : MonoBehaviour
     public void AddCurrency(int amount)
     {
         currencyAmount += amount;
+        UpdateCurrency();
     }
 
     public void RemoveCurrency(int amount)
     {
-        if (currencyAmount - amount <= 0)
+        if (!IsAffordable(amount))
         {
-            currencyAmount = 0;
+            Debug.Log("Not enough money!");
         }
         else
         {
@@ -39,7 +49,15 @@ public class CurrencyManager : MonoBehaviour
     void UpdateCurrency()
     {
         // Update player data
-        // Update currency UI
+        if (currencyUI != null)
+        {
+            currencyUI.text = CurrencyStringFormat();
+        }
+    }
+
+    public bool IsAffordable(int price)
+    {
+        return currencyAmount >= price;
     }
 
     string CurrencyStringFormat()
