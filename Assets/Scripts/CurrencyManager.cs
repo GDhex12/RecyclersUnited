@@ -52,7 +52,14 @@ public class CurrencyManager : MonoBehaviour
         if (currencyUI != null)
         {
             currencyUI.text = CurrencyStringFormat();
+            // temp add for testing - Ernestas
+            SaveSystem.SavePlayer(new PlayerData(currencyAmount));
         }
+    }
+    public void SetCurrency(long amount)
+    {
+        currencyAmount = amount;
+        UpdateCurrency();
     }
 
     public bool IsAffordable(int price)
