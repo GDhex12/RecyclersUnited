@@ -12,6 +12,17 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "Mouse - Test",
+            "bindingGroup": "Mouse - Test",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }

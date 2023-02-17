@@ -34,6 +34,17 @@ public partial class @InputActionMap : IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Mouse - Test"",
+            ""bindingGroup"": ""Mouse - Test"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -99,6 +110,15 @@ public partial class @InputActionMap : IInputActionCollection2, IDisposable
         {
             if (m_MainSchemeSchemeIndex == -1) m_MainSchemeSchemeIndex = asset.FindControlSchemeIndex("MainScheme");
             return asset.controlSchemes[m_MainSchemeSchemeIndex];
+        }
+    }
+    private int m_MouseTestSchemeIndex = -1;
+    public InputControlScheme MouseTestScheme
+    {
+        get
+        {
+            if (m_MouseTestSchemeIndex == -1) m_MouseTestSchemeIndex = asset.FindControlSchemeIndex("Mouse - Test");
+            return asset.controlSchemes[m_MouseTestSchemeIndex];
         }
     }
 }
