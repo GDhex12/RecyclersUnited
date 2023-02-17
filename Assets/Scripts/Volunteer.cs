@@ -12,5 +12,8 @@ public class Volunteer : MonoBehaviour
         navMeshAgent.SetDestination(new Vector3(-3f,0f,-3));
     }
 
-
+    public void MoveTo(Vector3 moveLocation)
+    {
+        navMeshAgent.SetDestination(moveLocation);
+    }
 }
