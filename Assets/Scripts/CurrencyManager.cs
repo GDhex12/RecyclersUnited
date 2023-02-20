@@ -46,6 +46,12 @@ public class CurrencyManager : MonoBehaviour
         UpdateCurrency();
     }
 
+    public void RemoveAllCurrency()
+    {
+        currencyAmount = 0;
+        UpdateCurrency();
+    }
+
     void UpdateCurrency()
     {
         // Update player data
@@ -87,6 +93,6 @@ public class CurrencyManager : MonoBehaviour
                 break;
         }
 
-        return line;
+        return "$"+line;
     }
 }
