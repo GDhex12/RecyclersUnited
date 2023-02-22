@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 public static class SaveSystem
@@ -7,30 +6,24 @@ public static class SaveSystem
     public static string filepath = "/player.game";
     public static void SavePlayer(PlayerData data)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + filepath;
-        FileStream stream = new FileStream(path, FileMode.Create);
 
-
-        formatter.Serialize(stream, data);
-        stream.Close();
+        using (StreamWriter stream = new StreamWriter(path))
+        {
+            string json = JsonUtility.ToJson(data);
+            stream.Write(json);
+        }
+        
     }
     public static PlayerData LoadPlayer()
     {
         string path = Application.persistentDataPath + filepath;
-        if(File.Exists(path))
+        PlayerData playerData;
+        using (StreamReader stream = new StreamReader(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            stream.Close();
-            return data;
+            string json = stream.ReadToEnd();
+            playerData = JsonUtility.FromJson<PlayerData>(json);
         }
-        else
-        {
-            PlayerData failed = new PlayerData();
-            return failed;
-        }
+        return playerData;
     }
 }
