@@ -7,11 +7,13 @@ public class Storage : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI storageUI;
 
+    int mapID;
     [SerializeField] int maxGarbageCount = 10;
     [SerializeField] int currentGarbageCount = 0;
 
     private void Start()
     {
+        GetParamsFromSave();
         UpdateGarbage();
     }
 
@@ -77,16 +79,32 @@ public class Storage : MonoBehaviour
 
     void UpdateGarbage()
     {
-        // Update scene data
         // Update storage UI
         if (storageUI != null)
         {
             storageUI.text = StorageStringFormat();
         }
+        // Update save data
+        SaveParams();
     }
 
     string StorageStringFormat()
     {
         return $"{currentGarbageCount}/{maxGarbageCount}";
+    }
+
+    void GetParamsFromSave()
+    {
+        //get parameters from savefile
+            //maxGarbageCount
+            //currentGarbageCount
+            //mapID
+    }
+
+    void SaveParams()
+    {
+        //save parameters to savefile
+            //maxGarbageCount
+            //currentGarbageCount
     }
 }

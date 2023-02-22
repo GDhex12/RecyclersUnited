@@ -6,6 +6,7 @@ using TMPro;
 
 public class CurrencyManager : MonoBehaviour
 {
+    int mapID;
     [SerializeField] long currencyAmount = 0;
     [SerializeField] TextMeshProUGUI currencyUI;
 
@@ -18,6 +19,7 @@ public class CurrencyManager : MonoBehaviour
 
     private void Start()
     {
+        GetParamsFromSave();
         UpdateCurrency();
     }
 
@@ -54,13 +56,14 @@ public class CurrencyManager : MonoBehaviour
 
     void UpdateCurrency()
     {
-        // Update player data
         if (currencyUI != null)
         {
             currencyUI.text = CurrencyStringFormat();
             // temp add for testing - Ernestas
             SaveSystem.SavePlayer(new PlayerData(currencyAmount));
         }
+        // Update player data
+        SaveParams();
     }
     public void SetCurrency(long amount)
     {
@@ -94,5 +97,18 @@ public class CurrencyManager : MonoBehaviour
         }
 
         return "$"+line;
+    }
+
+    void GetParamsFromSave()
+    {
+        //get parameters from savefile
+            //currencyAmount
+            //mapID
+    }
+
+    void SaveParams()
+    {
+        //save parameters to savefile
+            //currencyAmount
     }
 }
