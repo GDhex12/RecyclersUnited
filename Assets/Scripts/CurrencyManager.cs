@@ -59,8 +59,6 @@ public class CurrencyManager : MonoBehaviour
         if (currencyUI != null)
         {
             currencyUI.text = CurrencyStringFormat();
-            // temp add for testing - Ernestas
-            SaveSystem.SavePlayer(new PlayerData(currencyAmount));
         }
         // Update player data
         SaveParams();
@@ -102,13 +100,14 @@ public class CurrencyManager : MonoBehaviour
     void GetParamsFromSave()
     {
         //get parameters from savefile
-            //currencyAmount
-            //mapID
+        //currencyAmount
+        //mapID
+
+        currencyAmount = SaveSystem.LoadPlayer().Coins;
     }
 
     void SaveParams()
     {
-        //save parameters to savefile
-            //currencyAmount
+        SaveSystem.SavePlayer(new PlayerData(currencyAmount));
     }
 }
