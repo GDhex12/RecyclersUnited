@@ -18,7 +18,13 @@ public static class SaveSystem
     public static PlayerData LoadPlayer()
     {
         string path = Application.persistentDataPath + filepath;
+
+        if (!File.Exists(path))
+        {
+            SavePlayer(new PlayerData());
+        }
         PlayerData playerData;
+
         using (StreamReader stream = new StreamReader(path))
         {
             string json = stream.ReadToEnd();
