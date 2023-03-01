@@ -43,6 +43,8 @@ public class Volunteer : MonoBehaviour
     {       
         GoToPutDownLocation();
         yield return new WaitForSeconds(time);
+        //arvyvdo demo addition
+        storage.GetComponent<Storage>().AddGarbage(1);
         StartCoroutine(PickUpAfter(time));
     }
 
