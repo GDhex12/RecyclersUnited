@@ -13,7 +13,7 @@ public class VehicleSystem : MonoBehaviour
     [SerializeField] int currentGarbageCount = 0;
 
     [Header("Money")]
-    [SerializeField] long moneyPerGarbage = 10;
+    [SerializeField] int moneyPerGarbage = 10;
 
     private void Start()
     {
@@ -67,12 +67,12 @@ public class VehicleSystem : MonoBehaviour
         UpdateGarbage();
     }
 
-    public void RemoveAllGarbage()//int
+    public int RemoveAllGarbage()
     {
         int amount = currentGarbageCount;
         currentGarbageCount = 0;
         UpdateGarbage();
-        //return amount;
+        return amount;
     }
 
     public void LoadVehicle(Storage storage)
@@ -90,6 +90,12 @@ public class VehicleSystem : MonoBehaviour
             storage.RemoveGarbage(amount);
             AddGarbage(amount);
         }
+    }
+
+    public void ExchangeGarbageToMoney()
+    {
+        CurrencyManager.instance.AddCurrency(
+            RemoveAllGarbage() * moneyPerGarbage);
     }
 
     public bool IsFull()
