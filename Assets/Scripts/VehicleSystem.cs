@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Storage : MonoBehaviour
+public class VehicleSystem : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI storageUI;
+    [Header("UI")]
+    [SerializeField] TextMeshProUGUI vehicleUI;
 
-    int mapID;
-    [SerializeField] int maxGarbageCount = 10;
+    [Header("Vehicle capacity")]
+    [SerializeField] int maxGarbageCount = 5;
     [SerializeField] int currentGarbageCount = 0;
+
+    [Header("Money")]
+    [SerializeField] int moneyPerGarbage = 10;
 
     private void Start()
     {
-        GetParamsFromSave();
         UpdateGarbage();
     }
 
@@ -64,12 +67,35 @@ public class Storage : MonoBehaviour
         UpdateGarbage();
     }
 
-    public void RemoveAllGarbage()//int
+    public int RemoveAllGarbage()
     {
         int amount = currentGarbageCount;
         currentGarbageCount = 0;
         UpdateGarbage();
-        //return amount;
+        return amount;
+    }
+
+    public void LoadVehicle(Storage storage)
+    {
+        LoadVehicle(storage, 1);
+    }
+
+    public void LoadVehicle(Storage storage, int amount)
+    {
+        if (IsFull())
+            return;
+
+        if (!storage.IsEmpty() && amount <= storage.GetGarbageCount())
+        {
+            storage.RemoveGarbage(amount);
+            AddGarbage(amount);
+        }
+    }
+
+    public void ExchangeGarbageToMoney()
+    {
+        CurrencyManager.instance.AddCurrency(
+            RemoveAllGarbage() * moneyPerGarbage);
     }
 
     public bool IsFull()
@@ -77,39 +103,18 @@ public class Storage : MonoBehaviour
         return !(currentGarbageCount < maxGarbageCount);
     }
 
-    public bool IsEmpty()
-    {
-        return !(currentGarbageCount > 0);
-    }
-
     void UpdateGarbage()
     {
         // Update storage UI
-        if (storageUI != null)
+        if (vehicleUI != null)
         {
-            storageUI.text = StorageStringFormat();
+            vehicleUI.text = StorageStringFormat();
         }
-        // Update save data
-        SaveParams();
+        
     }
 
     string StorageStringFormat()
     {
         return $"{currentGarbageCount}/{maxGarbageCount}";
-    }
-
-    void GetParamsFromSave()
-    {
-        //get parameters from savefile
-            //maxGarbageCount
-            //currentGarbageCount
-            //mapID
-    }
-
-    void SaveParams()
-    {
-        //save parameters to savefile
-            //maxGarbageCount
-            //currentGarbageCount
     }
 }
