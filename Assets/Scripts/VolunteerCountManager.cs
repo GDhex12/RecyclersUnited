@@ -5,7 +5,8 @@ using UnityEngine;
 public class VolunteerCountManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int currrentVolunteersCount = 0;
+    [SerializeField]
+    private int currrentVolunteersCount = 1;
 
     private int temporaryAddedVolunteers = 0;
 
