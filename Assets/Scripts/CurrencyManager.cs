@@ -108,6 +108,8 @@ public class CurrencyManager : MonoBehaviour
 
     void SaveParams()
     {
-        SaveSystem.SavePlayer(new PlayerData(currencyAmount));
+        PersistantData.Instance.playerData.Coins = currencyAmount;
+        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+
     }
 }
