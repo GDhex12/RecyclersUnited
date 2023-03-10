@@ -127,7 +127,11 @@ public class PowerUp : MonoBehaviour
 	{
 		rb.AddForce(-transform.up * speed);
 	}
-	protected virtual void DoTheThing(Collider2D collision)
+	public void OnClick()
+	{
+		Destroy(gameObject);
+	}
+    protected virtual void DoTheThing(Collider2D collision)
 	{
 
 	}

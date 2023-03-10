@@ -10,4 +10,9 @@ public class SpawnObject : MonoBehaviour
     {
         Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
     }
+
+    public GameObject SpawnObjectInSceneTemporary(Transform parent)
+    {
+       return Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
+    }
 }
