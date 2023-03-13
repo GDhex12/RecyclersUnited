@@ -5,13 +5,16 @@ using UnityEngine;
 public class SpawnObject : MonoBehaviour
 {
     [SerializeField] GameObject spawnObject;
+
     [Header("Spawn References")]
     [SerializeField] GameObject volunteer;
+
 
     public void SpawnObjectInScene(Transform parent)
     {
         Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
     }
+
     public void SpawnVolunteerInSceneIfAfforded(int price)
     {
         if(CurrencyManager.instance.IsAffordable(price))
@@ -21,4 +24,5 @@ public class SpawnObject : MonoBehaviour
             SaveSystem.SavePlayer(PersistantData.Instance.playerData);
         }   
     }
+
 }
