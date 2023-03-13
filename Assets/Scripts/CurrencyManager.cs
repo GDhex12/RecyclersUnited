@@ -30,11 +30,21 @@ public class CurrencyManager : MonoBehaviour
 
     public void AddCurrency(int amount)
     {
+        AddCurrency((long)amount);
+    }
+
+    public void AddCurrency(long amount)
+    {
         currencyAmount += amount;
         UpdateCurrency();
     }
 
     public void RemoveCurrency(int amount)
+    {
+        RemoveCurrency((long)amount);
+    }
+
+    public void RemoveCurrency(long amount)
     {
         if (!IsAffordable(amount))
         {
@@ -69,7 +79,7 @@ public class CurrencyManager : MonoBehaviour
         UpdateCurrency();
     }
 
-    public bool IsAffordable(int price)
+    public bool IsAffordable(long price)
     {
         return currencyAmount >= price;
     }

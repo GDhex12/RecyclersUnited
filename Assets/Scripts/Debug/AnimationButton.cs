@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class AnimationButton : MonoBehaviour
 {
-    public GameObject temp;
+    public GameObject truck;
     public ChangeVehicles vehicleSelection;
 
     private void Awake()
     {
-        vehicleSelection = temp.GetComponent<ChangeVehicles>();
+        //vehicleSelection = temp.GetComponent<ChangeVehicles>();
         GetComponent<Button>().onClick.AddListener(LaunchAnimation);
     }
 
     private void LaunchAnimation ()
     {
-        GameObject[] allVehicles = vehicleSelection.vehicles;
-        int currentIdx = vehicleSelection.arrayIdx;
-        allVehicles[currentIdx].GetComponent<Animator>().Play(string.Format("{0}GoesAway", allVehicles[currentIdx].name));
+        //GameObject[] allVehicles = vehicleSelection.vehicles;
+        //int currentIdx = vehicleSelection.arrayIdx;
+        truck.GetComponent<Animator>().Play(string.Format("{0}GoesAway", truck.name));
     }
 }
