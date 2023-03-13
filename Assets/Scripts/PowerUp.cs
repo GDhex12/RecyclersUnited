@@ -18,7 +18,7 @@ public class PowerUp : MonoBehaviour
 	private bool up = true;
 	private bool down = false;
 	public Rigidbody rb;
-
+	[SerializeField] private PowerUpSpawner powerUpSpawner;
 
 
 
@@ -129,7 +129,9 @@ public class PowerUp : MonoBehaviour
 	}
 	public void OnClick()
 	{
-		Destroy(gameObject);
+		powerUpSpawner.DecreasePowerUp(gameObject);
+		gameObject.SetActive(false);
+		//Destroy(gameObject);
 	}
     protected virtual void DoTheThing(Collider2D collision)
 	{
@@ -144,8 +146,8 @@ public class PowerUp : MonoBehaviour
 			//pickUp.enabled = true;
 			//gameObject.GetComponent<Collider2D>().enabled = false;
 			DoTheThing(collision);
-
-			Destroy(gameObject, 1f);
+			gameObject.SetActive(false);
+			//Destroy(gameObject, 1f);
 		}
 
 
@@ -168,10 +170,12 @@ public class PowerUp : MonoBehaviour
 
 	void CheckPosition()
 	{
-		//if (transform.position.x < player.position.x - cameraWidth / 2f)
-		//{
-		//	Destroy(gameObject);
-		//}
+		if (transform.position.x > cameraWidth + 30f)
+		{
+			powerUpSpawner.DecreasePowerUp(gameObject);
+			gameObject.SetActive(false);
+			
+		}
 
 
 	}
