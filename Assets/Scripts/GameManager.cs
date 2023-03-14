@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] CurrencyManager currencyManager;
+    public static GameManager Instance;
+
+
 
 
     private void Start()
@@ -18,7 +20,9 @@ public class GameManager : MonoBehaviour
 
         PersistantData.Instance.GetLoadedData(loadedData);
 
-        currencyManager.SetCurrency(loadedData.Coins);
+        CurrencyManager.instance.SetCurrency(loadedData.Coins);
 
     }
+
+
 }
