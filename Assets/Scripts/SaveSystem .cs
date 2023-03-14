@@ -23,7 +23,7 @@ public static class SaveSystem
         {
             SavePlayer(new PlayerData());
         }
-        PlayerData playerData;
+        PlayerData playerData = new PlayerData();
 
         using (StreamReader stream = new StreamReader(path))
         {
