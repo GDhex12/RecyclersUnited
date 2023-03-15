@@ -20,6 +20,7 @@ public class ExperienceStats : MonoBehaviour
 
     private void Awake()
     {
+        
         CalculateNewLimit();
     }
 
@@ -29,6 +30,7 @@ public class ExperienceStats : MonoBehaviour
         refToLevelValue.text = Convert.ToString(level);
         refToExpValues.text = string.Format("{0} / {1}", expPrevious, requiredAmountToNextLv);
         expPrevious = experienceToIncrease;
+        GetExperience();
         if (experienceToIncrease != 0)
         {
             refToExpBack.sizeDelta = new Vector2(CalculateExpBarDifference(experienceToIncrease), refToExpBack.sizeDelta.y);
@@ -51,7 +53,33 @@ public class ExperienceStats : MonoBehaviour
         requiredAmountToNextLv = (float)((level / 10 + level % 10) * 100 * Math.Pow(10, level / 10));
     }
 
-    private void UpdateExpPoints()
+    public void GetExperience()
+    {
+        expPrevious = SaveSystem.LoadPlayer().Experience;
+        experienceToIncrease = SaveSystem.LoadPlayer().Experience;
+        level = SaveSystem.LoadPlayer().Level;
+        requiredAmountToNextLv = SaveSystem.LoadPlayer().ExpLimit;
+    }
+
+    public void SetExperience(int expLevel, float expPoints, float expLimit)
+    {
+        expPrevious = expPoints;
+        experienceToIncrease = expPoints;
+        level = expLevel;
+        requiredAmountToNextLv = expLimit;
+        Debug.Log("hahah");
+        UpdateWithNewValues();
+    }
+
+    private void UpdateWithNewValues()
+    {
+        PersistantData.Instance.playerData.Level = level;
+        PersistantData.Instance.playerData.Experience = expPrevious;
+        PersistantData.Instance.playerData.ExpLimit = requiredAmountToNextLv;
+        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+    }
+
+    public void UpdateExpPoints()
     {
         // Level up
         if (experienceToIncrease >= requiredAmountToNextLv)
@@ -62,11 +90,13 @@ public class ExperienceStats : MonoBehaviour
             refToLevelValue.text = Convert.ToString(level);
             // Determine new value
             CalculateNewLimit();
+            UpdateWithNewValues();
         }
         else
         {
             Debug.Log(string.Format("Player is now at {0} experience points", experienceToIncrease));
             refToExpBack.sizeDelta = new Vector2(CalculateExpBarDifference(experienceToIncrease), refToExpBack.sizeDelta.y);
+            UpdateWithNewValues();
         }
     }
 
