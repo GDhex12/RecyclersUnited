@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+
 --- !u!1 &201333091170265093
 GameObject:
   m_ObjectHideFlags: 0
@@ -8,6 +9,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+
   - component: {fileID: 3651670365117337700}
   m_Layer: 5
   m_Name: Sliding Area
@@ -2825,6 +2827,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 7782230308720048568}
   isopen: 0
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &8337975382178744420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,6 +4254,7 @@ RectTransform:
   - {fileID: 626959725803187265}
   - {fileID: 8337975383892027201}
   - {fileID: 8337975384215547987}
+  - {fileID: 2452585457193883775}
   - {fileID: 8337975382558983853}
   - {fileID: 541351808562632458}
   - {fileID: 6935982791417843185}

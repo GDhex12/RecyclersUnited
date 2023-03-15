@@ -5,9 +5,20 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] CurrencyManager currencyManager;
-    private void Awake()
+
+
+    private void Start()
+    {
+        LoadPlayerData();
+    }
+
+    private void LoadPlayerData()
     {
         PlayerData loadedData = SaveSystem.LoadPlayer();
+
+        PersistantData.Instance.GetLoadedData(loadedData);
+
         currencyManager.SetCurrency(loadedData.Coins);
+
     }
 }
