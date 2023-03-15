@@ -15,6 +15,12 @@ public class SpawnObject : MonoBehaviour
         Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
     }
 
+
+    public GameObject SpawnObjectInSceneTemporary(Transform parent)
+    {
+       return Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
+    }
+
     public void SpawnVolunteerInSceneIfAfforded(int price)
     {
         if(CurrencyManager.instance.IsAffordable(price))
@@ -24,5 +30,6 @@ public class SpawnObject : MonoBehaviour
             SaveSystem.SavePlayer(PersistantData.Instance.playerData);
         }   
     }
+
 
 }

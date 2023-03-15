@@ -25,6 +25,9 @@
 .vscode/
 *.vsconfig
 
+# JetBrains products
+.idea/
+
 # Gradle cache directory
 .gradle/
 
