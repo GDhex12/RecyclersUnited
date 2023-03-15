@@ -12,7 +12,7 @@ public class Volunteer : MonoBehaviour
     [SerializeField] private GameObject storage;
     [SerializeField] private float timeBetweenMoves = 5f;
 
-    [SerializeField] private ExperienceStats refToExp;
+    [SerializeField] public ExperienceStats refToExpManager;
     [SerializeField] public int[] randomGain;
 
     private void Awake()
@@ -20,7 +20,6 @@ public class Volunteer : MonoBehaviour
     }
     void Start()
     {
-        refToExp = GetComponent<ExperienceStats>();
         StartCoroutine(PickUpAfter(timeBetweenMoves));
     }
 
@@ -42,7 +41,7 @@ public class Volunteer : MonoBehaviour
     {      
         GoToPickUpLocation();
         yield return new WaitForSeconds(time);
-        refToExp.experienceToIncrease += Random.Range(randomGain[0], randomGain[1]);
+        refToExpManager.experienceToIncrease += Random.Range(randomGain[0], randomGain[1]);
         StartCoroutine(PutDownAfter(time));
     }
     IEnumerator PutDownAfter(float time)

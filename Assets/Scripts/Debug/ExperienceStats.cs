@@ -12,7 +12,7 @@ public class ExperienceStats : MonoBehaviour
     public TMP_Text refToLevelValue;
 
     public float requiredAmountToNextLv;
-    public int level = 3;
+    public int level = 1;
     public float experienceToIncrease = 0f;
 
     private float expPrevious = 0f;
