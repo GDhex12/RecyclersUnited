@@ -20,7 +20,7 @@ public class ExperienceStats : MonoBehaviour
 
     private void Awake()
     {
-        requiredAmountToNextLv = (float)((level / 10 + level % 10) * 100 * Math.Pow(10, level / 10));
+        CalculateNewLimit();
     }
 
     // Start is called before the first frame update
@@ -46,6 +46,11 @@ public class ExperienceStats : MonoBehaviour
         }
     }
 
+    private void CalculateNewLimit()
+    {
+        requiredAmountToNextLv = (float)((level / 10 + level % 10) * 100 * Math.Pow(10, level / 10));
+    }
+
     private void UpdateExpPoints()
     {
         // Level up
@@ -55,6 +60,8 @@ public class ExperienceStats : MonoBehaviour
             refToExpBack.sizeDelta = new Vector2(CalculateExpBarDifference(experienceToIncrease - requiredAmountToNextLv), refToExpBack.sizeDelta.y);
             level++;
             refToLevelValue.text = Convert.ToString(level);
+            // Determine new value
+            CalculateNewLimit();
         }
         else
         {
