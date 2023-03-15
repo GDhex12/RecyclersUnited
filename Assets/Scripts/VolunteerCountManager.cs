@@ -5,10 +5,15 @@ using UnityEngine;
 public class VolunteerCountManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int currrentVolunteersCount = 0;
+    [SerializeField]
+    private int currrentVolunteersCount = 1;
 
-    private int temporaryAddedVolunteers = 0;
+    private List<int> temporaryAddedVolunteersCount =new List<int>();
 
+    private List<GameObject> temporaryAddedVolunteersList = new List<GameObject>();
+
+    [SerializeField] private Transform volunteersSpawnTransform;
+    [SerializeField] private SpawnObject spawnObjectScript;
     [SerializeField]
     private int saveSystem;//Placeholder for a save system
     void Start()
@@ -37,19 +42,36 @@ public class VolunteerCountManager : MonoBehaviour
     public void AddVolunteers(int volunteersToAdd)
 	{
         currrentVolunteersCount += volunteersToAdd;
+        spawnObjectScript.SpawnObjectInScene(volunteersSpawnTransform);
 	}
 
     public void AddVolunteersTemporary(int volunteersToAdd, float time)
 	{
         currrentVolunteersCount += volunteersToAdd;
-        temporaryAddedVolunteers = volunteersToAdd;
+        temporaryAddedVolunteersCount.Add( volunteersToAdd);
         FunctionTimer.Create(DecreaseVolunteersCount, time);
+        for(int i=0; i<volunteersToAdd; i++)
+        {
+            spawnObjectScript.SpawnObjectInScene(volunteersSpawnTransform);
+            temporaryAddedVolunteersList.Add(spawnObjectScript.SpawnObjectInSceneTemporary(volunteersSpawnTransform));
+        }
+        
     }
 
     public void DecreaseVolunteersCount()
 	{
-        currrentVolunteersCount -= temporaryAddedVolunteers;
-	}
+        Debug.Log("DESTRUCTION");
+        for(int i=0; i < temporaryAddedVolunteersCount[0]; i++)
+        {
+            //Destroy(temporaryAddedVolunteersList[i]);
+
+        }
+        int count = temporaryAddedVolunteersCount[0];
+        temporaryAddedVolunteersList.RemoveRange(0, count);
+        temporaryAddedVolunteersCount.RemoveAt(0);
+
+
+    }
     /// <summary>
     /// Returns a volunteers count
     /// </summary>
