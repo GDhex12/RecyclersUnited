@@ -12,9 +12,18 @@ public static class SaveSystem
         {
             string json = JsonUtility.ToJson(data);
             stream.Write(json);
-        }
-        
+        }  
     }
+
+    public static void RemoveAllData()
+    {
+        string path = Application.persistentDataPath + filepath;
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+    }
+
     public static PlayerData LoadPlayer()
     {
         string path = Application.persistentDataPath + filepath;
