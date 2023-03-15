@@ -4,6 +4,8 @@ public class PersistantData : MonoBehaviour
 {
     public static PersistantData Instance { get; private set; }
     public PlayerData playerData = new PlayerData();
+    public int SaveDataVerToCheck = 2;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -22,6 +24,10 @@ public class PersistantData : MonoBehaviour
 
     public void GetLoadedData(PlayerData data)
     {
-        playerData = data; 
+        playerData = data;
+        if (playerData.SaveDataVersion != SaveDataVerToCheck)
+        {
+            SaveSystem.RemoveAllData();
+        }
     }
 }
