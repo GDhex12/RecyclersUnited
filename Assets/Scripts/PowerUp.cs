@@ -19,6 +19,7 @@ public class PowerUp : MonoBehaviour
 	private bool down = false;
 	public Rigidbody rb;
 	[SerializeField] private PowerUpSpawner powerUpSpawner;
+	[SerializeField] private GameObject pickUpEffect;
 
 
 
@@ -129,6 +130,7 @@ public class PowerUp : MonoBehaviour
 	}
 	public void OnClick()
 	{
+		Instantiate(pickUpEffect, gameObject.transform.position, Quaternion.identity);
 		powerUpSpawner.DecreasePowerUp(gameObject);
 		gameObject.SetActive(false);
 		//Destroy(gameObject);
