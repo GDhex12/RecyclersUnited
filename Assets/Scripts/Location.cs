@@ -11,6 +11,7 @@ public class Location : MonoBehaviour
     [SerializeField] bool isUnlocked = false;
     [SerializeField] bool isBought = false;
     [SerializeField] long price = 100;
+    [SerializeField] string sceneName;
 
     [Header("Visuals")]
     [SerializeField] Image imageRef;
@@ -79,8 +80,7 @@ public class Location : MonoBehaviour
     {
         if (IsLoadable())
         {
-            //SceneManager.LoadScene(buildIndex);
-            Debug.Log($"Loading to scene {buildIndex}");
+            LocationLoader.Instance.LoadScene_Transition(sceneName);
         }
         else
         {
