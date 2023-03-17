@@ -6,21 +6,35 @@ public class SpawnObject : MonoBehaviour
 {
     [SerializeField] GameObject spawnObject;
 
-    [Header("Spawn References")]
-    [SerializeField] GameObject volunteer;
 
 
     public void SpawnObjectInScene(Transform parent)
     {
-        Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
+        Instantiate(spawnObject, parent.position, Quaternion.identity, parent).SetActive(true);
     }
 
+<<<<<<< Updated upstream
+=======
+
+    public GameObject SpawnObjectInSceneTemporary(Transform parent)
+    {
+       return Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
+    }
+
+    public void SpawnCertainAmountOfVolunteers(int amount)
+    {
+        for(int i = 0; i < amount; i++)
+        {
+            Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
+        }
+    }
+>>>>>>> Stashed changes
     public void SpawnVolunteerInSceneIfAfforded(int price)
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {
             PersistantData.Instance.playerData.VolunteerCount++;
-            Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+            Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
             SaveSystem.SavePlayer(PersistantData.Instance.playerData);
         }   
     }

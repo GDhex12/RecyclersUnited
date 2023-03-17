@@ -98,18 +98,21 @@ public class Storage : MonoBehaviour
         return $"{currentGarbageCount}/{maxGarbageCount}";
     }
 
-    void GetParamsFromSave()
+    public void GetParamsFromSave()
     {
         //get parameters from savefile
-            //maxGarbageCount
-            //currentGarbageCount
-            //mapID
+        //maxGarbageCount
+        //currentGarbageCount
+        //mapID
+        currentGarbageCount = PersistantData.Instance.playerData.CurrentGarbageCount;
     }
 
     void SaveParams()
     {
         //save parameters to savefile
-            //maxGarbageCount
-            //currentGarbageCount
+        //maxGarbageCount
+        //currentGarbageCount
+        PersistantData.Instance.playerData.CurrentGarbageCount = currentGarbageCount;
+        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
     }
 }

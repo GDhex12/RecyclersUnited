@@ -120,6 +120,5 @@ public class CurrencyManager : MonoBehaviour
     {
         PersistantData.Instance.playerData.Coins = currencyAmount;
         SaveSystem.SavePlayer(PersistantData.Instance.playerData);
-
     }
 }

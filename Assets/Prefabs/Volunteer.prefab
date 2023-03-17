@@ -119,6 +119,8 @@ MonoBehaviour:
   - {fileID: 0}
   storage: {fileID: 0}
   timeBetweenMoves: 3
+  refToExpManager: {fileID: 0}
+  randomGain: 0100000002000000
 --- !u!195 &4417018898175952504
 NavMeshAgent:
   m_ObjectHideFlags: 0

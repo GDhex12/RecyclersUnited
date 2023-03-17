@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LoadPlayerData();
+        LoadPlayerDataToScene();
     }
 
     private void LoadPlayerData()
@@ -20,5 +21,11 @@ public class GameManager : MonoBehaviour
 
         currencyManager.SetCurrency(loadedData.Coins);
 
+    }
+    private void LoadPlayerDataToScene()
+    {
+        //Loading Volunteers to scene
+        FindObjectOfType<SpawnObject>().SpawnCertainAmountOfVolunteers(PersistantData.Instance.playerData.VolunteerCount);
+        FindObjectOfType<Storage>().GetParamsFromSave();
     }
 }
