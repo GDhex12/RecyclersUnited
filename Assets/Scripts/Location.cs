@@ -24,9 +24,19 @@ public class Location : MonoBehaviour
     //[SerializeField] Sprite unlockedSprite;
     //[SerializeField] Sprite boughtSprite;
 
+    GameObject _popup;
+    bool _popupActive;
+
+    private void Awake()
+    {
+        
+        _popup = transform.Find("Popup").gameObject;
+    }
+
     private void Start()
     {
         UpdateUI();
+        _popupActive = false;
     }
 
     public int GetBuildIndex()
@@ -114,6 +124,7 @@ public class Location : MonoBehaviour
             {
                 CurrencyManager.instance.RemoveCurrency(price);
                 SetIsBought(true);
+                SetPopupActive(false);
                 UpdateUI();
             }
             else
@@ -135,12 +146,25 @@ public class Location : MonoBehaviour
         }
         else if (isUnlocked && !isBought)
         {
-            BuyLocation();
+            //BuyLocation();
+
+            TogglePopup();
         }
         else if (isUnlocked && isBought)
         {
             LoadLocation();
         }
         
+    }
+
+    void TogglePopup()
+    {
+        _popupActive = !_popupActive;
+        _popup.SetActive(_popupActive);
+    }
+
+    void SetPopupActive(bool active)
+    {
+        _popup.SetActive(active);
     }
 }
