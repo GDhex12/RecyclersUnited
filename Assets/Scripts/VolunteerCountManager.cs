@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class VolunteerCountManager : MonoBehaviour
 {
@@ -79,7 +80,13 @@ public class VolunteerCountManager : MonoBehaviour
 
     public void IncreaseVolunteersSpeed()
 	{
+       GameObject[] allVolunteers =  GameObject.FindGameObjectsWithTag("Volunteer");
 
+        for(int i =0; i< allVolunteers.Length; i++)
+		{
+            allVolunteers[i].GetComponent<NavMeshAgent>().speed = allVolunteers[i].GetComponent<NavMeshAgent>().speed * 2f;
+
+        }
 	}
     /// <summary>
     /// Returns a volunteers count

@@ -31,6 +31,7 @@ public class PowerUpsManager : MonoBehaviour
                     hit.transform.gameObject.GetComponent<PowerUp>().OnClick();
                   
                     countManager.AddVolunteersTemporary(3, 10f);
+                    countManager.IncreaseVolunteersSpeed();
                 }
             }
         }
