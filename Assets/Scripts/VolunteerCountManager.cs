@@ -10,10 +10,11 @@ public class VolunteerCountManager : MonoBehaviour
 
     private List<int> temporaryAddedVolunteersCount =new List<int>();
 
-    private List<GameObject> temporaryAddedVolunteersList = new List<GameObject>();
+    [SerializeField] private List<GameObject> temporaryAddedVolunteersList = new List<GameObject>();
 
     [SerializeField] private Transform volunteersSpawnTransform;
     [SerializeField] private SpawnObject spawnObjectScript;
+    [SerializeField] private GameObject walkOffPoint;
     [SerializeField]
     private int saveSystem;//Placeholder for a save system
     void Start()
@@ -52,7 +53,7 @@ public class VolunteerCountManager : MonoBehaviour
         FunctionTimer.Create(DecreaseVolunteersCount, time);
         for(int i=0; i<volunteersToAdd; i++)
         {
-            spawnObjectScript.SpawnObjectInScene(volunteersSpawnTransform);
+            
             temporaryAddedVolunteersList.Add(spawnObjectScript.SpawnObjectInSceneTemporary(volunteersSpawnTransform));
         }
         
@@ -60,10 +61,13 @@ public class VolunteerCountManager : MonoBehaviour
 
     public void DecreaseVolunteersCount()
 	{
-        Debug.Log("DESTRUCTION");
+       
         for(int i=0; i < temporaryAddedVolunteersCount[0]; i++)
         {
-            //Destroy(temporaryAddedVolunteersList[i]);
+            
+            temporaryAddedVolunteersList[i].gameObject.GetComponent<Volunteer>().WalkOutOfMap(walkOffPoint.transform.position);
+            
+
 
         }
         int count = temporaryAddedVolunteersCount[0];
@@ -72,6 +76,11 @@ public class VolunteerCountManager : MonoBehaviour
 
 
     }
+
+    public void IncreaseVolunteersSpeed()
+	{
+
+	}
     /// <summary>
     /// Returns a volunteers count
     /// </summary>
