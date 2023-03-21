@@ -12,12 +12,14 @@ public class Location : MonoBehaviour
     [SerializeField] bool isBought = false;
     [SerializeField] long price = 100;
     [SerializeField] string sceneName;
+    [SerializeField] int lvlToUnlock = 0;
 
     [Header("Visuals")]
     [SerializeField] Image imageRef;
     [SerializeField] Color lockedColor;
     [SerializeField] Color unlockedColor;
     [SerializeField] Color boughtColor;
+
 
     //for later iteration
     //[SerializeField] Sprite lockedSprite;
@@ -26,17 +28,30 @@ public class Location : MonoBehaviour
 
     GameObject _popup;
     bool _popupActive;
+    Animator _animator;
+    ExperienceStats _experienceStats;
 
     private void Awake()
     {
-        
+        _experienceStats = FindObjectOfType<ExperienceStats>();
+        _animator = GetComponent<Animator>();
         _popup = transform.Find("Popup").gameObject;
     }
 
     private void Start()
     {
-        UpdateUI();
         _popupActive = false;
+
+        
+        UpdateUI();
+    }
+
+    private void Update()
+    {
+        if (!isUnlocked)
+        {
+            CheckUnlockLocation();
+        }
     }
 
     public int GetBuildIndex()
@@ -82,7 +97,7 @@ public class Location : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Location is bought but not unlocked!");
+            //Debug.LogWarning("Location is bought but not unlocked!");
         }
     }
 
@@ -116,6 +131,17 @@ public class Location : MonoBehaviour
         }
     }
 
+    void CheckUnlockLocation()
+    {
+        if (_experienceStats != null)
+        {
+            if (_experienceStats.level >= lvlToUnlock)
+            {
+                UnlockLocation();
+            }
+        }
+    }
+
     public void BuyLocation()
     {
         if (isUnlocked && !isBought)
@@ -142,7 +168,7 @@ public class Location : MonoBehaviour
     {
         if (!isUnlocked && !isBought)
         {
-            UnlockLocation();
+            //UnlockLocation();
         }
         else if (isUnlocked && !isBought)
         {
@@ -160,11 +186,13 @@ public class Location : MonoBehaviour
     void TogglePopup()
     {
         _popupActive = !_popupActive;
-        _popup.SetActive(_popupActive);
+        SetPopupActive(_popupActive);
+        //_popup.SetActive(_popupActive);
     }
 
     void SetPopupActive(bool active)
     {
-        _popup.SetActive(active);
+        //_popup.SetActive(active);
+        _animator.SetBool("popup", active);
     }
 }
