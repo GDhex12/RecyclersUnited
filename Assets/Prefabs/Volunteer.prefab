@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4417018898175952504}
   m_Layer: 6
   m_Name: Volunteer
-  m_TagString: Untagged
+  m_TagString: Volunteer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +119,8 @@ MonoBehaviour:
   - {fileID: 0}
   storage: {fileID: 0}
   timeBetweenMoves: 3
+  refToExpManager: {fileID: 0}
+  randomGain: 
 --- !u!195 &4417018898175952504
 NavMeshAgent:
   m_ObjectHideFlags: 0

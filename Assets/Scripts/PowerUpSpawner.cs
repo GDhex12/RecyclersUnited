@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PowerUpSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class PowerUpSpawner : MonoBehaviour
             Vector3 offset = new Vector3(0f, 0f, Random.Range(0, 25));
             powerUp.transform.position = powerUpsSpawnPoint.position+ offset;
             powerUp.SetActive(true);
+            powerUp.GetComponent<PowerUp>().Setup();
             activePowerUps.Add(powerUp);
            
 
