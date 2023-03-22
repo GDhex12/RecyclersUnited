@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] CurrencyManager currencyManager;
     [SerializeField] ExperienceStats experienceManager;
+    public static GameManager Instance;
+
+
+
 
     private void Start()
     {
@@ -16,7 +19,10 @@ public class GameManager : MonoBehaviour
     {
         PlayerData loadedData = SaveSystem.LoadPlayer();
         PersistantData.Instance.GetLoadedData(loadedData);
-        currencyManager.SetCurrency(loadedData.Coins);
+
+        CurrencyManager.instance.SetCurrency(loadedData.Coins);
         experienceManager.SetExperience(loadedData.Level, loadedData.Experience, loadedData.ExpLimit);
     }
+
+
 }

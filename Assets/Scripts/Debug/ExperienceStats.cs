@@ -27,10 +27,10 @@ public class ExperienceStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetExperience();
         refToLevelValue.text = Convert.ToString(level);
         refToExpValues.text = string.Format("{0} / {1}", expPrevious, requiredAmountToNextLv);
         expPrevious = experienceToIncrease;
-        GetExperience();
         if (experienceToIncrease != 0)
         {
             refToExpBack.sizeDelta = new Vector2(CalculateExpBarDifference(experienceToIncrease), refToExpBack.sizeDelta.y);
