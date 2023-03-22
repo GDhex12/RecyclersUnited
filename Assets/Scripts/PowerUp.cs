@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PowerUpType
+{
+	Add,
+	Speed
+}
 public class PowerUp : MonoBehaviour
 {
 	private float maxHeight = 0;
 	private float cameraWidth;
+	private PowerUpType type;
+
+
 	//public  float minSpeed;
 
 	//public float maxSpedd;
@@ -20,6 +28,9 @@ public class PowerUp : MonoBehaviour
 	public Rigidbody rb;
 	[SerializeField] private PowerUpSpawner powerUpSpawner;
 	[SerializeField] private GameObject pickUpEffect;
+	[SerializeField] private Color AddPowerUpColor;
+	[SerializeField] private Color SpeedPowerUpColor;
+	[SerializeField] private GameObject PowerUpMesh;
 
 
 
@@ -179,6 +190,27 @@ public class PowerUp : MonoBehaviour
 			
 		}
 
+
+	}
+
+	public PowerUpType GetType()
+	{
+		return type;
+	}
+
+	public void Setup()
+	{
+		if (Random.value > 0.5)
+		{
+			PowerUpMesh.GetComponent<SpriteRenderer>().color = SpeedPowerUpColor;
+			type = PowerUpType.Speed;
+		}
+		else
+		{
+			PowerUpMesh.GetComponent<SpriteRenderer>().color = AddPowerUpColor;
+			type = PowerUpType.Add;
+		}
+			
 
 	}
 

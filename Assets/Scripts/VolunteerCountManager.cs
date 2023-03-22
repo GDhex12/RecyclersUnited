@@ -84,10 +84,22 @@ public class VolunteerCountManager : MonoBehaviour
 
         for(int i =0; i< allVolunteers.Length; i++)
 		{
-            allVolunteers[i].GetComponent<NavMeshAgent>().speed = allVolunteers[i].GetComponent<NavMeshAgent>().speed * 2f;
+            allVolunteers[i].GetComponent<NavMeshAgent>().speed = allVolunteers[i].GetComponent<NavMeshAgent>().speed * 1.2f;
 
         }
+        FunctionTimer.Create(DecreaseVolunteersSpeed, 10f);
 	}
+
+    public void DecreaseVolunteersSpeed()
+    {
+        GameObject[] allVolunteers = GameObject.FindGameObjectsWithTag("Volunteer");
+
+        for (int i = 0; i < allVolunteers.Length; i++)
+        {
+            allVolunteers[i].GetComponent<NavMeshAgent>().speed = allVolunteers[i].GetComponent<NavMeshAgent>().speed / 1.2f;
+
+        }
+    }
     /// <summary>
     /// Returns a volunteers count
     /// </summary>

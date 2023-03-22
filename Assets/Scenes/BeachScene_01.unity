@@ -179,6 +179,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: PowerUpMesh
+      value: 
+      objectReference: {fileID: 1944752566}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
       propertyPath: pickUpEffect
       value: 
       objectReference: {fileID: 6908319076973097748, guid: 05871fca8dfdc9a4e847a7775ed93340, type: 3}
@@ -186,6 +190,38 @@ PrefabInstance:
       propertyPath: powerUpSpawner
       value: 
       objectReference: {fileID: 577836302}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: AddPowerUpColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: AddPowerUpColor.b
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: AddPowerUpColor.g
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: AddPowerUpColor.r
+      value: 0.8901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: SpeedPowerUpColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: SpeedPowerUpColor.b
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: SpeedPowerUpColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: SpeedPowerUpColor.r
+      value: 0.2509804
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
 --- !u!4 &3238549 stripped
@@ -213,6 +249,10 @@ PrefabInstance:
     - target: {fileID: 1886338777770891840, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
       propertyPath: m_Name
       value: PowerUp1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891840, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1886338777770891841, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
       propertyPath: m_RootOrder
@@ -263,6 +303,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: PowerUpMesh
+      value: 
+      objectReference: {fileID: 1642266892}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
       propertyPath: pickUpEffect
       value: 
       objectReference: {fileID: 6908319076973097748, guid: 05871fca8dfdc9a4e847a7775ed93340, type: 3}
@@ -270,6 +314,38 @@ PrefabInstance:
       propertyPath: powerUpSpawner
       value: 
       objectReference: {fileID: 577836302}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: AddPowerUpColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: AddPowerUpColor.b
+      value: 0.25575954
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: AddPowerUpColor.g
+      value: 0.25575954
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: AddPowerUpColor.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: SpeedPowerUpColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: SpeedPowerUpColor.b
+      value: 0.13427502
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: SpeedPowerUpColor.g
+      value: 0.5566038
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: SpeedPowerUpColor.r
+      value: 0.24930057
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
 --- !u!4 &48050823 stripped
@@ -281,6 +357,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1886338777770891840, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
   m_PrefabInstance: {fileID: 48050822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &176554859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3562854590523415924, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+  m_PrefabInstance: {fileID: 453436552}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &192564977
 PrefabInstance:
@@ -1439,6 +1520,10 @@ PrefabInstance:
       value: PowerUp3
       objectReference: {fileID: 0}
     - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: PowerUpMesh
+      value: 
+      objectReference: {fileID: 176554859}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
       propertyPath: pickUpEffect
       value: 
       objectReference: {fileID: 6908319076973097748, guid: 05871fca8dfdc9a4e847a7775ed93340, type: 3}
@@ -1446,6 +1531,38 @@ PrefabInstance:
       propertyPath: powerUpSpawner
       value: 
       objectReference: {fileID: 577836302}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: AddPowerUpColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: AddPowerUpColor.b
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: AddPowerUpColor.g
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: AddPowerUpColor.r
+      value: 0.8901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: SpeedPowerUpColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: SpeedPowerUpColor.b
+      value: 0.13725491
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: SpeedPowerUpColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: SpeedPowerUpColor.r
+      value: 0.2509804
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
 --- !u!4 &453436553 stripped
@@ -3232,6 +3349,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011250219612, guid: 145166ff5ca66964ebee41bbda15dee2, type: 3}
   m_PrefabInstance: {fileID: 1593604065}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1642266892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1886338777035147798, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+  m_PrefabInstance: {fileID: 48050822}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1665249151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3456,6 +3578,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012804062732, guid: 4e71c850834f57447ba73215bf2dd67f, type: 3}
   m_PrefabInstance: {fileID: 1937024242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1944752566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8118786478889035307, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+  m_PrefabInstance: {fileID: 3238548}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1969004341
 PrefabInstance:
