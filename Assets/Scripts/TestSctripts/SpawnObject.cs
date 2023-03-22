@@ -13,13 +13,13 @@ public class SpawnObject : MonoBehaviour
         Instantiate(spawnObject, parent.position, Quaternion.identity, parent).SetActive(true);
     }
 
-<<<<<<< Updated upstream
-=======
+
 
     public GameObject SpawnObjectInSceneTemporary(Transform parent)
     {
        return Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
     }
+
 
     public void SpawnCertainAmountOfVolunteers(int amount)
     {
@@ -28,7 +28,7 @@ public class SpawnObject : MonoBehaviour
             Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
         }
     }
->>>>>>> Stashed changes
+
     public void SpawnVolunteerInSceneIfAfforded(int price)
     {
         if(CurrencyManager.instance.IsAffordable(price))
@@ -38,5 +38,6 @@ public class SpawnObject : MonoBehaviour
             SaveSystem.SavePlayer(PersistantData.Instance.playerData);
         }   
     }
+
 
 }

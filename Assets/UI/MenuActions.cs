@@ -8,12 +8,14 @@ public class MenuActions : MonoBehaviour
     public bool isopen;
     public void openExitMenu()
     {
-        if (isopen == false)
+        isopen = panel.activeSelf;
+
+        if (!isopen)
         {
             isopen = true;
             panel.gameObject.SetActive(true);
         }
-        else if (isopen == true)
+        else if (isopen)
         {
             isopen = false;
             panel.gameObject.SetActive(false);
