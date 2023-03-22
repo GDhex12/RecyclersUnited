@@ -10,6 +10,7 @@ public class Volunteer : MonoBehaviour
 
     [Header("Movement Settings")]
     [SerializeField] private GameObject[] movementPoints;
+    
     [SerializeField] private GameObject storage;
     [SerializeField] private GameObject vehicle;
     [SerializeField] private float timeBetweenMoves = 5f;
@@ -70,6 +71,21 @@ public class Volunteer : MonoBehaviour
         yield return new WaitForSeconds(time);
         vehicle.GetComponent<VehicleSystem>().AddGarbage(bagStorageCurrent);
         StartCoroutine(TakeFromStorageAfter(time));
+    }
+
+    public void WalkOutOfMap(Vector3 walkOffPoint)
+	{
+        //Destroy(gameObject);
+        StartCoroutine(WalkOffMapAndDestroy(walkOffPoint));
+	}
+
+    IEnumerator WalkOffMapAndDestroy(Vector3 walkOffPoint)
+    {
+        MoveTo(walkOffPoint);
+        Debug.Log("Einam susinaikinti");
+        yield return new WaitForSeconds(20f);
+        Debug.Log("Susinaikinam");
+        Destroy(gameObject);
     }
 
 }

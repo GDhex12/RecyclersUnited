@@ -20,16 +20,7 @@ public class SpawnObject : MonoBehaviour
        return Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
     }
 
-
-    public void SpawnCertainAmountOfVolunteers(int amount)
-    {
-        for(int i = 0; i < amount; i++)
-        {
-            Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
-        }
-    }
-
-    public void SpawnVolunteerInSceneIfAfforded(int price)
+    public void SpawnVolunteerInSceneIfAfforded(long price)
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {

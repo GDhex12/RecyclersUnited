@@ -86,25 +86,30 @@ public class CurrencyManager : MonoBehaviour
 
     string CurrencyStringFormat()
     {
+        return CurrencyStringFormat(currencyAmount);
+    }
+
+    public string CurrencyStringFormat(long amount)
+    {
         string line = "";
         int roundDigits = 1;
-        switch (currencyAmount)
+        switch (amount)
         {
             case < 1000:
-                line = currencyAmount.ToString();
+                line = amount.ToString();
                 break;
             case < 1000000:
-                line = $"{Math.Round((double)currencyAmount / 1000, roundDigits)} K";
+                line = $"{Math.Round((double)amount / 1000, roundDigits)} K";
                 break;
             case < 1000000000:
-                line = $"{Math.Round((double)currencyAmount / 1000000, roundDigits)} M";
+                line = $"{Math.Round((double)amount / 1000000, roundDigits)} M";
                 break;
             case >= 1000000000:
-                line = $"{Math.Round((double)currencyAmount / 1000000000, roundDigits)} B";
+                line = $"{Math.Round((double)amount / 1000000000, roundDigits)} B";
                 break;
         }
 
-        return "$"+line;
+        return "$" + line;
     }
 
     void GetParamsFromSave()
