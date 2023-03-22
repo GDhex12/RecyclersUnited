@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460962177884215055, guid: ddfa0ed2ecc7de846b5433a7a29f514d, type: 3}
       propertyPath: sceneName
-      value: BeachScene_01
+      value: ArvydoTest2
       objectReference: {fileID: 0}
     - target: {fileID: 5460962177884215055, guid: ddfa0ed2ecc7de846b5433a7a29f514d, type: 3}
       propertyPath: isUnlocked
@@ -835,7 +835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460962177884215055, guid: ddfa0ed2ecc7de846b5433a7a29f514d, type: 3}
       propertyPath: sceneName
-      value: BeachScene_01
+      value: ArvydoTest2
       objectReference: {fileID: 0}
     - target: {fileID: 5460962177884215055, guid: ddfa0ed2ecc7de846b5433a7a29f514d, type: 3}
       propertyPath: isUnlocked
@@ -1543,7 +1543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460962177884215055, guid: ddfa0ed2ecc7de846b5433a7a29f514d, type: 3}
       propertyPath: sceneName
-      value: BeachScene_01
+      value: ArvydoTest2
       objectReference: {fileID: 0}
     - target: {fileID: 5460962177884215055, guid: ddfa0ed2ecc7de846b5433a7a29f514d, type: 3}
       propertyPath: isUnlocked
