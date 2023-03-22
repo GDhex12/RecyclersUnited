@@ -179,6 +179,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
+      propertyPath: maxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118786480714607934, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
       propertyPath: PowerUpMesh
       value: 
       objectReference: {fileID: 1944752566}
@@ -299,8 +307,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
       propertyPath: pickUp
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: speedY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: maxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
+      propertyPath: amplitude
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1886338777770891903, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
       propertyPath: PowerUpMesh
@@ -1518,6 +1542,14 @@ PrefabInstance:
     - target: {fileID: 3562854591601639047, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
       propertyPath: m_Name
       value: PowerUp3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
+      propertyPath: maxSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3562854591601639067, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
       propertyPath: PowerUpMesh
