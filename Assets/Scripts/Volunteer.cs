@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,47 +11,65 @@ public class Volunteer : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private GameObject[] movementPoints;
     [SerializeField] private GameObject storage;
+    [SerializeField] private GameObject vehicle;
     [SerializeField] private float timeBetweenMoves = 5f;
 
     [SerializeField] public ExperienceStats refToExpManager;
     [SerializeField] public int[] randomGain;
+    [SerializeField] private bool vehicleFillerVolunteer = false;
+    [SerializeField] private int bagStorage = 1;
+    private int bagStorageCurrent = 0;
 
-    private void Awake()
-    {
-    }
     void Start()
     {
-        StartCoroutine(PickUpAfter(timeBetweenMoves));
+        if(vehicleFillerVolunteer)
+        {
+            StartCoroutine(TakeFromStorageAfter(timeBetweenMoves));
+        }
+        else
+        {
+            StartCoroutine(PickUpAfter(timeBetweenMoves));
+        }
+        
     }
 
     public void MoveTo(Vector3 moveLocation)
     {
         navMeshAgent.SetDestination(moveLocation);
     }
-    public void GoToPickUpLocation()
+    public void GoToLocation(GameObject location)
     {
-        int randomInt = Random.Range(0, movementPoints.Length);
-        MoveTo(movementPoints[randomInt].transform.position);
-    }
-    public void GoToPutDownLocation()
-    {
-        MoveTo(storage.transform.position);
+        MoveTo(location.transform.position);
     }
 
+
     IEnumerator PickUpAfter(float time)
-    {      
-        GoToPickUpLocation();
+    {
+        GoToLocation(movementPoints[Random.Range(0, movementPoints.Length)]);
         yield return new WaitForSeconds(time);
         refToExpManager.experienceToIncrease += Random.Range(randomGain[0], randomGain[1]);
         StartCoroutine(PutDownAfter(time));
     }
     IEnumerator PutDownAfter(float time)
-    {       
-        GoToPutDownLocation();
+    {
+        GoToLocation(storage);
         yield return new WaitForSeconds(time);
-        //arvyvdo demo addition
-        storage.GetComponent<Storage>().AddGarbage(1);
+        storage.GetComponent<Storage>().AddGarbage(bagStorage);
         StartCoroutine(PickUpAfter(time));
+    }
+    IEnumerator TakeFromStorageAfter(float time)
+    {
+        GoToLocation(storage);
+        yield return new WaitForSeconds(time);
+        bagStorageCurrent = storage.GetComponent<Storage>().RemoveGarbage(bagStorage);
+        StartCoroutine(PutToTruckAfterAfter(time));
+    }
+    IEnumerator PutToTruckAfterAfter(float time)
+    {
+        GoToLocation(vehicle);
+        yield return new WaitForSeconds(time);
+        vehicle.GetComponent<VehicleSystem>().AddGarbage(bagStorageCurrent);
+        StartCoroutine(TakeFromStorageAfter(time));
     }
 
 }

@@ -29,5 +29,6 @@ public class GameManager : MonoBehaviour
         //Loading Volunteers to scene
         FindObjectOfType<SpawnObject>().SpawnCertainAmountOfVolunteers(PersistantData.Instance.playerData.VolunteerCount);
         FindObjectOfType<Storage>().GetParamsFromSave();
+        FindObjectOfType<VehicleSystem>().GetParamsFromSave();
     }
 }
