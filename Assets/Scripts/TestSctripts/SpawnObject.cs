@@ -21,7 +21,7 @@ public class SpawnObject : MonoBehaviour
        return Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
     }
 
-    public void SpawnVolunteerInSceneIfAfforded(int price)
+    public void SpawnVolunteerInSceneIfAfforded(long price)
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {
