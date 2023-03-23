@@ -6,14 +6,14 @@ using TMPro;
 public class VehicleSystem : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] TextMeshProUGUI vehicleUI;
+    [SerializeField] private TextMeshProUGUI vehicleUI;
 
     [Header("Vehicle capacity")]
-    [SerializeField] int maxGarbageCount = 5;
-    [SerializeField] int currentGarbageCount = 0;
+    [SerializeField] private int maxGarbageCount = 25;
+    [SerializeField] public int currentGarbageCount = 0;
 
     [Header("Money")]
-    [SerializeField] int moneyPerGarbage = 10;
+    [SerializeField] private int moneyPerGarbage = 10;
 
 
     private void Start()
@@ -94,10 +94,9 @@ public class VehicleSystem : MonoBehaviour
         }
     }
 
-    public void ExchangeGarbageToMoney()
+    public void ExchangeGarbageToMoney(int garbageCount)
     {
-        CurrencyManager.instance.AddCurrency(
-            RemoveAllGarbage() * moneyPerGarbage);
+        CurrencyManager.instance.AddCurrency(garbageCount * moneyPerGarbage);
     }
 
     public bool IsFull()
