@@ -82,9 +82,7 @@ public class Volunteer : MonoBehaviour
     IEnumerator WalkOffMapAndDestroy(Vector3 walkOffPoint)
     {
         MoveTo(walkOffPoint);
-        Debug.Log("Einam susinaikinti");
         yield return new WaitForSeconds(20f);
-        Debug.Log("Susinaikinam");
         Destroy(gameObject);
     }
 
