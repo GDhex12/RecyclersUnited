@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62536465b49ee6746a716ec26641ede0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vehicleUI: {fileID: 0}
+  vehicleUI: {fileID: 1889326034}
   maxGarbageCount: 25
   currentGarbageCount: 0
   moneyPerGarbage: 10
@@ -3677,6 +3677,17 @@ Transform:
 --- !u!114 &1888805623 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3949478749646187485, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+  m_PrefabInstance: {fileID: 1343300754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1889326034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8337975382872599562, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
   m_PrefabInstance: {fileID: 1343300754}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
