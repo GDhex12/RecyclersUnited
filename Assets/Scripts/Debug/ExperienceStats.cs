@@ -93,7 +93,7 @@ public class ExperienceStats : MonoBehaviour
         }
         else
         {
-            Debug.Log(string.Format("Player is now at {0} experience points", experienceToIncrease));
+            //Debug.Log(string.Format("Player is now at {0} experience points", experienceToIncrease));
             refToExpBack.sizeDelta = new Vector2(CalculateExpBarDifference(experienceToIncrease), refToExpBack.sizeDelta.y);
             UpdateWithNewValues();
         }
