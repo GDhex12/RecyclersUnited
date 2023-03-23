@@ -92,9 +92,9 @@ public class PowerUp : MonoBehaviour
 	{
 		Instantiate(pickUpEffect, gameObject.transform.position, Quaternion.identity);
 		powerUpSpawner.DecreasePowerUp(gameObject);
-		//gameObject.SetActive(false);
+
 		PowerUpMesh.GetComponent<PowerUpPickUp>().PickUp();
-		//Destroy(gameObject);
+
 	}
     protected virtual void DoTheThing(Collider2D collision)
 	{
