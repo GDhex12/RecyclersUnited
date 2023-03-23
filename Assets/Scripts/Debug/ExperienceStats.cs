@@ -67,7 +67,6 @@ public class ExperienceStats : MonoBehaviour
         experienceToIncrease = expPoints;
         level = expLevel;
         requiredAmountToNextLv = expLimit;
-        Debug.Log("hahah");
         UpdateWithNewValues();
     }
 

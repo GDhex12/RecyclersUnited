@@ -20,13 +20,6 @@ public class PowerUpSpawner : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-    }
-
     public void SpawnPowerUp()
 	{
         
@@ -34,7 +27,6 @@ public class PowerUpSpawner : MonoBehaviour
         //
         if (activePowerUps.Count < allPowerUps.Count - 1)
         {
-            Debug.Log("Lets goo");
             GameObject powerUp = allPowerUps[activePowerUps.Count];
             Vector3 offset = new Vector3(0f, 0f, Random.Range(0, 25));
             powerUp.transform.position = powerUpsSpawnPoint.position+ offset;

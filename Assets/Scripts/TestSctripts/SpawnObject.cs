@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,5 +31,11 @@ public class SpawnObject : MonoBehaviour
         }   
     }
 
-
+    public void SpawnCertainAmountOfVolunteers(Transform parent, int volunteerCount)
+    {
+        for (int i=0; i<volunteerCount; i++)
+        {
+            Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
+        }
+    }
 }

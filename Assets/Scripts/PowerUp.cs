@@ -142,7 +142,7 @@ public class PowerUp : MonoBehaviour
 
 	}
 
-	public PowerUpType GetType()
+	public new PowerUpType GetType()
 	{
 		return type;
 	}

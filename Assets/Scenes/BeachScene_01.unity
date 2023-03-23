@@ -735,6 +735,8 @@ MonoBehaviour:
     SaveDataVersion: 2
     Coins: 0
     VolunteerCount: 1
+    StorageGarbageCount: 0
+    VehicleGarbageCount: 0
     Level: 1
     Experience: 0
     ExpLimit: 100
@@ -863,8 +865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0ead39e67356a43a01dadd6f8eebfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyManager: {fileID: 842269432}
   experienceManager: {fileID: 2117493108}
+  volunteerRoot: {fileID: 471543195}
 --- !u!4 &351914033
 Transform:
   m_ObjectHideFlags: 0
@@ -1098,6 +1100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426374533}
+  - component: {fileID: 426374534}
   m_Layer: 0
   m_Name: VehicleManager
   m_TagString: Untagged
@@ -1120,6 +1123,22 @@ Transform:
   m_Father: {fileID: 1242293048}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &426374534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426374532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62536465b49ee6746a716ec26641ede0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleUI: {fileID: 0}
+  maxGarbageCount: 25
+  currentGarbageCount: 0
+  moneyPerGarbage: 10
 --- !u!1001 &428529685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1654,7 +1673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 721832906}
-  volunteer: {fileID: 0}
 --- !u!1 &568066588
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,7 +3323,7 @@ MonoBehaviour:
   temporaryAddedVolunteersList: []
   volunteersSpawnTransform: {fileID: 471543195}
   spawnObjectScript: {fileID: 471543196}
-  walkOffPoint: {fileID: 1682764968}
+  walkOffPoint: {fileID: 0}
   saveSystem: 0
 --- !u!1001 &1593604065
 PrefabInstance:
@@ -3433,11 +3451,6 @@ Transform:
   m_Father: {fileID: 1460198920}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1682764968 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000010619989362, guid: dba21f9fe488f124cb751bd561ca4caa, type: 3}
-  m_PrefabInstance: {fileID: 248851064}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1682764969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013489191528, guid: dba21f9fe488f124cb751bd561ca4caa, type: 3}
