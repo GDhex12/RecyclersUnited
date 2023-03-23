@@ -10,6 +10,8 @@ public class VehicleCooldown : MonoBehaviour
     [SerializeField]
     public TMP_Text timeString;
     public GameObject cooldownContainer;
+    public VehicleSystem vehicleManager;
+    private int lastSentCount = 0;
 
     private bool cooldownFinished = false; 
 
@@ -35,12 +37,15 @@ public class VehicleCooldown : MonoBehaviour
 
     private IEnumerator CountdownLoop ()
     {
+        lastSentCount = vehicleManager.currentGarbageCount;
+        vehicleManager.RemoveAllGarbage();
         for (int i=timeoutSeconds; i>=0; i--)
         {
             timeString.text = string.Format("{0} s", i);
             yield return new WaitForSeconds(1f);
         }
         cooldownFinished = true;
+        vehicleManager.ExchangeGarbageToMoney(lastSentCount);
         yield return null;
     }
 }
