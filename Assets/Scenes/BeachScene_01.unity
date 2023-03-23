@@ -242,6 +242,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8118786480714607922, guid: 4c36078a23c52e84ca6cb43a8cbc6b1d, type: 3}
   m_PrefabInstance: {fileID: 3238548}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3238554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a7a9895b7f4f243a70002d08aad402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 2
+  animationDuration: 0.5
+  alphaSpeed: 2
 --- !u!1 &34116528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8764347774696888438, guid: addccbe70e65722438a27aa337d52539, type: 3}
@@ -1626,6 +1641,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3562854591601639047, guid: 9c0654b747b68d34fae0a4b02d78567e, type: 3}
   m_PrefabInstance: {fileID: 453436552}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &453436558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453436554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a7a9895b7f4f243a70002d08aad402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 2
+  animationDuration: 0.5
+  alphaSpeed: 2
 --- !u!1 &471543194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,6 +3434,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1886338777035147798, guid: 3b6eea42816dfa1479cc7910b8b59e3e, type: 3}
   m_PrefabInstance: {fileID: 48050822}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1642266895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642266892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a7a9895b7f4f243a70002d08aad402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleMultiplier: 2
+  animationDuration: 0.5
+  alphaSpeed: 2
 --- !u!1 &1665249151
 GameObject:
   m_ObjectHideFlags: 0
