@@ -2,23 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PowerUpType
+{
+	Add,
+	Speed
+}
 public class PowerUp : MonoBehaviour
 {
 	private float maxHeight = 0;
 	private float cameraWidth;
+	private PowerUpType type;
+
+
 	//public  float minSpeed;
 
 	//public float maxSpedd;
 
-	public float maxSpeed;
-	public float speed = 1f; //amount of powerup acceleration;
+	[SerializeField] private float maxSpeed;
+	[SerializeField] private float speed = 1f; //amount of powerup acceleration;
+	[SerializeField] private float maxAmplitude = 0.5f; // Set the amplitude of the up-down movement
+	[SerializeField] private float maxSpeedY = 1.0f; // Set the speed of the up-down movement
+	private float startY; // Store the object's initial Y position
 
 	public Animator pickUp;
 
-	private bool up = true;
-	private bool down = false;
+
 	public Rigidbody rb;
 	[SerializeField] private PowerUpSpawner powerUpSpawner;
+	[SerializeField] private GameObject pickUpEffect;
+	[SerializeField] private Color AddPowerUpColor;
+	[SerializeField] private Color SpeedPowerUpColor;
+	[SerializeField] private GameObject PowerUpMesh;
 
 
 
@@ -26,7 +40,9 @@ public class PowerUp : MonoBehaviour
 	private void Start()
 	{
 
-
+		startY = transform.position.y;
+		maxAmplitude = Random.Range(0.5f, maxAmplitude);
+		maxSpeedY = Random.Range(1f, maxSpeedY);
 
 		//speed = FCalculateRandomNumbers(minSpeed, maxSpedd);
 
@@ -61,74 +77,20 @@ public class PowerUp : MonoBehaviour
 	protected void Move()
 	{
 		transform.position += transform.right *  Time.deltaTime * speed;
-		//rb.AddForce(transform.right * maxSpeed);
 
-	}
-
-
-	protected void Rotate()
-	{
-		if (up)
-		{
-
-			if (transform.position.y >= maxHeight)
-			{
-				speed -= 10f;
-				if (speed <= 0)
-				{
-					up = false;
-					down = true;
-				}
+		float newY = startY + maxAmplitude * Mathf.Sin(speed * Time.time);
 
 
-			}
-
-			else if (speed < maxSpeed)
-			{
-				speed += 40f;
-			}
-			GoUp();
-
-		}
-		else if (down)
-		{
-
-			if (transform.position.y <= -maxHeight)
-			{
-				speed -= 10f;
-				if (speed <= 0)
-				{
-					up = true;
-					down = false;
-				}
-
-
-			}
-
-			else if (speed < maxSpeed)
-			{
-				speed += 40f;
-			}
-			GoDown();
-
-		}
+		transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 
 
 	}
 
-	void GoUp()
-	{
-		rb.AddForce(transform.up * speed);
-	}
 
 
-
-	void GoDown()
-	{
-		rb.AddForce(-transform.up * speed);
-	}
 	public void OnClick()
 	{
+		Instantiate(pickUpEffect, gameObject.transform.position, Quaternion.identity);
 		powerUpSpawner.DecreasePowerUp(gameObject);
 		gameObject.SetActive(false);
 		//Destroy(gameObject);
@@ -177,6 +139,27 @@ public class PowerUp : MonoBehaviour
 			
 		}
 
+
+	}
+
+	public PowerUpType GetType()
+	{
+		return type;
+	}
+
+	public void Setup()
+	{
+		if (Random.value > 0.5)
+		{
+			PowerUpMesh.GetComponent<SpriteRenderer>().color = SpeedPowerUpColor;
+			type = PowerUpType.Speed;
+		}
+		else
+		{
+			PowerUpMesh.GetComponent<SpriteRenderer>().color = AddPowerUpColor;
+			type = PowerUpType.Add;
+		}
+			
 
 	}
 

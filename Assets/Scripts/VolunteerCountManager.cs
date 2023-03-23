@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class VolunteerCountManager : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class VolunteerCountManager : MonoBehaviour
 
     private List<int> temporaryAddedVolunteersCount =new List<int>();
 
-    private List<GameObject> temporaryAddedVolunteersList = new List<GameObject>();
+    [SerializeField] private List<GameObject> temporaryAddedVolunteersList = new List<GameObject>();
 
     [SerializeField] private Transform volunteersSpawnTransform;
     [SerializeField] private SpawnObject spawnObjectScript;
+    [SerializeField] private GameObject walkOffPoint;
     [SerializeField]
     private int saveSystem;//Placeholder for a save system
     void Start()
@@ -52,7 +54,7 @@ public class VolunteerCountManager : MonoBehaviour
         FunctionTimer.Create(DecreaseVolunteersCount, time);
         for(int i=0; i<volunteersToAdd; i++)
         {
-            spawnObjectScript.SpawnObjectInScene(volunteersSpawnTransform);
+            
             temporaryAddedVolunteersList.Add(spawnObjectScript.SpawnObjectInSceneTemporary(volunteersSpawnTransform));
         }
         
@@ -60,10 +62,13 @@ public class VolunteerCountManager : MonoBehaviour
 
     public void DecreaseVolunteersCount()
 	{
-        Debug.Log("DESTRUCTION");
+       
         for(int i=0; i < temporaryAddedVolunteersCount[0]; i++)
         {
-            //Destroy(temporaryAddedVolunteersList[i]);
+            
+            temporaryAddedVolunteersList[i].gameObject.GetComponent<Volunteer>().WalkOutOfMap(walkOffPoint.transform.position);
+            
+
 
         }
         int count = temporaryAddedVolunteersCount[0];
@@ -71,6 +76,29 @@ public class VolunteerCountManager : MonoBehaviour
         temporaryAddedVolunteersCount.RemoveAt(0);
 
 
+    }
+
+    public void IncreaseVolunteersSpeed()
+	{
+       GameObject[] allVolunteers =  GameObject.FindGameObjectsWithTag("Volunteer");
+
+        for(int i =0; i< allVolunteers.Length; i++)
+		{
+            allVolunteers[i].GetComponent<NavMeshAgent>().speed = allVolunteers[i].GetComponent<NavMeshAgent>().speed * 1.2f;
+
+        }
+        FunctionTimer.Create(DecreaseVolunteersSpeed, 10f);
+	}
+
+    public void DecreaseVolunteersSpeed()
+    {
+        GameObject[] allVolunteers = GameObject.FindGameObjectsWithTag("Volunteer");
+
+        for (int i = 0; i < allVolunteers.Length; i++)
+        {
+            allVolunteers[i].GetComponent<NavMeshAgent>().speed = allVolunteers[i].GetComponent<NavMeshAgent>().speed / 1.2f;
+
+        }
     }
     /// <summary>
     /// Returns a volunteers count

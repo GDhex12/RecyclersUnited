@@ -27,10 +27,21 @@ public class PowerUpsManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.transform.tag == "PowerUp")
-                { print("PowerUp!!!");
+                { 
+
                     hit.transform.gameObject.GetComponent<PowerUp>().OnClick();
-                  
-                    countManager.AddVolunteersTemporary(3, 10f);
+                    PowerUpType type = hit.transform.gameObject.GetComponent<PowerUp>().GetType();
+                    if(type == PowerUpType.Add)
+					{
+                        countManager.AddVolunteersTemporary(3, 10f);
+                    }
+					else if(type == PowerUpType.Speed)
+					{
+                        countManager.IncreaseVolunteersSpeed();
+                    }
+
+                    
+                    //countManager.IncreaseVolunteersSpeed();
                 }
             }
         }
@@ -38,8 +49,5 @@ public class PowerUpsManager : MonoBehaviour
         
     }
 
-    private void AddTemporaryVolunteers()
-    {
-        spawnObject.SpawnObjectInScene(spawnTransform);
-    }
+   
 }
