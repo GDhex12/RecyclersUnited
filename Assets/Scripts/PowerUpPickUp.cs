@@ -28,7 +28,6 @@ public class PowerUpPickUp : MonoBehaviour
         Color color = gameObject.GetComponent<SpriteRenderer>().color;
         while (color.a > 0f)
         {
-           // transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsedTime / animationDuration);
             transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsedTime / animationDuration);
             color.a -= alphaSpeed * Time.deltaTime;
             gameObject.GetComponent<SpriteRenderer>().color = color;
