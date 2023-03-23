@@ -16,15 +16,15 @@ public class Location : MonoBehaviour
 
     [Header("Visuals")]
     [SerializeField] Image imageRef;
-    [SerializeField] Color lockedColor;
-    [SerializeField] Color unlockedColor;
-    [SerializeField] Color boughtColor;
+    //[SerializeField] Color lockedColor;
+    //[SerializeField] Color unlockedColor;
+    //[SerializeField] Color boughtColor;
 
 
     //for later iteration
-    //[SerializeField] Sprite lockedSprite;
-    //[SerializeField] Sprite unlockedSprite;
-    //[SerializeField] Sprite boughtSprite;
+    [SerializeField] Sprite lockedSprite;
+    [SerializeField] Sprite unlockedSprite;
+    [SerializeField] Sprite boughtSprite;
 
     GameObject _popup;
     bool _popupActive;
@@ -82,18 +82,18 @@ public class Location : MonoBehaviour
     {
         if (!isUnlocked && !isBought)
         {
-            //imageRef.sprite = lockedSprite;
-            imageRef.color = lockedColor;
+            imageRef.sprite = lockedSprite;
+            //imageRef.color = lockedColor;
         }
         else if (isUnlocked && !isBought)
         {
-            //imageRef.sprite = unlockedSprite;
-            imageRef.color = unlockedColor;
+            imageRef.sprite = unlockedSprite;
+            //imageRef.color = unlockedColor;
         }
         else if (isUnlocked && isBought)
         {
-            //imageRef.sprite = boughtSprite;
-            imageRef.color = boughtColor;
+            imageRef.sprite = boughtSprite;
+            //imageRef.color = boughtColor;
         }
         else
         {
