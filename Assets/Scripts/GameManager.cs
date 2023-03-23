@@ -6,9 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] ExperienceStats experienceManager;
     public static GameManager Instance;
-
-
-
+    public Transform volunteerRoot;
 
     private void Start()
     {
@@ -27,7 +25,7 @@ public class GameManager : MonoBehaviour
     private void LoadPlayerDataToScene()
     {
         //Loading Volunteers to scene
-        FindObjectOfType<SpawnObject>().SpawnCertainAmountOfVolunteers(PersistantData.Instance.playerData.VolunteerCount);
+        FindObjectOfType<SpawnObject>().SpawnCertainAmountOfVolunteers(volunteerRoot, PersistantData.Instance.playerData.VolunteerCount);
         FindObjectOfType<Storage>().GetParamsFromSave();
         FindObjectOfType<VehicleSystem>().GetParamsFromSave();
     }
