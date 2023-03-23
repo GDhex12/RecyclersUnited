@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "700426651559",
+    "project_id": "recyclersunited-k273",
+    "storage_bucket": "recyclersunited-k273.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700426651559:android:749a567114a301150d9882",
+        "android_client_info": {
+          "package_name": "com.TrashPandas.RecyclersUnited"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700426651559-o69jhk7a6tdcdirpr12vmhic72i6dk0c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDABYIb1GPzgnSIFlWxutM558ibokcZVB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700426651559-o69jhk7a6tdcdirpr12vmhic72i6dk0c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
