@@ -1100,6 +1100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426374533}
+  - component: {fileID: 426374534}
   m_Layer: 0
   m_Name: VehicleManager
   m_TagString: Untagged
@@ -1122,6 +1123,22 @@ Transform:
   m_Father: {fileID: 1242293048}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &426374534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426374532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62536465b49ee6746a716ec26641ede0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicleUI: {fileID: 0}
+  maxGarbageCount: 25
+  currentGarbageCount: 0
+  moneyPerGarbage: 10
 --- !u!1001 &428529685
 PrefabInstance:
   m_ObjectHideFlags: 0
