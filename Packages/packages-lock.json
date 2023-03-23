@@ -1,5 +1,30 @@
 {
   "dependencies": {
+    "com.google.external-dependency-manager": {
+      "version": "git+https://github.com/GameWorkstore/com.google.external-dependency-manager#1.2.175",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "55748b74c9031f745432278f29e622a4ad488629"
+    },
+    "com.google.firebase.app": {
+      "version": "git+https://github.com/GameWorkstore/com.google.firebase.app#10.3.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.175"
+      },
+      "hash": "358df1c29e6425f6ba8cbb96357e77539257bf76"
+    },
+    "com.google.firebase.messaging": {
+      "version": "git+https://github.com/GameWorkstore/com.google.firebase.messaging#10.3.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.google.firebase.app": "10.3.0"
+      },
+      "hash": "7feaee03a352cff7df7192e31c97f2042c3bad9b"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
