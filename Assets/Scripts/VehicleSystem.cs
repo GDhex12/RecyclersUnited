@@ -16,6 +16,12 @@ public class VehicleSystem : MonoBehaviour
     [SerializeField] int moneyPerGarbage = 10;
 
 
+    private void Start()
+    {
+        GetParamsFromSave();
+        UpdateGarbage();
+    }
+
     public int GetGarbageCount()
     {
         return currentGarbageCount;
