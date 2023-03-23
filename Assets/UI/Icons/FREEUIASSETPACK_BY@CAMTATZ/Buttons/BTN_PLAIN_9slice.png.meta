@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47d5bc1e164ee644093156a4b0a99cf3
+guid: f9ab7b9ec5949be438144d0e12643cd2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,13 +42,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 25, y: 29, z: 22, w: 18}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -131,14 +131,23 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BTN_PLAIN_9slice_0: 1565494713
+      BTN_PLAIN_9slice_5: -207528578
+      BTN_PLAIN_9slice_4: -616096487
+      BTN_PLAIN_9slice_7: -2003026283
+      BTN_PLAIN_9slice_6: 863977540
+      BTN_PLAIN_9slice_2: 1703073754
+      BTN_PLAIN_9slice_8: -1726712398
+      BTN_PLAIN_9slice_1: -1313907138
+      BTN_PLAIN_9slice_3: 1985896166
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
