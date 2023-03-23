@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LoadPlayerData();
+        LoadPlayerDataToScene();
     }
 
     private void LoadPlayerData()
@@ -23,6 +24,11 @@ public class GameManager : MonoBehaviour
         CurrencyManager.instance.SetCurrency(loadedData.Coins);
         experienceManager.SetExperience(loadedData.Level, loadedData.Experience, loadedData.ExpLimit);
     }
-
-
+    private void LoadPlayerDataToScene()
+    {
+        //Loading Volunteers to scene
+        FindObjectOfType<SpawnObject>().SpawnCertainAmountOfVolunteers(PersistantData.Instance.playerData.VolunteerCount);
+        FindObjectOfType<Storage>().GetParamsFromSave();
+        FindObjectOfType<VehicleSystem>().GetParamsFromSave();
+    }
 }

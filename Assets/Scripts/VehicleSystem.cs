@@ -15,10 +15,6 @@ public class VehicleSystem : MonoBehaviour
     [Header("Money")]
     [SerializeField] int moneyPerGarbage = 10;
 
-    private void Start()
-    {
-        UpdateGarbage();
-    }
 
     public int GetGarbageCount()
     {
@@ -110,11 +106,28 @@ public class VehicleSystem : MonoBehaviour
         {
             vehicleUI.text = StorageStringFormat();
         }
-        
+        SaveParams();
     }
 
     string StorageStringFormat()
     {
         return $"{currentGarbageCount}/{maxGarbageCount}";
+    }
+    public void GetParamsFromSave()
+    {
+        //get parameters from savefile
+        //maxGarbageCount
+        //currentGarbageCount
+        //mapID
+        currentGarbageCount = PersistantData.Instance.playerData.VehicleGarbageCount;
+    }
+
+    void SaveParams()
+    {
+        //save parameters to savefile
+        //maxGarbageCount
+        //currentGarbageCount
+        PersistantData.Instance.playerData.VehicleGarbageCount = currentGarbageCount;
+        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
     }
 }

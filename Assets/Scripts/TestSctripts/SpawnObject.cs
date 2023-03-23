@@ -6,14 +6,13 @@ public class SpawnObject : MonoBehaviour
 {
     [SerializeField] GameObject spawnObject;
 
-    [Header("Spawn References")]
-    [SerializeField] GameObject volunteer;
 
 
     public void SpawnObjectInScene(Transform parent)
     {
-        Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
+        Instantiate(spawnObject, parent.position, Quaternion.identity, parent).SetActive(true);
     }
+
 
 
     public GameObject SpawnObjectInSceneTemporary(Transform parent)
@@ -26,7 +25,7 @@ public class SpawnObject : MonoBehaviour
         if(CurrencyManager.instance.IsAffordable(price))
         {
             PersistantData.Instance.playerData.VolunteerCount++;
-            Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+            Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
             SaveSystem.SavePlayer(PersistantData.Instance.playerData);
         }   
     }

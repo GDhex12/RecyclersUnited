@@ -11,11 +11,6 @@ public class Storage : MonoBehaviour
     [SerializeField] int maxGarbageCount = 10;
     [SerializeField] int currentGarbageCount = 0;
 
-    private void Start()
-    {
-        GetParamsFromSave();
-        UpdateGarbage();
-    }
 
     public int GetGarbageCount()
     {
@@ -50,18 +45,22 @@ public class Storage : MonoBehaviour
         UpdateGarbage();
     }
 
-    public void RemoveGarbage(int amount)
+    public int RemoveGarbage(int amount)
     {
+        int garbageTaken;
         if (currentGarbageCount - amount <= 0)
         {
+            garbageTaken = currentGarbageCount;
             currentGarbageCount = 0;
         }
         else
         {
+            garbageTaken = amount;
             currentGarbageCount -= amount;
         }
 
         UpdateGarbage();
+        return garbageTaken;
     }
 
     public void RemoveAllGarbage()//int
@@ -98,18 +97,21 @@ public class Storage : MonoBehaviour
         return $"{currentGarbageCount}/{maxGarbageCount}";
     }
 
-    void GetParamsFromSave()
+    public void GetParamsFromSave()
     {
         //get parameters from savefile
-            //maxGarbageCount
-            //currentGarbageCount
-            //mapID
+        //maxGarbageCount
+        //currentGarbageCount
+        //mapID
+        currentGarbageCount = PersistantData.Instance.playerData.StorageGarbageCount;
     }
 
     void SaveParams()
     {
         //save parameters to savefile
-            //maxGarbageCount
-            //currentGarbageCount
+        //maxGarbageCount
+        //currentGarbageCount
+        PersistantData.Instance.playerData.StorageGarbageCount = currentGarbageCount;
+        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
     }
 }
