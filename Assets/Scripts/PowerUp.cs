@@ -13,11 +13,6 @@ public class PowerUp : MonoBehaviour
 	private float cameraWidth;
 	private PowerUpType type;
 
-
-	//public  float minSpeed;
-
-	//public float maxSpedd;
-
 	[SerializeField] private float maxSpeed;
 	[SerializeField] private float speed = 1f; //amount of powerup acceleration;
 	[SerializeField] private float maxAmplitude = 0.5f; // Set the amplitude of the up-down movement
@@ -39,27 +34,18 @@ public class PowerUp : MonoBehaviour
 	// Start is called before the first frame update
 	private void Start()
 	{
-
 		startY = transform.position.y;
 		maxAmplitude = Random.Range(0.5f, maxAmplitude);
 		maxSpeedY = Random.Range(1f, maxSpeedY);
-
-		//speed = FCalculateRandomNumbers(minSpeed, maxSpedd);
-
 	}
 
 	private void Awake()
 	{
 		Camera MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		float height = 2f * MainCamera.orthographicSize;
-		//maxHeight =  MainCamera.orthographicSize;
 		maxHeight = FCalculateRandomNumbers(3, MainCamera.orthographicSize / 1.5f);
 		speed = FCalculateRandomNumbers(1, maxSpeed);
-		//maxHeight = MainCamera.orthographicSize/1.5f;
-		//maxSpeed = 125f;
 		cameraWidth = height * MainCamera.aspect;
-
-
 	}
 
 	private void FixedUpdate()
@@ -77,13 +63,8 @@ public class PowerUp : MonoBehaviour
 	protected void Move()
 	{
 		transform.position += transform.right *  Time.deltaTime * speed;
-
 		float newY = startY + maxAmplitude * Mathf.Sin(speed * Time.time);
-
-
 		transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-
-
 	}
 
 
@@ -105,23 +86,14 @@ public class PowerUp : MonoBehaviour
 		if (collision.tag == "Player")
 		{
 			gameObject.GetComponent<CircleCollider2D>().enabled = false;
-			//pickUp.gameObject.SetActive(true);
-			//pickUp.enabled = true;
-			//gameObject.GetComponent<Collider2D>().enabled = false;
 			DoTheThing(collision);
 			gameObject.SetActive(false);
-			//Destroy(gameObject, 1f);
 		}
 
 
 
 	}
 
-	int CalculateRandomNumbers(int rangeStart, int rangeEnd)
-	{
-		int rnd = Random.Range(rangeStart, rangeEnd);
-		return rnd;
-	}
 
 	float FCalculateRandomNumbers(float rangeStart, float rangeEnd)
 	{

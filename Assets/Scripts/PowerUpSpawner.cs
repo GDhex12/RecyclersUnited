@@ -22,9 +22,7 @@ public class PowerUpSpawner : MonoBehaviour
 
     public void SpawnPowerUp()
 	{
-        
-        //powerUpPrefab.SetActive(true);
-        //
+
         if (activePowerUps.Count < allPowerUps.Count - 1)
         {
             GameObject powerUp = allPowerUps[activePowerUps.Count];
@@ -33,10 +31,7 @@ public class PowerUpSpawner : MonoBehaviour
             powerUp.SetActive(true);
             powerUp.GetComponent<PowerUp>().Setup();
             activePowerUps.Add(powerUp);
-           
-
         }
-
     }
 
     public void PrepNextPowerUp()

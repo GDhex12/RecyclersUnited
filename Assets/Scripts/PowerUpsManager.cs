@@ -27,8 +27,7 @@ public class PowerUpsManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.transform.tag == "PowerUp")
-                { 
-
+                {
                     hit.transform.gameObject.GetComponent<PowerUp>().OnClick();
                     PowerUpType type = hit.transform.gameObject.GetComponent<PowerUp>().GetType();
                     if(type == PowerUpType.Add)
@@ -40,8 +39,7 @@ public class PowerUpsManager : MonoBehaviour
                         countManager.IncreaseVolunteersSpeed();
                     }
 
-                    
-                    //countManager.IncreaseVolunteersSpeed();
+
                 }
             }
         }
