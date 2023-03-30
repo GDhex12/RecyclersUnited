@@ -2,13 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class HireVolunteer : MonoBehaviour
 {
     [SerializeField] long price;
-    //[SerializeField] int initPrice = 10;
+    [SerializeField] int initPrice = 10;
     [SerializeField] float priceMultiplier = 1.2f;
     [SerializeField] TextMeshProUGUI btnText;
+    //[SerializeField] string unitName = "volunteer";
+    [SerializeField] VolunteerType volunteerType;
+    
+    [Serializable]
+    enum VolunteerType
+    {
+        volunteer, loader
+    };
 
     SpawnObject _spawnObject;
 
@@ -20,14 +29,15 @@ public class HireVolunteer : MonoBehaviour
     private void Start()
     {
         //CalculatePrice();
-        price = 10;
+        price = initPrice;
+        UpdateUI();
     }
 
     public void BuyVolunteer()
     {
         if (CurrencyManager.instance.IsAffordable(price)) 
         {
-            _spawnObject.SpawnVolunteerInSceneIfAfforded(price);
+            SpawnUnit();
             CalculatePrice();
             CurrencyManager.instance.RemoveCurrency(price);
         }
@@ -47,6 +57,19 @@ public class HireVolunteer : MonoBehaviour
 
     public string StringFormat()
     {
-        return $"Hire volunteer\n-{CurrencyManager.instance.CurrencyStringFormat(price)}";
+        return $"Hire {volunteerType}\n-{CurrencyManager.instance.CurrencyStringFormat(price)}";
+    }
+
+    void SpawnUnit()
+    {
+        switch (volunteerType)
+        {
+            case VolunteerType.volunteer:
+                _spawnObject.SpawnVolunteerInSceneIfAfforded(price);
+                break;
+            case VolunteerType.loader:
+                _spawnObject.SpawnLoaderInSceneIfAfforded(price);
+                break;
+        }
     }
 }
