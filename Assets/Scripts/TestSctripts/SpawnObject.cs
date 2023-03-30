@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnObject : MonoBehaviour
 {
     [SerializeField] GameObject spawnObject;
-
-
+    [Header("SpawnBetween")]
+    [SerializeField] private GameObject spawnFrom;
+    [SerializeField] private GameObject spawnTo;
 
     public void SpawnObjectInScene(Transform parent)
     {
@@ -35,7 +37,16 @@ public class SpawnObject : MonoBehaviour
     {
         for (int i=0; i<volunteerCount; i++)
         {
-            Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
+            Debug.Log(RandomPositionBetween(spawnFrom, spawnTo));
+            Instantiate(spawnObject, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, parent).SetActive(true);
         }
+    }
+    private Vector3 RandomPositionBetween(GameObject from, GameObject to)
+    {
+        Vector3 vector1 = from.transform.position;
+        Vector3 vector2 = to.transform.position;
+
+        // Get a random point within the square
+        return new Vector3(Random.Range(vector1.x, vector2.x), Random.Range(vector1.y, vector2.y), Random.Range(vector1.z, vector2.z));
     }
 }

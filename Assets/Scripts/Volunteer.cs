@@ -8,17 +8,21 @@ public class Volunteer : MonoBehaviour
     [SerializeField] private NavMeshAgent navMeshAgent;
 
     [Header("Movement Settings")]
-    [SerializeField] private GameObject[] movementPoints;
-    
+    [Header("Normal volunteer")]
+    [SerializeField] private GameObject[] movementPoints;    
     [SerializeField] private GameObject storage;
-    [SerializeField] private GameObject vehicle;
-    [SerializeField] private float timeBetweenMoves = 5f;
-
     [SerializeField] public ExperienceStats refToExpManager;
+    
+    [SerializeField] private float timeBetweenMoves = 5f;
     [SerializeField] public int[] randomGain;
-    [SerializeField] private bool vehicleFillerVolunteer = false;
     [SerializeField] private int bagStorage = 1;
+    [Header("Transporter volunteer")]
+    [SerializeField] private bool vehicleFillerVolunteer = false;
+    [SerializeField] private GameObject vehicle;
+
     private int bagStorageCurrent = 0;
+    private bool stopMoving = false;
+    private float distanceThreshold = 1f;
 
     void Start()
     {
@@ -42,7 +46,14 @@ public class Volunteer : MonoBehaviour
         MoveTo(location.transform.position);
     }
 
-
+    private void CheckIfClose(GameObject targetObject)
+    {
+        if (navMeshAgent.remainingDistance <= distanceThreshold && targetObject != null && Vector3.Distance(transform.position, targetObject.transform.position) <= distanceThreshold)
+        {
+            // NavMeshAgent is close to the target object
+            // Do something here, such as stopping the NavMeshAgent or triggering an event
+        }
+    }
     IEnumerator PickUpAfter(float time)
     {
         GoToLocation(movementPoints[Random.Range(0, movementPoints.Length)]);
