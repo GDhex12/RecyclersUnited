@@ -38,8 +38,8 @@ public class HireVolunteer : MonoBehaviour
         if (CurrencyManager.instance.IsAffordable(price)) 
         {
             SpawnUnit();
-            CalculatePrice();
             CurrencyManager.instance.RemoveCurrency(price);
+            CalculatePrice();
         }
     }
 
