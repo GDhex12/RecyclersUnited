@@ -30,6 +30,7 @@ public class VehicleSystem : MonoBehaviour
     public void SetMaxGarbageCount(int count)
     {
         maxGarbageCount = count;
+        UpdateGarbage();
     }
 
     public int GetMaxGarbageCount()
