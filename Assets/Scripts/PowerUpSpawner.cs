@@ -30,7 +30,6 @@ public class PowerUpSpawner : MonoBehaviour
             GameObject powerUp = allPowerUps[activePowerUps.Count];
             Vector3 offset = new Vector3(0f, 0f, Random.Range(0, 25));
             int direction = Random.value > 0.5 ? 0 : 1;
-            Debug.Log(direction);
             powerUp.transform.position = powerUpsSpawnPoint[direction].position+ offset;
             powerUp.SetActive(true);
             powerUp.GetComponent<PowerUp>().Setup(direction);
