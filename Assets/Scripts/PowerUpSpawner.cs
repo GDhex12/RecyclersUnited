@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class PowerUpSpawner : MonoBehaviour
@@ -9,7 +11,7 @@ public class PowerUpSpawner : MonoBehaviour
     [SerializeField] private float spawnRate;
     [SerializeField] private int maxPowerUps;
     [SerializeField] private GameObject powerUpPrefab;
-    [SerializeField] private Transform powerUpsSpawnPoint;
+    [SerializeField] private Transform[] powerUpsSpawnPoint = new Transform[2];
     [SerializeField] private List<GameObject> allPowerUps;
     [SerializeField] private List<GameObject> activePowerUps;
     private int timeToNextPowerUp;
@@ -27,9 +29,11 @@ public class PowerUpSpawner : MonoBehaviour
         {
             GameObject powerUp = allPowerUps[activePowerUps.Count];
             Vector3 offset = new Vector3(0f, 0f, Random.Range(0, 25));
-            powerUp.transform.position = powerUpsSpawnPoint.position+ offset;
+            int direction = Random.value > 0.5 ? 0 : 1;
+            Debug.Log(direction);
+            powerUp.transform.position = powerUpsSpawnPoint[direction].position+ offset;
             powerUp.SetActive(true);
-            powerUp.GetComponent<PowerUp>().Setup();
+            powerUp.GetComponent<PowerUp>().Setup(direction);
             activePowerUps.Add(powerUp);
         }
     }
