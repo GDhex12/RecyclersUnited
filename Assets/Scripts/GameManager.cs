@@ -5,13 +5,40 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] ExperienceStats experienceManager;
-    public static GameManager Instance;
+    public Storage storage;
+    public VehicleSystem vehicle;
+    public static GameManager Instance { get; private set; }
     public Transform volunteerRoot;
 
+    //temporary for volunteer walking
+    public Queue<GameObject> trash = new Queue<GameObject>();
+
+    [SerializeField]
+    private GameObject[] trashobj;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+            foreach (GameObject obj in trashobj)
+            {
+                trash.Enqueue(obj);
+            }
+        }
+
+
+    }
     private void Start()
     {
         LoadPlayerData();
         LoadPlayerDataToScene();
+        // Add the game objects to the queue
+        
     }
 
     private void LoadPlayerData()
@@ -26,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         //Loading Volunteers to scene
         FindObjectOfType<SpawnObject>().SpawnCertainAmountOfVolunteers(volunteerRoot, PersistantData.Instance.playerData.VolunteerCount);
-        FindObjectOfType<Storage>().GetParamsFromSave();
+        storage.GetParamsFromSave();
         FindObjectOfType<VehicleSystem>().GetParamsFromSave();
     }
 }
