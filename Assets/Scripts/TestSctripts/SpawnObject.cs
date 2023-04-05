@@ -6,21 +6,25 @@ using Random = UnityEngine.Random;
 
 public class SpawnObject : MonoBehaviour
 {
-    [SerializeField] GameObject spawnObject;
     [Header("SpawnBetween")]
     [SerializeField] private GameObject spawnFrom;
     [SerializeField] private GameObject spawnTo;
 
+    [SerializeField] GameObject volunteer;
+    [SerializeField] GameObject loader;
+
+
+
     public void SpawnObjectInScene(Transform parent)
     {
-        Instantiate(spawnObject, parent.position, Quaternion.identity, parent).SetActive(true);
+        Instantiate(volunteer, parent.position, Quaternion.identity, parent).SetActive(true);
     }
 
 
 
     public GameObject SpawnObjectInSceneTemporary(Transform parent)
     {
-       return Instantiate(spawnObject, parent.position, Quaternion.identity, parent);
+       return Instantiate(volunteer, parent.position, Quaternion.identity, parent);
     }
 
     public void SpawnVolunteerInSceneIfAfforded(long price)
@@ -28,8 +32,18 @@ public class SpawnObject : MonoBehaviour
         if(CurrencyManager.instance.IsAffordable(price))
         {
             PersistantData.Instance.playerData.VolunteerCount++;
-            Instantiate(spawnObject, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
+            Instantiate(volunteer, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
             SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+        }   
+    }
+    
+    public void SpawnLoaderInSceneIfAfforded(long price)
+    {
+        if(CurrencyManager.instance.IsAffordable(price))
+        {
+            //PersistantData.Instance.playerData.VolunteerCount++;
+            Instantiate(loader, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
+            //SaveSystem.SavePlayer(PersistantData.Instance.playerData);
         }   
     }
 

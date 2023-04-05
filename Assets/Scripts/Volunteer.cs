@@ -28,9 +28,13 @@ public class Volunteer : MonoBehaviour
 
 
 
+    private GameObject thrashInHand; // for enabling thrash model when volunteer is coming back
+
     void Start()
     {
-        if(vehicleFillerVolunteer)
+        thrashInHand = transform.Find("pickedupThrash").gameObject; //gets thrash GameObject
+
+        if (vehicleFillerVolunteer)
         {
             //StartCoroutine(TakeFromStorageAfter(timeBetweenMoves));
         }
@@ -152,13 +156,15 @@ public class Volunteer : MonoBehaviour
     }
     IEnumerator PickUpAfter(float time)
     {
-        //GoToLocation(movementPoints[Random.Range(0, movementPoints.Length)]);
+        thrashInHand.SetActive(false);
+        GoToLocation(movementPoints[Random.Range(0, movementPoints.Length)]);
         yield return new WaitForSeconds(time);
         refToExpManager.experienceToIncrease += Random.Range(randomGain[0], randomGain[1]);
         StartCoroutine(PutDownAfter(time));
     }
     IEnumerator PutDownAfter(float time)
     {
+        thrashInHand.SetActive(true);
         GoToLocation(storage);
         yield return new WaitForSeconds(time);
         storage.GetComponent<Storage>().AddGarbage(bagStorage);
@@ -166,6 +172,7 @@ public class Volunteer : MonoBehaviour
     }
     IEnumerator TakeFromStorageAfter(float time)
     {
+        thrashInHand.SetActive(false);
         GoToLocation(storage);
         yield return new WaitForSeconds(time);
         bagStorageCurrent = storage.GetComponent<Storage>().RemoveGarbage(bagStorage);
@@ -173,6 +180,7 @@ public class Volunteer : MonoBehaviour
     }
     IEnumerator PutToTruckAfterAfter(float time)
     {
+        thrashInHand.SetActive(true);
         GoToLocation(vehicle);
         yield return new WaitForSeconds(time);
         vehicle.GetComponent<VehicleSystem>().AddGarbage(bagStorageCurrent);

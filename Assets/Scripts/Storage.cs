@@ -11,7 +11,10 @@ public class Storage : MonoBehaviour
     [SerializeField] int maxGarbageCount = 10;
     [SerializeField] int currentGarbageCount = 0;
 
-
+    private void Start()
+    {
+        UpdateGarbage();
+    }
     public int GetGarbageCount()
     {
         return currentGarbageCount;
