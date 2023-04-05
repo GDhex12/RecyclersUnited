@@ -13,8 +13,8 @@ public class VehicleCooldown : MonoBehaviour
     public VehicleSystem vehicleManager;
     private int lastSentCount = 0;
 
-    private bool cooldownFinished = false; 
-
+    private bool cooldownFinished = false;
+    public bool vehicleReturned = true;
     public void Initialize ()
     {
         cooldownContainer.SetActive(true);
@@ -31,12 +31,14 @@ public class VehicleCooldown : MonoBehaviour
 
     public void TimerShutdown ()
     {
+        vehicleReturned = true;
         cooldownContainer.SetActive(false);
         GetComponent<Animator>().Play(string.Format("{0}Returns", gameObject.name));
     }
 
     private IEnumerator CountdownLoop ()
     {
+        vehicleReturned = false;
         lastSentCount = vehicleManager.currentGarbageCount;
         vehicleManager.RemoveAllGarbage();
         for (int i=timeoutSeconds; i>=0; i--)

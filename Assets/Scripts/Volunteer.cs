@@ -63,11 +63,13 @@ public class Volunteer : MonoBehaviour
                 {
                     bagStorageCurrent = GameManager.Instance.storage.RemoveGarbage(bagStorage);
                     carryingTrash = true;
+                    thrashInHand.SetActive(true);
                 }
             }
             else // going to vehicle
             {
-                if(GameManager.Instance.vehicle.IsFull() /*|| vehicle isvaziavusi*/)//  if(GameManager.Instance.)
+
+                if(GameManager.Instance.vehicle.IsFull() || !GameManager.Instance.vehicleCooldown.vehicleReturned/*|| vehicle isvaziavusi*/)//  if(GameManager.Instance.)
                 {
                     GoToLocation(gameObject);
                     return;
@@ -79,6 +81,7 @@ public class Volunteer : MonoBehaviour
                     Debug.Log("adding to vehicle");
                     GameManager.Instance.vehicle.AddGarbage(bagStorageCurrent);
                     carryingTrash = false;
+                    thrashInHand.SetActive(false);
                 }
             }
         }
@@ -109,6 +112,7 @@ public class Volunteer : MonoBehaviour
                 {
                     Destroy(trashImGoingTo);
                     carryingTrash = true;
+                    thrashInHand.SetActive(true);
                     GoToLocation(storage);
                 }
                 
@@ -127,6 +131,7 @@ public class Volunteer : MonoBehaviour
 
                     GameManager.Instance.storage.AddGarbage(bagStorage);
                     carryingTrash = false;
+                    thrashInHand.SetActive(false);
                 }
             }
         }
@@ -157,7 +162,7 @@ public class Volunteer : MonoBehaviour
     IEnumerator PickUpAfter(float time)
     {
         thrashInHand.SetActive(false);
-        GoToLocation(movementPoints[Random.Range(0, movementPoints.Length)]);
+        //GoToLocation(movementPoints[Random.Range(0, movementPoints.Length)]);
         yield return new WaitForSeconds(time);
         refToExpManager.experienceToIncrease += Random.Range(randomGain[0], randomGain[1]);
         StartCoroutine(PutDownAfter(time));

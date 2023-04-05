@@ -51,8 +51,7 @@ public class SpawnObject : MonoBehaviour
     {
         for (int i=0; i<volunteerCount; i++)
         {
-            Debug.Log(RandomPositionBetween(spawnFrom, spawnTo));
-            Instantiate(spawnObject, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, parent).SetActive(true);
+            Instantiate(volunteer, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, parent).SetActive(true);
         }
     }
     private Vector3 RandomPositionBetween(GameObject from, GameObject to)

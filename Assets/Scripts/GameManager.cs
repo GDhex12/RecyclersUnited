@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ExperienceStats experienceManager;
     public Storage storage;
     public VehicleSystem vehicle;
+    public VehicleCooldown vehicleCooldown;
     public static GameManager Instance { get; private set; }
     public Transform volunteerRoot;
 
