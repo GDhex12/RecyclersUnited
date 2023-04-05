@@ -5,28 +5,19 @@ using TMPro;
 
 public class VehicleCooldown : MonoBehaviour
 {
-    [SerializeField]
     public int timeoutSeconds;
-    [SerializeField]
     public TMP_Text timeString;
     public GameObject cooldownContainer;
     public VehicleSystem vehicleManager;
-    private int lastSentCount = 0;
+    [SerializeField] private int lastSentCount = 0;
 
     private bool cooldownFinished = false;
     public bool vehicleReturned = true;
+
     public void Initialize ()
     {
         cooldownContainer.SetActive(true);
         StartCoroutine(nameof(CountdownLoop));
-    }
-
-    private void Update()
-    {
-        if (cooldownFinished)
-        {
-            TimerShutdown();
-        }
     }
 
     public void TimerShutdown ()
@@ -46,7 +37,7 @@ public class VehicleCooldown : MonoBehaviour
             timeString.text = string.Format("{0} s", i);
             yield return new WaitForSeconds(1f);
         }
-        cooldownFinished = true;
+        TimerShutdown();
         vehicleManager.ExchangeGarbageToMoney(lastSentCount);
         yield return null;
     }
