@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class PickerVolunteer : Volunteer
 {
-    private GameObject trashImGoingTo;
+    private TrashPile trashImGoingTo;
     private void Update()
     {
         if (!carryingTrash) // going to get trash
         {
-            if (GameManager.Instance.trash.Count <= 0 && trashImGoingTo == null)
+            if (TrashController.Instance.GetCount() <= 0 && trashImGoingTo == null)
             {
                 GoToLocation(gameObject);
                 return;
             }
             if (trashImGoingTo == null)
             {
-                trashImGoingTo = GetTrash();
+                trashImGoingTo = TrashController.Instance.GetRandomPile();
                 if (trashImGoingTo != null)
                 {
-                    GoToLocation(trashImGoingTo);
+                    GoToLocation(trashImGoingTo.gameObject);
                 }
                 else
                 {
@@ -31,8 +31,9 @@ public class PickerVolunteer : Volunteer
             if (CloseToDestination())
             {
                 //Destroy(trashImGoingTo);
-                trashImGoingTo = null;
                 // trashImGoinTo -1 right now
+                trashImGoingTo.RemoveTrash();
+                trashImGoingTo = null;
                 carryingTrash = true;
                 thrashInHand.SetActive(true);
                 GoToLocation(storage);

@@ -14,6 +14,11 @@ public class TrashController : MonoBehaviour
         Instance = this;
     }
 
+    public int GetCount()
+    {
+        return trashPiles.Count;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
