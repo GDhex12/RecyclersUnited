@@ -91,9 +91,7 @@ public class Volunteer : MonoBehaviour
     {
         
         MoveTo(walkOffPoint);
-        Debug.Log("Iseinuu");
         navMeshAgent.SetDestination(walkOffPoint);
-        
         yield return new WaitForSeconds(20f);
         Destroy(gameObject);
     }
