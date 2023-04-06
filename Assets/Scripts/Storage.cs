@@ -35,7 +35,7 @@ public class Storage : MonoBehaviour
     {
         if (IsFull())
             return;
-
+        
         if (currentGarbageCount + amount > maxGarbageCount)
         {
             currentGarbageCount = maxGarbageCount;
