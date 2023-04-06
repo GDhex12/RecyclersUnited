@@ -7,7 +7,6 @@ public class Storage : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI storageUI;
 
-    int mapID;
     [SerializeField] int maxGarbageCount = 10;
     [SerializeField] int currentGarbageCount = 0;
 
@@ -23,6 +22,7 @@ public class Storage : MonoBehaviour
     public void SetMaxGarbageCount(int count)
     {
         maxGarbageCount = count;
+        UpdateGarbage();
     }
 
     public int GetMaxGarbageCount()

@@ -6,12 +6,10 @@ using TMPro;
 
 public class ChangeVehicles : MonoBehaviour
 {
-    [SerializeField]
     public GameObject[] vehicles;
-    [SerializeField]
     public int arrayIdx;
 
-    private TMP_Dropdown dd;
+    [SerializeField] private TMP_Dropdown dd;
 
     private void Awake()
     {
