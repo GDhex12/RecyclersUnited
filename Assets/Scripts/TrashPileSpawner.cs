@@ -19,6 +19,7 @@ public class TrashPileSpawner : MonoBehaviour
     public IEnumerator InitiateNewSpawn (Vector3 removedLoc)
     {
         yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax));
-        Instantiate(possibleVariants[Random.Range(0, possibleVariants.Count-1)].gameObject, removedLoc, Quaternion.identity);
+        GameObject newTrash = Instantiate(possibleVariants[Random.Range(0, possibleVariants.Count-1)].gameObject, removedLoc, Quaternion.identity);
+        newTrash.GetComponent<Animation>().Play();
     }
 }

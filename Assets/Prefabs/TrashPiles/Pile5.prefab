@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6588230396811940180}
   - component: {fileID: 82567458063999391}
+  - component: {fileID: 435559487}
   m_Layer: 0
   m_Name: Pile5
   m_TagString: Untagged
@@ -57,6 +58,23 @@ MonoBehaviour:
   - {fileID: 437563293788042352}
   - {fileID: 6323697470904462825}
   - {fileID: 437563292711276644}
+  trashSpawner: {fileID: 0}
+--- !u!111 &435559487
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6588230396811940183}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 956210e81aac2e84f83de004757e938a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 956210e81aac2e84f83de004757e938a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &6588230395645556466
 PrefabInstance:
   m_ObjectHideFlags: 0
