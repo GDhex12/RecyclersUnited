@@ -60,8 +60,9 @@ public class VolunteerCountManager : MonoBehaviour
         FunctionTimer.Create(DecreaseVolunteersCount, time);
         for(int i=0; i<volunteersToAdd; i++)
         {
-            
-            temporaryAddedVolunteersList.Add(spawnObjectScript.SpawnObjectInSceneTemporary(volunteersSpawnTransform));
+            GameObject tempObj = spawnObjectScript.SpawnObjectInSceneTemporary(volunteersSpawnTransform);
+            tempObj.SetActive(true);
+            temporaryAddedVolunteersList.Add(tempObj);
         }
         
     }
