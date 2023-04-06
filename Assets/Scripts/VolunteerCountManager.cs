@@ -12,6 +12,7 @@ public class VolunteerCountManager : MonoBehaviour
     private List<int> temporaryAddedVolunteersCount =new List<int>();
 
     [SerializeField] private List<GameObject> temporaryAddedVolunteersList = new List<GameObject>();
+    [SerializeField] private List<GameObject> allVolunteers = new List<GameObject>();
 
     [SerializeField] private Transform volunteersSpawnTransform;
     [SerializeField] private SpawnObject spawnObjectScript;
@@ -46,6 +47,11 @@ public class VolunteerCountManager : MonoBehaviour
         currrentVolunteersCount += volunteersToAdd;
         spawnObjectScript.SpawnObjectInScene(volunteersSpawnTransform);
 	}
+    public void AddVolunteersToList(GameObject volunteer)
+    {
+        currrentVolunteersCount += 1;
+        allVolunteers.Add(volunteer);
+    }
 
     public void AddVolunteersTemporary(int volunteersToAdd, float time)
 	{
@@ -79,26 +85,31 @@ public class VolunteerCountManager : MonoBehaviour
     }
 
     public void IncreaseVolunteersSpeed()
-	{
-       GameObject[] allVolunteers =  GameObject.FindGameObjectsWithTag("Volunteer");
+    {
 
-        for(int i =0; i< allVolunteers.Length; i++)
+        foreach (GameObject obj in allVolunteers)
 		{
-            allVolunteers[i].GetComponent<NavMeshAgent>().speed = allVolunteers[i].GetComponent<NavMeshAgent>().speed * 1.2f;
-
+            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed * 1.5f;
+        }
+        foreach (GameObject obj in temporaryAddedVolunteersList)
+        {
+            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed * 1.5f;
         }
         FunctionTimer.Create(DecreaseVolunteersSpeed, 10f);
 	}
 
     public void DecreaseVolunteersSpeed()
     {
-        GameObject[] allVolunteers = GameObject.FindGameObjectsWithTag("Volunteer");
 
-        for (int i = 0; i < allVolunteers.Length; i++)
+        foreach (GameObject obj in allVolunteers)
         {
-            allVolunteers[i].GetComponent<NavMeshAgent>().speed = allVolunteers[i].GetComponent<NavMeshAgent>().speed / 1.2f;
-
+            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed / 1.5f;
         }
+        foreach (GameObject obj in temporaryAddedVolunteersList)
+        {
+            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed / 1.5f;
+        }
+        FunctionTimer.Create(DecreaseVolunteersSpeed, 10f);
     }
     /// <summary>
     /// Returns a volunteers count

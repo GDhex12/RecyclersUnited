@@ -98,22 +98,8 @@ public class PowerUp : MonoBehaviour
 		PowerUpMesh.GetComponent<PowerUpPickUp>().PickUp();
 
 	}
-    protected virtual void DoTheThing(Collider2D collision)
-	{
+   
 
-	}
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.tag == "Player")
-		{
-			gameObject.GetComponent<CircleCollider2D>().enabled = false;
-			DoTheThing(collision);
-			gameObject.SetActive(false);
-		}
-
-
-
-	}
 
 
 	float FCalculateRandomNumbers(float rangeStart, float rangeEnd)

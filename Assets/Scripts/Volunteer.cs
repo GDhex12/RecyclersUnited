@@ -63,13 +63,15 @@ public class Volunteer : MonoBehaviour
 
     public void WalkOutOfMap(Vector3 walkOffPoint)
 	{
-        //Destroy(gameObject);
+        StopAllCoroutines();
         StartCoroutine(WalkOffMapAndDestroy(walkOffPoint));
 	}
 
     IEnumerator WalkOffMapAndDestroy(Vector3 walkOffPoint)
     {
+        
         MoveTo(walkOffPoint);
+        navMeshAgent.SetDestination(walkOffPoint);
         yield return new WaitForSeconds(20f);
         Destroy(gameObject);
     }
