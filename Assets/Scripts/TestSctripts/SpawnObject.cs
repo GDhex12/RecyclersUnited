@@ -66,14 +66,34 @@ public class SpawnObject : MonoBehaviour
 
     public void IncreasePickerSpeed(float increaseAmount)
     {
-        picker.GetComponent<NavMeshAgent>().speed += increaseAmount;
+        // Find all objects with the MyScript component
+        PickerVolunteer[] objectsWithScript = FindObjectsOfType<PickerVolunteer>();
+
+        // Loop through each object and change the value of myVariable
+        foreach (PickerVolunteer picker in objectsWithScript)
+        {
+            picker.GetComponent<NavMeshAgent>().speed += increaseAmount;
+        }
+       
     }
     public void IncreaseLoaderSpeed(float increaseAmount)
     {
-        loader.GetComponent<NavMeshAgent>().speed += increaseAmount;
+        LoaderVolunteer[] objectsWithScript = FindObjectsOfType<LoaderVolunteer>();
+
+        // Loop through each object and change the value of myVariable
+        foreach (LoaderVolunteer loader in objectsWithScript)
+        {
+            loader.GetComponent<NavMeshAgent>().speed += increaseAmount;
+        }
     }
     public void IncreaseLoaderVolunteerBag(int increaseAmount)
     {
-        loader.GetComponent<Volunteer>().bagStorage += increaseAmount;
+        LoaderVolunteer[] objectsWithScript = FindObjectsOfType<LoaderVolunteer>();
+
+        // Loop through each object and change the value of myVariable
+        foreach (LoaderVolunteer loader in objectsWithScript)
+        {
+            loader.bagStorage += increaseAmount;
+        }        
     }
 }
