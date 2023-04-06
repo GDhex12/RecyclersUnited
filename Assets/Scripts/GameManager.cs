@@ -13,10 +13,8 @@ public class GameManager : MonoBehaviour
     public Transform volunteerRoot;
 
     //temporary for volunteer walking
-    public Queue<GameObject> trash = new Queue<GameObject>();
+    public List<GameObject> trash = new List<GameObject>();
 
-    [SerializeField]
-    private GameObject[] trashobj; //temp for trash
 
     private void Awake()
     {
@@ -27,10 +25,6 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            foreach (GameObject obj in trashobj) // temp for trash
-            {
-                trash.Enqueue(obj);
-            }
         }
 
 

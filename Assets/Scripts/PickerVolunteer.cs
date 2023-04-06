@@ -26,12 +26,13 @@ public class PickerVolunteer : Volunteer
                 {
                     GoToLocation(gameObject);
                 }
-
                 return;
             }
             if (CloseToDestination())
             {
-                Destroy(trashImGoingTo);
+                //Destroy(trashImGoingTo);
+                trashImGoingTo = null;
+                // trashImGoinTo -1 right now
                 carryingTrash = true;
                 thrashInHand.SetActive(true);
                 GoToLocation(storage);

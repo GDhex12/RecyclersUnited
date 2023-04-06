@@ -40,7 +40,12 @@ public class Volunteer : MonoBehaviour
     }
     public GameObject GetTrash()
     {
-        return GameManager.Instance.trash.Dequeue();
+
+        GameObject trash = GameManager.Instance.trash[Random.Range(0, GameManager.Instance.trash.Count)];
+        // TRASH check if it still has garbage in it
+            // TRASH -1 to be, not now(for checking if another volunteer shuold go there too)
+            // grazinti null jei nera kur eit
+        return trash;
     }
     public void MoveTo(Vector3 moveLocation)
     {

@@ -1001,7 +1001,7 @@ MonoBehaviour:
   vehicleCooldown: {fileID: 417565232}
   spawner: {fileID: 471543196}
   volunteerRoot: {fileID: 471543195}
-  trashobj:
+  trash:
   - {fileID: 799904190}
   - {fileID: 658196257}
   - {fileID: 34116528}
