@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TrashController : MonoBehaviour
 {
     public static TrashController Instance;
-
+    public NavMeshAgent navMesh;
     [SerializeField] List<TrashPile> trashPiles;
 
     private void Awake()
@@ -42,5 +43,14 @@ public class TrashController : MonoBehaviour
     public void RemoveTrashPile(TrashPile pile)
     {
         trashPiles.Remove(pile);
+    }
+
+    //if new items are added on field
+    public void RegeneratePickupPoints()
+    {
+        navMesh.isStopped = true;
+        /*
+         * TO-DO: clear all NavMesh data and regenerate new paths based on newly spawned trash here
+         */
     }
 }

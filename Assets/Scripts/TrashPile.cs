@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrashPile : MonoBehaviour
 {
     [SerializeField] List<GameObject> trashList;
+    public TrashPileSpawner trashSpawner;
     int _trashIndex;
 
 
@@ -29,6 +30,7 @@ public class TrashPile : MonoBehaviour
 
         if(_trashIndex < 0)
         {
+            trashSpawner.LaunchRespawn(gameObject.transform.position);
             TrashController.Instance.RemoveTrashPile(this);
             Destroy(gameObject);
         }
