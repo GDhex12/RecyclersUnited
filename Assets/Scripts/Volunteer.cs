@@ -9,7 +9,8 @@ public class Volunteer : MonoBehaviour
 
     [Header("Movement Settings")]
     [SerializeField] private GameObject[] movementPoints;
-    
+    [SerializeField] private GameObject walkOffPoint;
+
     [SerializeField] private GameObject storage;
     [SerializeField] private GameObject vehicle;
     [SerializeField] private float timeBetweenMoves = 5f;
@@ -82,13 +83,17 @@ public class Volunteer : MonoBehaviour
 
     public void WalkOutOfMap(Vector3 walkOffPoint)
 	{
-        //Destroy(gameObject);
+        StopAllCoroutines();
         StartCoroutine(WalkOffMapAndDestroy(walkOffPoint));
 	}
 
     IEnumerator WalkOffMapAndDestroy(Vector3 walkOffPoint)
     {
+        
         MoveTo(walkOffPoint);
+        Debug.Log("Iseinuu");
+        navMeshAgent.SetDestination(walkOffPoint);
+        
         yield return new WaitForSeconds(20f);
         Destroy(gameObject);
     }
