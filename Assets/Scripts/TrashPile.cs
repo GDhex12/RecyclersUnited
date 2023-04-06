@@ -29,6 +29,7 @@ public class TrashPile : MonoBehaviour
 
         if(_trashIndex < 0)
         {
+            TrashController.Instance.RemoveTrashPile(this);
             Destroy(gameObject);
         }
     }

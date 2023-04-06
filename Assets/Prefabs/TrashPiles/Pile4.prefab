@@ -51,12 +51,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashList:
+  - {fileID: 2667625979197474210}
   - {fileID: 2667632264416963349}
   - {fileID: 2667632263808800504}
   - {fileID: 2667632265214153768}
   - {fileID: 2667632265737631982}
   - {fileID: 2667632265279296185}
-  - {fileID: 2667625979197474210}
 --- !u!1001 &2667253310545607937
 PrefabInstance:
   m_ObjectHideFlags: 0
