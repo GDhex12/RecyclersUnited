@@ -53,6 +53,7 @@ public class PickerVolunteer : Volunteer
             {
 
                 GameManager.Instance.storage.AddGarbage(bagStorage);
+                refToExpManager.experienceToIncrease ++;
                 carryingTrash = false;
                 thrashInHand.SetActive(false);
             }
