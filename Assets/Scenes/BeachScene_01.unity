@@ -1857,6 +1857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volunteer: {fileID: 721832906}
   loader: {fileID: 2076921682}
+  countManager: {fileID: 1571467721}
 --- !u!1 &568066588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,6 +4018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currrentVolunteersCount: 0
   temporaryAddedVolunteersList: []
+  allVolunteers: []
   volunteersSpawnTransform: {fileID: 471543195}
   spawnObjectScript: {fileID: 471543196}
   walkOffPoint: {fileID: 778673067}
