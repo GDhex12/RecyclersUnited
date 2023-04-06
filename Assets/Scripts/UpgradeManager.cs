@@ -75,6 +75,21 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] UpgradeUI storageCapacityUI = new UpgradeUI();
     [SerializeField] int storageCapacityIncrement = 100;
 
+    [Header("Picker speed")]
+    [SerializeField] UpgradeData pickerSpeedData = new UpgradeData();
+    [SerializeField] UpgradeUI pickerSpeedUI = new UpgradeUI();
+    [SerializeField] int pickerSpeedIncrement = 5;
+
+    [Header("Loader speed")]
+    [SerializeField] UpgradeData loaderSpeedData = new UpgradeData();
+    [SerializeField] UpgradeUI loaderSpeedUI = new UpgradeUI();
+    [SerializeField] int loaderSpeedIncrement = 5;
+
+    [Header("Loader Bag")]
+    [SerializeField] UpgradeData loaderBagData = new UpgradeData();
+    [SerializeField] UpgradeUI loaderBagUI = new UpgradeUI();
+    [SerializeField] int loaderBagIncrement = 1;
+
     Storage _storage;
     VehicleSystem _vehicleSystem;
 
@@ -86,6 +101,9 @@ public class UpgradeManager : MonoBehaviour
 
         vehicleCapacityUI.UpdateUI(vehicleCapacityData);
         storageCapacityUI.UpdateUI(storageCapacityData);
+        pickerSpeedUI.UpdateUI(pickerSpeedData);
+        loaderSpeedUI.UpdateUI(loaderSpeedData);
+        loaderBagUI.UpdateUI(loaderBagData);
 
         
     }
@@ -135,6 +153,40 @@ public class UpgradeManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Vehicle system not set");
+        }
+    }
+
+    public void UpgradePickerVolunteerSpeed()
+    {
+        if (CurrencyManager.instance.IsAffordable(pickerSpeedData.price))
+        {
+            if (pickerSpeedData.Upgrade())
+            {
+                GameManager.Instance.spawner.IncreasePickerSpeed(pickerSpeedIncrement);
+                pickerSpeedUI.UpdateUI(pickerSpeedData);
+            }
+        }
+    }
+    public void UpgradeLoaderVolunteerSpeed()
+    {
+        if (CurrencyManager.instance.IsAffordable(loaderSpeedData.price))
+        {
+            if (loaderSpeedData.Upgrade())
+            {
+                GameManager.Instance.spawner.IncreaseLoaderSpeed(loaderSpeedIncrement);
+                loaderSpeedUI.UpdateUI(loaderSpeedData);
+            }
+        }
+    }
+    public void UpgradeLoaderVolunteerBag()
+    {
+        if (CurrencyManager.instance.IsAffordable(loaderBagData.price))
+        {
+            if (loaderBagData.Upgrade())
+            {
+                GameManager.Instance.spawner.IncreaseLoaderVolunteerBag(loaderBagIncrement);
+                loaderBagUI.UpdateUI(loaderBagData);
+            }
         }
     }
 }

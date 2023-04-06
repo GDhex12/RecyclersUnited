@@ -9,138 +9,36 @@ public class Volunteer : MonoBehaviour
 
     [Header("Movement Settings")]
 
-    [SerializeField] private GameObject storage;
+    [SerializeField] public GameObject storage;
+    [Header("Exp Settings")]
     [SerializeField] public ExperienceStats refToExpManager;
-    [Header("Base volunteer")]
-    [SerializeField] private float timeBetweenMoves = 5f;
-    [SerializeField] public int[] randomGain;
-    [SerializeField] private int bagStorage = 1;
-    [Header("Transporter volunteer")]
-    [SerializeField] private bool vehicleFillerVolunteer = false;
-    [SerializeField] private GameObject vehicle;
 
-    private int bagStorageCurrent = 0;
+    [SerializeField] public int[] randomGain;
+    [SerializeField] public int bagStorage = 1;
+
+
+    [Header("Shared Information")]
+    public int bagStorageCurrent = 0;
     private bool stopMoving = false;
     private float distanceThreshold = 1f;
 
-    private bool carryingTrash = false;
-    private GameObject trashImGoingTo;
+    public bool carryingTrash = false;
 
 
 
-    private GameObject thrashInHand; // for enabling thrash model when volunteer is coming back
+    public GameObject thrashInHand; // for enabling thrash model when volunteer is coming back
 
     void Start()
     {
         thrashInHand = transform.Find("pickedupThrash").gameObject; //gets thrash GameObject
-
-        if (vehicleFillerVolunteer)
-        {
-            //StartCoroutine(TakeFromStorageAfter(timeBetweenMoves));
-        }
-        else
-        {
-            //StartCoroutine(PickUpAfter(timeBetweenMoves));
-        }
         
     }
-    
-    private void Update()
-    {
 
-        //Debug.Log(GameManager.Instance.trash.Count);
-        if(vehicleFillerVolunteer)
-        {
-            if (!carryingTrash) // going to storage
-            {
-                if (GameManager.Instance.storage.IsEmpty())
-                {
-                    GoToLocation(gameObject);
-                    return;
-                }
-                GoToLocation(storage);
-                if (CheckIfClose(storage))
-                {
-                    bagStorageCurrent = GameManager.Instance.storage.RemoveGarbage(bagStorage);
-                    carryingTrash = true;
-                    thrashInHand.SetActive(true);
-                }
-            }
-            else // going to vehicle
-            {
-
-                if(GameManager.Instance.vehicle.IsFull() || !GameManager.Instance.vehicleCooldown.vehicleReturned/*|| vehicle isvaziavusi*/)//  if(GameManager.Instance.)
-                {
-                    GoToLocation(gameObject);
-                    return;
-                }
-
-                GoToLocation(vehicle);
-                if (CheckIfClose(vehicle))
-                {
-                    Debug.Log("adding to vehicle");
-                    GameManager.Instance.vehicle.AddGarbage(bagStorageCurrent);
-                    carryingTrash = false;
-                    thrashInHand.SetActive(false);
-                }
-            }
-        }
-        else
-        {
-            if(!carryingTrash) // going to get trash
-            {
-                if (GameManager.Instance.trash.Count <= 0 && trashImGoingTo == null)
-                {
-                    GoToLocation(gameObject);
-                    return;
-                }                    
-                if(trashImGoingTo == null)
-                {
-                    trashImGoingTo = GetTrash();
-                    if(trashImGoingTo != null)
-                    {
-                        GoToLocation(trashImGoingTo);
-                    }
-                    else
-                    {
-                        GoToLocation(gameObject);
-                    }
-                   
-                    return;
-                }
-                if(CloseToDestination())
-                {
-                    Destroy(trashImGoingTo);
-                    carryingTrash = true;
-                    thrashInHand.SetActive(true);
-                    GoToLocation(storage);
-                }
-                
-            }
-            else // going to storage
-            {
-                
-                if (GameManager.Instance.storage.IsFull())
-                {
-                    GoToLocation(gameObject);
-                    return;
-                }               
-                GoToLocation(storage);
-                if (CloseToDestination())
-                {
-
-                    GameManager.Instance.storage.AddGarbage(bagStorage);
-                    carryingTrash = false;
-                    thrashInHand.SetActive(false);
-                }
-            }
-        }
-    }
-    bool CloseToDestination()
+    public bool CloseToDestination()
     {
         return navMeshAgent.remainingDistance <= distanceThreshold;
     }
-    GameObject GetTrash()
+    public GameObject GetTrash()
     {
         return GameManager.Instance.trash.Dequeue();
     }
@@ -153,43 +51,9 @@ public class Volunteer : MonoBehaviour
         MoveTo(location.transform.position);
     }
 
-    private bool CheckIfClose(GameObject targetObject)
+    public bool CheckIfClose(GameObject targetObject)
     {
         return navMeshAgent.remainingDistance <= distanceThreshold && targetObject != null && Vector3.Distance(transform.position, targetObject.transform.position) <= distanceThreshold;
-        
-
-    }
-    IEnumerator PickUpAfter(float time)
-    {
-        thrashInHand.SetActive(false);
-        //GoToLocation(movementPoints[Random.Range(0, movementPoints.Length)]);
-        yield return new WaitForSeconds(time);
-        refToExpManager.experienceToIncrease += Random.Range(randomGain[0], randomGain[1]);
-        StartCoroutine(PutDownAfter(time));
-    }
-    IEnumerator PutDownAfter(float time)
-    {
-        thrashInHand.SetActive(true);
-        GoToLocation(storage);
-        yield return new WaitForSeconds(time);
-        storage.GetComponent<Storage>().AddGarbage(bagStorage);
-        StartCoroutine(PickUpAfter(time));
-    }
-    IEnumerator TakeFromStorageAfter(float time)
-    {
-        thrashInHand.SetActive(false);
-        GoToLocation(storage);
-        yield return new WaitForSeconds(time);
-        bagStorageCurrent = storage.GetComponent<Storage>().RemoveGarbage(bagStorage);
-        StartCoroutine(PutToTruckAfterAfter(time));
-    }
-    IEnumerator PutToTruckAfterAfter(float time)
-    {
-        thrashInHand.SetActive(true);
-        GoToLocation(vehicle);
-        yield return new WaitForSeconds(time);
-        vehicle.GetComponent<VehicleSystem>().AddGarbage(bagStorageCurrent);
-        StartCoroutine(TakeFromStorageAfter(time));
     }
 
     public void WalkOutOfMap(Vector3 walkOffPoint)

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Storage storage;
     public VehicleSystem vehicle;
     public VehicleCooldown vehicleCooldown;
+    public SpawnObject spawner;
     public static GameManager Instance { get; private set; }
     public Transform volunteerRoot;
 
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     public Queue<GameObject> trash = new Queue<GameObject>();
 
     [SerializeField]
-    private GameObject[] trashobj;
+    private GameObject[] trashobj; //temp for trash
 
     private void Awake()
     {
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            foreach (GameObject obj in trashobj)
+            foreach (GameObject obj in trashobj) // temp for trash
             {
                 trash.Enqueue(obj);
             }
