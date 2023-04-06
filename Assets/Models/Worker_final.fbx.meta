@@ -1,9 +1,44 @@
 fileFormatVersion: 2
-guid: cedc23acbcb5f274ea04df8d6d5920c6
+guid: f384322268e666b46bc4ed3fef051377
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hat
+    second: {fileID: 2100000, guid: cec1d8b6c61b83b4fa40464eb48231d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 2888a55f90de5c143aa39263a7f3a593, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: f6704e148659be348b9635c0c570f425, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: fe9c804d293ac9f43a94fbea94863554, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Textured
+    second: {fileID: 2100000, guid: 1c7a893334520194cb5bae2617429651, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vest
+    second: {fileID: 2100000, guid: c7744f316612c534280b884bb3110a3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shirt
+    second: {fileID: 2100000, guid: 4a433b45d5a8562479df4bae9d4357ef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
