@@ -6,19 +6,19 @@ public class MenuActions : MonoBehaviour
 {
     public GameObject panel;
     public bool isopen;
-    public void openExitMenu()
+    public void OpenExitMenu()
     {
         isopen = panel.activeSelf;
 
         if (!isopen)
         {
             isopen = true;
-            panel.gameObject.SetActive(true);
+            panel.SetActive(true);
         }
         else if (isopen)
         {
             isopen = false;
-            panel.gameObject.SetActive(false);
+            panel.SetActive(false);
         }
     }
 }

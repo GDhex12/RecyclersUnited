@@ -9,25 +9,19 @@ public class VolunteerCountManager : MonoBehaviour
     [SerializeField]
     private int currrentVolunteersCount = 1;
 
-    private List<int> temporaryAddedVolunteersCount =new List<int>();
+    private readonly List<int> temporaryAddedVolunteersCount = new();
 
-    [SerializeField] private List<GameObject> temporaryAddedVolunteersList = new List<GameObject>();
-    [SerializeField] private List<GameObject> allVolunteers = new List<GameObject>();
+    [SerializeField] private List<GameObject> temporaryAddedVolunteersList = new();
+    [SerializeField] private List<GameObject> allVolunteers = new();
 
     [SerializeField] private Transform volunteersSpawnTransform;
     [SerializeField] private SpawnObject spawnObjectScript;
     [SerializeField] private GameObject walkOffPoint;
-    [SerializeField]
-    private int saveSystem;//Placeholder for a save system
+    [SerializeField] private int saveSystem; //Placeholder for a save system
+
     void Start()
     {
         LoadVolunteersCount();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     /// <summary>
@@ -73,7 +67,7 @@ public class VolunteerCountManager : MonoBehaviour
         for(int i=0; i < temporaryAddedVolunteersCount[0]; i++)
         {
             
-            temporaryAddedVolunteersList[i].gameObject.GetComponent<Volunteer>().WalkOutOfMap(walkOffPoint.transform.position);
+            temporaryAddedVolunteersList[i].GetComponent<Volunteer>().WalkOutOfMap(walkOffPoint.transform.position);
             
 
 

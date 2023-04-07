@@ -8,19 +8,18 @@ public class Volunteer : MonoBehaviour
     [SerializeField] private NavMeshAgent navMeshAgent;
 
     [Header("Movement Settings")]
+    public GameObject storage;
 
-    [SerializeField] public GameObject storage;
     [Header("Exp Settings")]
-    [SerializeField] public ExperienceStats refToExpManager;
+    public ExperienceStats refToExpManager;
 
-    [SerializeField] public int[] randomGain;
-    [SerializeField] public int bagStorage = 1;
+    public int[] randomGain;
+    public int bagStorage = 1;
 
 
     [Header("Shared Information")]
     public int bagStorageCurrent = 0;
-    private bool stopMoving = false;
-    private float distanceThreshold = 1f;
+    private readonly float distanceThreshold = 1f;
 
     public bool carryingTrash = false;
 

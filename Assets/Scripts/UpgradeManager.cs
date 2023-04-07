@@ -66,28 +66,28 @@ public class UpgradeManager : MonoBehaviour
     }
 
     [Header("Vehicle capacity")]
-    [SerializeField] UpgradeData vehicleCapacityData = new UpgradeData();
-    [SerializeField] UpgradeUI vehicleCapacityUI = new UpgradeUI();
+    [SerializeField] UpgradeData vehicleCapacityData = new();
+    [SerializeField] UpgradeUI vehicleCapacityUI = new();
     [SerializeField] int vehicleCapacityIncrement = 100;
 
     [Header("Storage capacity")]
-    [SerializeField] UpgradeData storageCapacityData = new UpgradeData();
-    [SerializeField] UpgradeUI storageCapacityUI = new UpgradeUI();
+    [SerializeField] UpgradeData storageCapacityData = new();
+    [SerializeField] UpgradeUI storageCapacityUI = new();
     [SerializeField] int storageCapacityIncrement = 100;
 
     [Header("Picker speed")]
-    [SerializeField] UpgradeData pickerSpeedData = new UpgradeData();
-    [SerializeField] UpgradeUI pickerSpeedUI = new UpgradeUI();
+    [SerializeField] UpgradeData pickerSpeedData = new();
+    [SerializeField] UpgradeUI pickerSpeedUI = new();
     [SerializeField] int pickerSpeedIncrement = 5;
 
     [Header("Loader speed")]
-    [SerializeField] UpgradeData loaderSpeedData = new UpgradeData();
-    [SerializeField] UpgradeUI loaderSpeedUI = new UpgradeUI();
+    [SerializeField] UpgradeData loaderSpeedData = new();
+    [SerializeField] UpgradeUI loaderSpeedUI = new();
     [SerializeField] int loaderSpeedIncrement = 5;
 
     [Header("Loader Bag")]
-    [SerializeField] UpgradeData loaderBagData = new UpgradeData();
-    [SerializeField] UpgradeUI loaderBagUI = new UpgradeUI();
+    [SerializeField] UpgradeData loaderBagData = new();
+    [SerializeField] UpgradeUI loaderBagUI = new();
     [SerializeField] int loaderBagIncrement = 1;
 
     Storage _storage;
@@ -120,18 +120,6 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    void SetStorageCapacity(int n)
-    {
-        if (_storage != null)
-        {
-            _storage.SetMaxGarbageCount(n);
-        }
-        else
-        {
-            Debug.LogWarning("Storage not set");
-        }
-    }
-
     public void UpgradeVehicleCapacity()
     {
         if (CurrencyManager.instance.IsAffordable(vehicleCapacityData.price))
@@ -141,18 +129,6 @@ public class UpgradeManager : MonoBehaviour
                 _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + vehicleCapacityIncrement);
                 vehicleCapacityUI.UpdateUI(vehicleCapacityData);
             }
-        }
-    }
-
-    void SetVehicleCapacity(int n)
-    {
-        if (_vehicleSystem != null)
-        {
-            _vehicleSystem.SetMaxGarbageCount(n);
-        }
-        else
-        {
-            Debug.LogWarning("Vehicle system not set");
         }
     }
 

@@ -17,7 +17,7 @@ public class PlayerData
 
     public PlayerData(long coins, int saveDataVer, int level, float exp, float limit)
     {
-        this.Coins = coins;
+        Coins = coins;
         SaveDataVersion = saveDataVer;
         Level = level;
         Experience = exp;

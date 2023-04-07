@@ -10,7 +10,7 @@ public class VehicleSystem : MonoBehaviour
 
     [Header("Vehicle capacity")]
     [SerializeField] private int maxGarbageCount = 25;
-    [SerializeField] public int currentGarbageCount = 0;
+    public int currentGarbageCount = 0;
 
     [Header("Money")]
     [SerializeField] private int moneyPerGarbage = 10;

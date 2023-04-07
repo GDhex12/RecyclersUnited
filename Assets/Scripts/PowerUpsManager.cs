@@ -13,25 +13,16 @@ public class PowerUpsManager : MonoBehaviour
     [SerializeField] private Color disabledButtonColor;
     [SerializeField] private Color enabledButtonColor;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (hit.transform.tag == "PowerUp")
+                if (hit.transform.CompareTag("PowerUp"))
                 {
                     hit.transform.gameObject.GetComponent<PowerUp>().OnClick();
                     PowerUpType type = hit.transform.gameObject.GetComponent<PowerUp>().GetType();

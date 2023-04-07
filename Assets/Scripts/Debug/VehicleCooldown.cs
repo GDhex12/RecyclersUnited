@@ -11,7 +11,6 @@ public class VehicleCooldown : MonoBehaviour
     public VehicleSystem vehicleManager;
     [SerializeField] private int lastSentCount = 0;
 
-    private bool cooldownFinished = false;
     public bool vehicleReturned = true;
 
     public void Initialize ()

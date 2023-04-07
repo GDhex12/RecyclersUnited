@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Transform volunteerRoot;
 
     //temporary for volunteer walking
-    public List<GameObject> trash = new List<GameObject>();
+    public List<GameObject> trash = new();
 
 
     private void Awake()

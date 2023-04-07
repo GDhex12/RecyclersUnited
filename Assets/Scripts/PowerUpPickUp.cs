@@ -34,9 +34,9 @@ public class PowerUpPickUp : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        transform.localScale = originalScale  ;
+        transform.localScale = originalScale;
         gameObject.transform.parent.gameObject.SetActive(false);
-        color.a =1;
+        color.a = 1;
         gameObject.GetComponent<SpriteRenderer>().color = color;
     }
 }

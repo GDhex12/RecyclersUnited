@@ -26,7 +26,6 @@ public class Location : MonoBehaviour
     [SerializeField] Sprite unlockedSprite;
     [SerializeField] Sprite boughtSprite;
 
-    GameObject _popup;
     bool _popupActive;
     Animator _animator;
     ExperienceStats _experienceStats;
@@ -35,7 +34,6 @@ public class Location : MonoBehaviour
     {
         _experienceStats = FindObjectOfType<ExperienceStats>();
         _animator = GetComponent<Animator>();
-        _popup = transform.Find("Popup").gameObject;
     }
 
     private void Start()

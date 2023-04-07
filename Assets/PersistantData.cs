@@ -3,7 +3,7 @@ using UnityEngine;
 public class PersistantData : MonoBehaviour
 {
     public static PersistantData Instance { get; private set; }
-    public PlayerData playerData = new PlayerData();
+    public PlayerData playerData = new();
     public int SaveDataVerToCheck = 2;
 
     private void Awake()
