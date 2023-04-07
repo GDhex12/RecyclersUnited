@@ -15,6 +15,7 @@ public class TrashPile : MonoBehaviour
         if(trashList.Count > 0)
         {
             _trashIndex = trashList.Count - 1;
+            trashSpawner = FindObjectOfType<TrashPileSpawner>();
         }
         else
         {

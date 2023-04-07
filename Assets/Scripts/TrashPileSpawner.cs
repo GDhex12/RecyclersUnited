@@ -21,5 +21,6 @@ public class TrashPileSpawner : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax));
         GameObject newTrash = Instantiate(possibleVariants[Random.Range(0, possibleVariants.Count-1)].gameObject, removedLoc, Quaternion.identity);
         newTrash.GetComponent<Animation>().Play();
+        TrashController.Instance.AddTrashPile(newTrash.GetComponent<TrashPile>());
     }
 }
