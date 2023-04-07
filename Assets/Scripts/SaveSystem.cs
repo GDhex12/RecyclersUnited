@@ -8,11 +8,9 @@ public static class SaveSystem
     {
         string path = Application.persistentDataPath + filepath;
 
-        using (StreamWriter stream = new StreamWriter(path))
-        {
-            string json = JsonUtility.ToJson(data);
-            stream.Write(json);
-        }  
+        using StreamWriter stream = new(path);
+        string json = JsonUtility.ToJson(data);
+        stream.Write(json);
     }
 
     public static void RemoveAllData()
@@ -32,9 +30,9 @@ public static class SaveSystem
         {
             SavePlayer(new PlayerData());
         }
-        PlayerData playerData = new PlayerData();
+        PlayerData playerData = new();
 
-        using (StreamReader stream = new StreamReader(path))
+        using (StreamReader stream = new(path))
         {
             string json = stream.ReadToEnd();
             playerData = JsonUtility.FromJson<PlayerData>(json);

@@ -6,7 +6,6 @@ using TMPro;
 
 public class CurrencyManager : MonoBehaviour
 {
-    int mapID;
     [SerializeField] long currencyAmount = 0;
     [SerializeField] TextMeshProUGUI currencyUI;
 

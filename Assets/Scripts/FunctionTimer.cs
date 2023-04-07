@@ -7,8 +7,8 @@ public class FunctionTimer
 {
     public static FunctionTimer Create(Action action, float timer)
     {
-        GameObject gameObject = new GameObject("FunctionTimer", typeof(MonoBehaviourHook));
-        FunctionTimer functionTimer = new FunctionTimer(action, timer, gameObject);
+        GameObject gameObject = new("FunctionTimer", typeof(MonoBehaviourHook));
+        FunctionTimer functionTimer = new(action, timer, gameObject);
 
 
         gameObject.GetComponent<MonoBehaviourHook>().onUpdate = functionTimer.Update;
@@ -22,15 +22,14 @@ public class FunctionTimer
 
         private void Update()
         {
-            if (onUpdate != null)
-                onUpdate();
+            onUpdate?.Invoke();
         }
     }
 
 
 
-    private GameObject gameObject;
-    private Action action;
+    private readonly GameObject gameObject;
+    private readonly Action action;
     private float timer;
     private bool isDestroyed;
 

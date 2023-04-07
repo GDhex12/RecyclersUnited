@@ -68,7 +68,6 @@ public class Storage : MonoBehaviour
 
     public void RemoveAllGarbage()//int
     {
-        int amount = currentGarbageCount;
         currentGarbageCount = 0;
         UpdateGarbage();
         //return amount;

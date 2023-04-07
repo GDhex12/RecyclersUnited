@@ -61,7 +61,7 @@ public class PowerUp : MonoBehaviour
 
 	protected void Move()
 	{
-		transform.position += transform.right *  Time.deltaTime * speed;
+		transform.position += speed * Time.deltaTime * transform.right;
 		float newY = startY + maxAmplitude * Mathf.Sin(speed * Time.time);
 		transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 
