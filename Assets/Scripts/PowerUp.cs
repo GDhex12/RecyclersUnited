@@ -25,9 +25,10 @@ public class PowerUp : MonoBehaviour
     [SerializeField] private Rigidbody rb;
 	[SerializeField] private PowerUpSpawner powerUpSpawner;
 	[SerializeField] private GameObject pickUpEffect;
-	[SerializeField] private Color AddPowerUpColor;
-	[SerializeField] private Color SpeedPowerUpColor;
+	[SerializeField] private Material AddPowerUpColor;
+	[SerializeField] private Material SpeedPowerUpColor;
 	[SerializeField] private GameObject PowerUpMesh;
+	private bool isActive = false;
 
 	Vector3 cameraPosition;
 
@@ -92,8 +93,12 @@ public class PowerUp : MonoBehaviour
 
 	public void OnClick()
 	{
+		if (isActive)
+		{
+			isActive = false;
+		}
 		Instantiate(pickUpEffect, gameObject.transform.position, Quaternion.identity);
-		powerUpSpawner.DecreasePowerUp(gameObject);
+		//powerUpSpawner.DecreasePowerUp(gameObject);
 
 		PowerUpMesh.GetComponent<PowerUpPickUp>().PickUp();
 
@@ -114,6 +119,7 @@ public class PowerUp : MonoBehaviour
 
 	private void DisablePowerUp()
 	{
+		isActive = false;
         powerUpSpawner.DecreasePowerUp(gameObject);
         gameObject.SetActive(false);
     }
@@ -138,18 +144,21 @@ public class PowerUp : MonoBehaviour
 
 		if (Random.value > 0.5)
 		{
-			PowerUpMesh.GetComponent<SpriteRenderer>().color = SpeedPowerUpColor;
+			PowerUpMesh.GetComponent<MeshRenderer>().material = SpeedPowerUpColor;
 			type = PowerUpType.Speed;
 		}
 		else
 		{
-			PowerUpMesh.GetComponent<SpriteRenderer>().color = AddPowerUpColor;
+			PowerUpMesh.GetComponent<MeshRenderer>().material = AddPowerUpColor;
 			type = PowerUpType.Add;
 		}
-			
 
+		isActive = true;
 	}
 
-
+	public bool IsPowerUpActive()
+	{
+		return isActive;
+	}
 
 }

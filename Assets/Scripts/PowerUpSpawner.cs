@@ -8,13 +8,13 @@ using Random = UnityEngine.Random;
 public class PowerUpSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private float spawnRate;
+    [SerializeField] private int spawnRate=0;
     [SerializeField] private int maxPowerUps;
     [SerializeField] private GameObject powerUpPrefab;
     [SerializeField] private Transform[] powerUpsSpawnPoint = new Transform[2];
     [SerializeField] private List<GameObject> allPowerUps;
     [SerializeField] private List<GameObject> activePowerUps;
-    private int timeToNextPowerUp;
+    private float timeToNextPowerUp;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class PowerUpSpawner : MonoBehaviour
 
     public void PrepNextPowerUp()
 	{
-        timeToNextPowerUp = Random.Range(5, 20);
+        timeToNextPowerUp = Random.Range(5f, spawnRate);
         FunctionTimer.Create(SpawnPowerUp, timeToNextPowerUp);
 	}
 
