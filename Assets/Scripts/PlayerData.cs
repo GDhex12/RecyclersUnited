@@ -3,10 +3,12 @@ using System;
 [System.Serializable]
 public class PlayerData
 {
-    public int SaveDataVersion = 2;
+    public int SaveDataVersion = 3;
 
     public long Coins = 0;
-    public int VolunteerCount = 1;
+    public int VolunteerPickerCount = 1;
+    public int VolunteerLoaderCount = 1;
+
 
     public int StorageGarbageCount = 0;
     public int VehicleGarbageCount = 0;
@@ -26,9 +28,10 @@ public class PlayerData
 
     public PlayerData()
     {
-        SaveDataVersion = 2;
+        SaveDataVersion = 3;
         Coins = 0;
-        VolunteerCount = 1;
+        VolunteerPickerCount = 1;
+        VolunteerLoaderCount = 1;
         StorageGarbageCount = 0;
         VehicleGarbageCount = 0;
         Level = 1;

@@ -29,11 +29,11 @@ public class SpawnObject : MonoBehaviour
        return Instantiate(picker, parent.position, Quaternion.identity, parent);
     }
 
-    public void SpawnVolunteerInSceneIfAfforded(long price)
+    public void SpawnVolunteerPickerInSceneIfAfforded(long price)
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {
-            PersistantData.Instance.playerData.VolunteerCount++;
+            PersistantData.Instance.playerData.VolunteerPickerCount++;
 
             GameObject temp = Instantiate(picker, gameObject.transform.position, Quaternion.identity, gameObject.transform);
             temp.SetActive(true);
@@ -48,19 +48,26 @@ public class SpawnObject : MonoBehaviour
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {
-            //PersistantData.Instance.playerData.VolunteerCount++;
+            PersistantData.Instance.playerData.VolunteerLoaderCount++;
             GameObject temp = Instantiate(loader, gameObject.transform.position, Quaternion.identity, gameObject.transform);
             temp.SetActive(true);
-            //SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+            SaveSystem.SavePlayer(PersistantData.Instance.playerData);
             countManager.AddVolunteersToList(temp);
         }   
     }
 
-    public void SpawnCertainAmountOfVolunteers(Transform parent, int volunteerCount)
+    public void SpawnCertainAmountOfPickerVolunteers(int volunteerCount)
     {
         for (int i=0; i<volunteerCount; i++)
         {
-            Instantiate(picker, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, parent).SetActive(true);
+            Instantiate(picker, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, gameObject.transform).SetActive(true);
+        }
+    }
+    public void SpawnCertainAmountOfLoaderVolunteers(int volunteerCount)
+    {
+        for (int i = 0; i < volunteerCount; i++)
+        {
+            Instantiate(loader, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, gameObject.transform).SetActive(true);
         }
     }
     private Vector3 RandomPositionBetween(GameObject from, GameObject to)
