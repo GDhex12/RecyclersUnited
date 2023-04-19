@@ -24,17 +24,19 @@ public class PowerUpsManager : MonoBehaviour
             {
                 if (hit.transform.CompareTag("PowerUp"))
                 {
-                    hit.transform.gameObject.GetComponent<PowerUp>().OnClick();
-                    PowerUpType type = hit.transform.gameObject.GetComponent<PowerUp>().GetType();
-                    if (type == PowerUpType.Add)
+                    if (hit.transform.gameObject.GetComponent<PowerUp>().IsPowerUpActive())
                     {
-                        countManager.AddVolunteersTemporary(3, 10f);
+                        hit.transform.gameObject.GetComponent<PowerUp>().OnClick();
+                        PowerUpType type = hit.transform.gameObject.GetComponent<PowerUp>().GetType();
+                        if (type == PowerUpType.Add)
+                        {
+                            countManager.AddVolunteersTemporary(3, 10f);
+                        }
+                        else if (type == PowerUpType.Speed)
+                        {
+                            countManager.IncreaseVolunteersSpeed();
+                        }
                     }
-                    else if (type == PowerUpType.Speed)
-                    {
-                        countManager.IncreaseVolunteersSpeed();
-                    }
-
 
                 }
             }
