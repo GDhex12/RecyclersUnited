@@ -100,6 +100,11 @@ public class VehicleSystem : MonoBehaviour
         CurrencyManager.instance.AddCurrency(garbageCount * moneyPerGarbage);
     }
 
+    public string GetGarbageToMoneyToString(int garbageCount)
+    {
+        return CurrencyManager.instance.CurrencyStringFormat(garbageCount * moneyPerGarbage);
+    }
+
     public bool IsFull()
     {
         return !(currentGarbageCount < maxGarbageCount);

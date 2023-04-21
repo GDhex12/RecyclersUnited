@@ -91,7 +91,7 @@ public class CurrencyManager : MonoBehaviour
     public string CurrencyStringFormat(long amount)
     {
         string line = "";
-        int roundDigits = 1;
+        int roundDigits = 2;
         switch (amount)
         {
             case < 1000:
