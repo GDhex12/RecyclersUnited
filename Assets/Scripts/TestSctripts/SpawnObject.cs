@@ -89,6 +89,9 @@ public class SpawnObject : MonoBehaviour
         {
             picker.GetComponent<NavMeshAgent>().speed += increaseAmount;
         }
+
+        picker.GetComponent<NavMeshAgent>().speed += increaseAmount;
+
        
     }
     public void IncreaseLoaderSpeed(float increaseAmount)
@@ -100,6 +103,8 @@ public class SpawnObject : MonoBehaviour
         {
             loader.GetComponent<NavMeshAgent>().speed += increaseAmount;
         }
+
+        loader.GetComponent<NavMeshAgent>().speed += increaseAmount;
     }
     public void IncreaseLoaderVolunteerBag(int increaseAmount)
     {
@@ -109,6 +114,8 @@ public class SpawnObject : MonoBehaviour
         foreach (LoaderVolunteer loader in objectsWithScript)
         {
             loader.bagStorage += increaseAmount;
-        }        
+        }
+        loader.GetComponent<LoaderVolunteer>().bagStorage += increaseAmount;
+
     }
 }
