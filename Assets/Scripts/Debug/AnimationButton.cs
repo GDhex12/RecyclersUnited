@@ -18,6 +18,7 @@ public class AnimationButton : MonoBehaviour
     {
         //GameObject[] allVehicles = vehicleSelection.vehicles;
         //int currentIdx = vehicleSelection.arrayIdx;
-        truck.GetComponent<Animator>().Play(string.Format("{0}GoesAway", truck.name));
+        //truck.GetComponent<Animator>().Play(string.Format("{0}GoesAway", truck.name));
+        truck.GetComponent<Animator>().Play("TruckGoesAway");
     }
 }

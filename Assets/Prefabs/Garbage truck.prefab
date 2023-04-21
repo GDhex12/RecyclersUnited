@@ -100,10 +100,8 @@ GameObject:
   - component: {fileID: 1660859939363314418}
   - component: {fileID: 417565231}
   - component: {fileID: 417565232}
-  - component: {fileID: 417565229}
-  - component: {fileID: 417565230}
   m_Layer: 9
-  m_Name: car-truck-dump
+  m_Name: Garbage truck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,42 +158,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.986728, y: 3.22684, z: 9.226843}
   m_Center: {x: 0.06993763, y: 1.6311831, z: -0.110056095}
---- !u!95 &417565229
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660859939363145426}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f428c4b212ac6d4ab2f1e3cd3f922c4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!114 &417565230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660859939363145426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111e875b6f11f6f4998fa93a71cf29cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeoutSeconds: 15
-  timeString: {fileID: 0}
-  cooldownContainer: {fileID: 0}
-  vehicleManager: {fileID: 0}
 --- !u!1 &1660859939363145428
 GameObject:
   m_ObjectHideFlags: 0
