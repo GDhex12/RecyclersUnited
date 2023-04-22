@@ -5,17 +5,23 @@ using UnityEngine;
 public class TrashPile : MonoBehaviour
 {
     [SerializeField] List<GameObject> trashList;
+    [SerializeField] int trashAmount;
     public TrashPileSpawner trashSpawner;
     int _trashIndex;
+    int _trashPerChange, _trashLeftAfterDivision;
+    int _trashTaken = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
+
         if(trashList.Count > 0)
         {
             _trashIndex = trashList.Count - 1;
             trashSpawner = FindObjectOfType<TrashPileSpawner>();
+            _trashPerChange = trashAmount / trashList.Count;
+            _trashLeftAfterDivision = trashAmount % trashList.Count;
         }
         else
         {
@@ -24,16 +30,31 @@ public class TrashPile : MonoBehaviour
         }
     }
 
+    //evens amount of trash to take between visual change
     public void RemoveTrash()
     {
-        trashList[_trashIndex].SetActive(false);
-        _trashIndex--;
+        trashAmount--;
+        _trashTaken++;
+        int trashToTake = _trashLeftAfterDivision > 0 ? _trashPerChange + 1 : _trashPerChange;
+        if (trashToTake <= _trashTaken)
+        {
+            ReduceVisualy();
+            if (_trashLeftAfterDivision > 0)
+                _trashLeftAfterDivision--;
+            _trashTaken = 0;
+        }
 
-        if(_trashIndex < 0)
+        if(trashAmount <= 0)
         {
             trashSpawner.LaunchRespawn(gameObject.transform.position);
             TrashController.Instance.RemoveTrashPile(this);
             Destroy(gameObject);
         }
+    }
+
+    void ReduceVisualy()
+    {
+        trashList[_trashIndex].SetActive(false);
+        _trashIndex--;
     }
 }
