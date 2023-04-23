@@ -12,6 +12,7 @@ public class AnimationButton : MonoBehaviour
     {
         //vehicleSelection = temp.GetComponent<ChangeVehicles>();
         GetComponent<Button>().onClick.AddListener(LaunchAnimation);
+        Debug.Log("hi");
     }
 
     private void LaunchAnimation ()
