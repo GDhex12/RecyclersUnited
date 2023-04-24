@@ -48,8 +48,11 @@ public class GameManager : MonoBehaviour
     private void LoadPlayerDataToScene()
     {
         //Loading Volunteers to scene
-        FindObjectOfType<SpawnObject>().SpawnCertainAmountOfVolunteers(volunteerRoot, PersistantData.Instance.playerData.VolunteerCount);
-        storage.GetParamsFromSave();
-        FindObjectOfType<VehicleSystem>().GetParamsFromSave();
+        if (volunteerRoot || storage != null)
+        {
+            FindObjectOfType<SpawnObject>().SpawnCertainAmountOfVolunteers(volunteerRoot, PersistantData.Instance.playerData.VolunteerCount);
+            storage.GetParamsFromSave();
+            FindObjectOfType<VehicleSystem>().GetParamsFromSave();
+        }
     }
 }
