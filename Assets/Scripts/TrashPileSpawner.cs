@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrashPileSpawner : MonoBehaviour
 {
     [Header("Main references")]
+    public Transform parent;
     public List<TrashPile> possibleVariants = new();
 
     [Header("Random wait times (in seconds)")]
@@ -19,7 +20,7 @@ public class TrashPileSpawner : MonoBehaviour
     public IEnumerator InitiateNewSpawn (Vector3 removedLoc)
     {
         yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax));
-        GameObject newTrash = Instantiate(possibleVariants[Random.Range(0, possibleVariants.Count-1)].gameObject, removedLoc, Quaternion.identity);
+        GameObject newTrash = Instantiate(possibleVariants[Random.Range(0, possibleVariants.Count-1)].gameObject, removedLoc, Quaternion.identity, parent);
         newTrash.GetComponent<Animation>().Play();
         TrashController.Instance.AddTrashPile(newTrash.GetComponent<TrashPile>());
     }
