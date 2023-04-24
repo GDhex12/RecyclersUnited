@@ -7,13 +7,28 @@ using System;
 public class Vehicle : ScriptableObject
 {
 	[SerializeField]private GameObject VehiclePrefab;
-
+	[SerializeField] private int id;
 	[SerializeField] private int price;
+	[SerializeField] private int levelRequired;
+	[SerializeField] private bool isDefault;
 
 
 
 	public int GetPrice()
 	{
 		return price;
+	}
+	public int GetLevelRequired()
+	{
+		return levelRequired;
+	}
+
+	public bool IsDefault()
+	{
+		return isDefault;
+	}
+	public int GetId()
+	{
+		return id;
 	}
 }
