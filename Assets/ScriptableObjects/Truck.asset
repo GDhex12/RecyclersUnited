@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef3a6586a565c146a9e910d1e8d8481, type: 3}
   m_Name: Truck
   m_EditorClassIdentifier: 
-  VehiclePrefab: {fileID: 0}
-  price: 0
+  VehiclePrefab: {fileID: 4080108481220529861, guid: 126c50539545c6b43acce466e1995651, type: 3}
+  id: 1
+  price: 10000
+  levelRequired: 10
+  isDefault: 0
