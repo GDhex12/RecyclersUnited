@@ -48,9 +48,14 @@ public class GameManager : MonoBehaviour
     private void LoadPlayerDataToScene()
     {
         //Loading Volunteers to scene
+
+        if (volunteerRoot || storage != null)
+        {
         spawner.SpawnCertainAmountOfPickerVolunteers(PersistantData.Instance.playerData.VolunteerPickerCount);
         spawner.SpawnCertainAmountOfLoaderVolunteers(PersistantData.Instance.playerData.VolunteerLoaderCount);
         storage.GetParamsFromSave();
         vehicle.GetParamsFromSave();
+        }
+
     }
 }
