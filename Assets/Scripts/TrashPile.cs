@@ -18,6 +18,9 @@ public class TrashPile : MonoBehaviour
 
         if(trashList.Count > 0)
         {
+            if (trashAmount < trashList.Count)
+                trashAmount = trashList.Count;
+
             _trashIndex = trashList.Count - 1;
             trashSpawner = FindObjectOfType<TrashPileSpawner>();
             _trashPerChange = trashAmount / trashList.Count;
@@ -49,6 +52,14 @@ public class TrashPile : MonoBehaviour
             trashSpawner.LaunchRespawn(gameObject.transform.position);
             TrashController.Instance.RemoveTrashPile(this);
             Destroy(gameObject);
+        }
+    }
+
+    public void RemoveTrash(int amount)
+    {
+        for (int i=0; i < amount; i++)
+        {
+            RemoveTrash();
         }
     }
 
