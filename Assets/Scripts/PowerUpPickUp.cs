@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUpPickUp : MonoBehaviour
 {
     private float shrinkTime = 0.5f;
-    private float currentTime = 0.0f;
+    //private float currentTime = 0.0f;
     private Vector3 originalScale;
 
 
