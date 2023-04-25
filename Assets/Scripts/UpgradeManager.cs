@@ -125,6 +125,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (storageCapacityData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.StorageCapacityCurrentLevel = storageCapacityData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 _storage.SetMaxGarbageCount(_storage.GetMaxGarbageCount() + storageCapacityIncrement);
                 storageCapacityUI.UpdateUI(storageCapacityData);
             }
@@ -137,6 +141,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (vehicleCapacityData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.VehicleCapacityCurrentLevel = vehicleCapacityData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + vehicleCapacityIncrement);
                 vehicleCapacityUI.UpdateUI(vehicleCapacityData);
             }
@@ -149,6 +157,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (pickerSpeedData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.PickerSpeedCurrentLevel = pickerSpeedData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 GameManager.Instance.spawner.IncreasePickerSpeed(pickerSpeedIncrement);
                 pickerSpeedUI.UpdateUI(pickerSpeedData);
             }
@@ -160,6 +172,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (loaderSpeedData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.LoaderSpeedCurrentLevel = loaderSpeedData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 GameManager.Instance.spawner.IncreaseLoaderSpeed(loaderSpeedIncrement);
                 loaderSpeedUI.UpdateUI(loaderSpeedData);
             }
@@ -171,6 +187,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (loaderBagData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.LoaderBagCurrentLevel = loaderBagData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 GameManager.Instance.spawner.IncreaseLoaderVolunteerBag(loaderBagIncrement);
                 loaderBagUI.UpdateUI(loaderBagData);
             }

@@ -15,7 +15,7 @@ public class SpawnObject : MonoBehaviour
     [SerializeField] GameObject loader;
     [SerializeField] private VolunteerCountManager countManager;
 
-
+   
 
     public void SpawnObjectInScene(Transform parent)
     {
@@ -29,11 +29,11 @@ public class SpawnObject : MonoBehaviour
        return Instantiate(picker, parent.position, Quaternion.identity, parent);
     }
 
-    public void SpawnVolunteerInSceneIfAfforded(long price)
+    public void SpawnVolunteerPickerInSceneIfAfforded(long price)
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {
-            PersistantData.Instance.playerData.VolunteerCount++;
+            PersistantData.Instance.playerData.VolunteerPickerCount++;
 
             GameObject temp = Instantiate(picker, gameObject.transform.position, Quaternion.identity, gameObject.transform);
             temp.SetActive(true);
@@ -48,19 +48,30 @@ public class SpawnObject : MonoBehaviour
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {
-            //PersistantData.Instance.playerData.VolunteerCount++;
+            PersistantData.Instance.playerData.VolunteerLoaderCount++;
             GameObject temp = Instantiate(loader, gameObject.transform.position, Quaternion.identity, gameObject.transform);
             temp.SetActive(true);
-            //SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+            SaveSystem.SavePlayer(PersistantData.Instance.playerData);
             countManager.AddVolunteersToList(temp);
         }   
     }
 
-    public void SpawnCertainAmountOfVolunteers(Transform parent, int volunteerCount)
+    public void SpawnCertainAmountOfPickerVolunteers(int volunteerCount)
     {
         for (int i=0; i<volunteerCount; i++)
         {
-            Instantiate(picker, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, parent).SetActive(true);
+            GameObject temp = Instantiate(picker, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, gameObject.transform);
+            temp.SetActive(true);
+            countManager.AddVolunteersToList(temp);
+        }
+    }
+    public void SpawnCertainAmountOfLoaderVolunteers(int volunteerCount)
+    {
+        for (int i = 0; i < volunteerCount; i++)
+        {
+            GameObject temp = Instantiate(loader, RandomPositionBetween(spawnFrom, spawnTo), Quaternion.identity, gameObject.transform);
+            temp.SetActive(true);
+            countManager.AddVolunteersToList(temp);
         }
     }
     private Vector3 RandomPositionBetween(GameObject from, GameObject to)
@@ -74,34 +85,26 @@ public class SpawnObject : MonoBehaviour
 
     public void IncreasePickerSpeed(float increaseAmount)
     {
-        // Find all objects with the MyScript component
-        PickerVolunteer[] objectsWithScript = FindObjectsOfType<PickerVolunteer>();
-
-        // Loop through each object and change the value of myVariable
-        foreach (PickerVolunteer picker in objectsWithScript)
+        for (int i = 0; i < countManager.spawnedPickerVolunteersList.Count; i++)
         {
-            picker.GetComponent<NavMeshAgent>().speed += increaseAmount;
+            countManager.spawnedPickerVolunteersList[i].GetComponent<NavMeshAgent>().speed += increaseAmount;
         }
-       
+        picker.GetComponent<NavMeshAgent>().speed += increaseAmount;       
     }
     public void IncreaseLoaderSpeed(float increaseAmount)
     {
-        LoaderVolunteer[] objectsWithScript = FindObjectsOfType<LoaderVolunteer>();
-
-        // Loop through each object and change the value of myVariable
-        foreach (LoaderVolunteer loader in objectsWithScript)
+        for(int i = 0; i< countManager.spawnedLoaderVolunteersList.Count;i++)
         {
-            loader.GetComponent<NavMeshAgent>().speed += increaseAmount;
+            countManager.spawnedLoaderVolunteersList[i].GetComponent<NavMeshAgent>().speed += increaseAmount;
         }
+        loader.GetComponent<NavMeshAgent>().speed += increaseAmount;
     }
     public void IncreaseLoaderVolunteerBag(int increaseAmount)
     {
-        LoaderVolunteer[] objectsWithScript = FindObjectsOfType<LoaderVolunteer>();
-
-        // Loop through each object and change the value of myVariable
-        foreach (LoaderVolunteer loader in objectsWithScript)
+        for (int i = 0; i < countManager.spawnedLoaderVolunteersList.Count; i++)
         {
-            loader.bagStorage += increaseAmount;
-        }        
+            countManager.spawnedLoaderVolunteersList[i].bagStorage += increaseAmount;
+        }
+        loader.GetComponent<LoaderVolunteer>().bagStorage += increaseAmount;
     }
 }
