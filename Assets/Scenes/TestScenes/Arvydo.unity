@@ -1883,6 +1883,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 996083844, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
   m_PrefabInstance: {fileID: 1343300754}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &706645190 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8337975383238866419, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+  m_PrefabInstance: {fileID: 1343300754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &724942098 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2490080235935541698, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
@@ -2713,7 +2718,6 @@ Transform:
   - {fileID: 1057556678}
   - {fileID: 351914033}
   - {fileID: 101566301}
-  - {fileID: 1763395433}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3122,6 +3126,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 628699275071758581, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763395434}
+    - target: {fileID: 628699275071758581, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeStorageCapacity
+      objectReference: {fileID: 0}
     - target: {fileID: 660002855343055779, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3302,6 +3314,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenExitMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6556762249660617384, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763395434}
+    - target: {fileID: 6556762249660617384, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeVehicleCapacity
+      objectReference: {fileID: 0}
     - target: {fileID: 6621638117754886881, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3317,6 +3337,14 @@ PrefabInstance:
     - target: {fileID: 7395317407479708424, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenExitMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496523372501810757, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763395434}
+    - target: {fileID: 7496523372501810757, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeLoaderVolunteerSpeed
       objectReference: {fileID: 0}
     - target: {fileID: 8024707335223833503, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3454,6 +3482,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8849373359181053661, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763395434}
+    - target: {fileID: 8849373359181053661, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeLoaderVolunteerBag
+      objectReference: {fileID: 0}
     - target: {fileID: 8976324300943353518, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3461,6 +3497,14 @@ PrefabInstance:
     - target: {fileID: 8976324300943353518, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenExitMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157718700039617492, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763395434}
+    - target: {fileID: 9157718700039617492, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradePickerVolunteerSpeed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
@@ -3944,12 +3988,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763395432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 183.99994, y: 331.8518, z: 0}
-  m_LocalScale: {x: 0.74074, y: 0.74074, z: 0.74074}
+  m_LocalPosition: {x: -402.00006, y: -711.11115, z: 0}
+  m_LocalScale: {x: 0.555555, y: 0.555555, z: 0.555555}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1242293048}
-  m_RootOrder: 9
+  m_Father: {fileID: 706645190}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1763395434
 MonoBehaviour:
@@ -3987,7 +4031,7 @@ MonoBehaviour:
   storageCapacityIncrement: 100
   pickerSpeedData:
     UpgradeName: Picker Speed
-    priceMultiplier: 1.2
+    priceMultiplier: 2
     currentLvl: 1
     maxLvl: 10
     initPrice: 10
@@ -3998,7 +4042,7 @@ MonoBehaviour:
   pickerSpeedIncrement: 1
   loaderSpeedData:
     UpgradeName: Loader Speed
-    priceMultiplier: 1.2
+    priceMultiplier: 2
     currentLvl: 1
     maxLvl: 10
     initPrice: 10
@@ -4009,7 +4053,7 @@ MonoBehaviour:
   loaderSpeedIncrement: 1
   loaderBagData:
     UpgradeName: LoaderBag
-    priceMultiplier: 1.2
+    priceMultiplier: 2
     currentLvl: 1
     maxLvl: 10
     initPrice: 10
