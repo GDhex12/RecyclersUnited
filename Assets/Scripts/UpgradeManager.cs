@@ -19,8 +19,13 @@ public class UpgradeManager : MonoBehaviour
 
         public UpgradeData()
         {
-            //currentLvl = (save file data)
-            price = (long)(initPrice * Mathf.Pow(priceMultiplier, currentLvl-1));
+            price = initPrice;
+        }
+
+        public void SetCurrLvl(int currentLvl)
+        {
+            this.currentLvl = currentLvl;
+            price = (long)(initPrice * Mathf.Pow(priceMultiplier, currentLvl - 1));
         }
 
         public bool Upgrade()
@@ -99,15 +104,22 @@ public class UpgradeManager : MonoBehaviour
         _storage = FindObjectOfType<Storage>();
         _vehicleSystem = FindObjectOfType<VehicleSystem>();
 
-        vehicleCapacityUI.UpdateUI(vehicleCapacityData);
-        storageCapacityUI.UpdateUI(storageCapacityData);
-        pickerSpeedUI.UpdateUI(pickerSpeedData);
-        loaderSpeedUI.UpdateUI(loaderSpeedData);
-        loaderBagUI.UpdateUI(loaderBagData);
+        SetupData();
 
         
     }
 
+    void SetupData()
+    {
+        LoadStorageCapacity();
+        LoadVehicleCapacity();
+
+        pickerSpeedUI.UpdateUI(pickerSpeedData);
+        loaderSpeedUI.UpdateUI(loaderSpeedData);
+        loaderBagUI.UpdateUI(loaderBagData);
+    }
+
+    //------------------Upgrade--------------------
     public void UpgradeStorageCapacity()
     {
         if (CurrencyManager.instance.IsAffordable(storageCapacityData.price))
@@ -164,5 +176,24 @@ public class UpgradeManager : MonoBehaviour
                 loaderBagUI.UpdateUI(loaderBagData);
             }
         }
+    }
+
+    //-----------------load-----------------------
+    void LoadStorageCapacity()
+    {
+        int level = 2; // load from file here
+        storageCapacityData.SetCurrLvl(level);
+        int amount = storageCapacityIncrement * (storageCapacityData.currentLvl-1);
+        _storage.SetMaxGarbageCount(_storage.GetMaxGarbageCount() + amount);
+        storageCapacityUI.UpdateUI(storageCapacityData);
+    }
+    
+    void LoadVehicleCapacity()
+    {
+        int level = 3; // load from file here
+        vehicleCapacityData.SetCurrLvl(level);
+        int amount = vehicleCapacityIncrement * (vehicleCapacityData.currentLvl-1);
+        _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + amount);
+        vehicleCapacityUI.UpdateUI(vehicleCapacityData);
     }
 }
