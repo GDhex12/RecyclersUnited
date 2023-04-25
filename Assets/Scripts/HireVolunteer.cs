@@ -65,7 +65,7 @@ public class HireVolunteer : MonoBehaviour
         switch (volunteerType)
         {
             case VolunteerType.volunteer:
-                _spawnObject.SpawnVolunteerInSceneIfAfforded(price);
+                _spawnObject.SpawnVolunteerPickerInSceneIfAfforded(price);
                 break;
             case VolunteerType.loader:
                 _spawnObject.SpawnLoaderInSceneIfAfforded(price);
