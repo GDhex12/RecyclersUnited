@@ -19,6 +19,8 @@ public class PowerUp : MonoBehaviour
 	[SerializeField] private float maxSpeedY = 1.0f; // Set the speed of the up-down movement
 	private float startY; // Store the object's initial Y position
 
+	[SerializeField] float flyDuration = 40f;
+
 
 
 
@@ -131,7 +133,7 @@ public class PowerUp : MonoBehaviour
 
 	public void Setup(int direction)
 	{
-		FunctionTimer.Create(DisablePowerUp, 25f);
+		FunctionTimer.Create(DisablePowerUp, flyDuration);
 		if(direction == 0)
 		{
 			speed = speed > 0 ? speed : speed * -1;

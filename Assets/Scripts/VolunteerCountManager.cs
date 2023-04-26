@@ -23,6 +23,8 @@ public class VolunteerCountManager : MonoBehaviour
     [SerializeField] private GameObject walkOffPoint;
     [SerializeField] private int saveSystem; //Placeholder for a save system
 
+    [SerializeField] float powerUpSpeedMultiplier = 1.5f;
+
     void Start()
     {
         LoadVolunteersCount();
@@ -97,11 +99,11 @@ public class VolunteerCountManager : MonoBehaviour
 
         foreach (GameObject obj in allVolunteers)
 		{
-            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed * 1.5f;
+            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed * powerUpSpeedMultiplier;
         }
         foreach (GameObject obj in temporaryAddedVolunteersList)
         {
-            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed * 1.5f;
+            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed * powerUpSpeedMultiplier;
         }
         FunctionTimer.Create(DecreaseVolunteersSpeed, 10f);
 	}
@@ -111,13 +113,13 @@ public class VolunteerCountManager : MonoBehaviour
 
         foreach (GameObject obj in allVolunteers)
         {
-            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed / 1.5f;
+            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed / powerUpSpeedMultiplier;
         }
         foreach (GameObject obj in temporaryAddedVolunteersList)
         {
-            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed / 1.5f;
+            obj.GetComponent<NavMeshAgent>().speed = obj.GetComponent<NavMeshAgent>().speed / powerUpSpeedMultiplier;
         }
-        FunctionTimer.Create(DecreaseVolunteersSpeed, 10f);
+        //FunctionTimer.Create(DecreaseVolunteersSpeed, 10f);
     }
     /// <summary>
     /// Returns a volunteers count

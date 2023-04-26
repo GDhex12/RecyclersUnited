@@ -23,6 +23,8 @@ public class Volunteer : MonoBehaviour
 
     public bool carryingTrash = false;
 
+    protected bool isGoingOfMap = false;
+
 
 
     public GameObject thrashInHand; // for enabling thrash model when volunteer is coming back
@@ -71,6 +73,7 @@ public class Volunteer : MonoBehaviour
         
         MoveTo(walkOffPoint);
         navMeshAgent.SetDestination(walkOffPoint);
+        isGoingOfMap = true;
         yield return new WaitForSeconds(20f);
         Destroy(gameObject);
     }

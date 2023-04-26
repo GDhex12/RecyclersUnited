@@ -4219,7 +4219,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8337975383238866419}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3978056421406931611
 MonoBehaviour:
@@ -4278,7 +4278,7 @@ MonoBehaviour:
     BtnText: {fileID: 6682996794501835105}
   loaderSpeedIncrement: 1
   loaderBagData:
-    UpgradeName: LoaderBag
+    UpgradeName: Loader Bag Size
     priceMultiplier: 1.2
     currentLvl: 1
     maxLvl: 10
@@ -12827,7 +12827,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3827115201309082028}
-  - {fileID: 996083847}
   - {fileID: 1628250496766464162}
   m_Father: {fileID: 0}
   m_RootOrder: 0
