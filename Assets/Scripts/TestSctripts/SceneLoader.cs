@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
+        LocationLoader.Instance.LoadScene_Transition(sceneName);
     }
 }

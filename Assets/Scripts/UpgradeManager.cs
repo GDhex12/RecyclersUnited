@@ -19,8 +19,13 @@ public class UpgradeManager : MonoBehaviour
 
         public UpgradeData()
         {
-            //currentLvl = (save file data)
-            price = (long)(initPrice * Mathf.Pow(priceMultiplier, currentLvl-1));
+            price = initPrice;
+        }
+
+        public void SetCurrLvl(int currentLvl)
+        {
+            this.currentLvl = currentLvl;
+            price = (long)(initPrice * Mathf.Pow(priceMultiplier, currentLvl - 1));
         }
 
         public bool Upgrade()
@@ -99,15 +104,21 @@ public class UpgradeManager : MonoBehaviour
         _storage = FindObjectOfType<Storage>();
         _vehicleSystem = FindObjectOfType<VehicleSystem>();
 
-        vehicleCapacityUI.UpdateUI(vehicleCapacityData);
-        storageCapacityUI.UpdateUI(storageCapacityData);
-        pickerSpeedUI.UpdateUI(pickerSpeedData);
-        loaderSpeedUI.UpdateUI(loaderSpeedData);
-        loaderBagUI.UpdateUI(loaderBagData);
+        SetupData();
 
         
     }
 
+    void SetupData()
+    {
+        LoadStorageCapacity();
+        LoadVehicleCapacity();
+        LoadPickerSpeed();
+        LoadLoaderSpeed();
+        LoadLoaderBag();
+    }
+
+    //------------------Upgrade--------------------
     public void UpgradeStorageCapacity()
     {
         if (CurrencyManager.instance.IsAffordable(storageCapacityData.price))
@@ -184,5 +195,51 @@ public class UpgradeManager : MonoBehaviour
                 loaderBagUI.UpdateUI(loaderBagData);
             }
         }
+    }
+
+    //-----------------load-----------------------
+    void LoadStorageCapacity()
+    {
+        int level = PersistantData.Instance.playerData.StorageCapacityCurrentLevel; // load from file here
+        storageCapacityData.SetCurrLvl(level);
+        int amount = storageCapacityIncrement * (storageCapacityData.currentLvl-1);
+        _storage.SetMaxGarbageCount(_storage.GetMaxGarbageCount() + amount);
+        storageCapacityUI.UpdateUI(storageCapacityData);
+    }
+    
+    void LoadVehicleCapacity()
+    {
+        int level = PersistantData.Instance.playerData.VehicleCapacityCurrentLevel; // load from file here
+        vehicleCapacityData.SetCurrLvl(level);
+        int amount = vehicleCapacityIncrement * (vehicleCapacityData.currentLvl-1);
+        _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + amount);
+        vehicleCapacityUI.UpdateUI(vehicleCapacityData);
+    }
+    
+    void LoadPickerSpeed()
+    {
+        int level = PersistantData.Instance.playerData.PickerSpeedCurrentLevel; // load from file here
+        pickerSpeedData.SetCurrLvl(level);
+        int amount = pickerSpeedIncrement * (pickerSpeedData.currentLvl-1);
+        GameManager.Instance.spawner.IncreasePickerSpeed(amount);
+        pickerSpeedUI.UpdateUI(pickerSpeedData);
+    }
+    
+    void LoadLoaderSpeed()
+    {
+        int level = PersistantData.Instance.playerData.LoaderSpeedCurrentLevel; // load from file here
+        loaderSpeedData.SetCurrLvl(level);
+        int amount = loaderSpeedIncrement * (loaderSpeedData.currentLvl-1);
+        GameManager.Instance.spawner.IncreaseLoaderSpeed(amount);
+        loaderSpeedUI.UpdateUI(loaderSpeedData);
+    }
+    
+    void LoadLoaderBag()
+    {
+        int level = PersistantData.Instance.playerData.LoaderBagCurrentLevel; // load from file here
+        loaderBagData.SetCurrLvl(level);
+        int amount = loaderBagIncrement * (loaderBagData.currentLvl-1);
+        GameManager.Instance.spawner.IncreaseLoaderVolunteerBag(amount);
+        loaderBagUI.UpdateUI(loaderBagData);
     }
 }
