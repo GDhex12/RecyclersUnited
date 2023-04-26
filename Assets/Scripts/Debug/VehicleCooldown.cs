@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
 public class VehicleCooldown : MonoBehaviour
 {
-    public float timeoutSeconds;
+    public float timeoutSeconds, timeLeft;
     public TMP_Text timeString;
     public GameObject cooldownContainer;
     public VehicleSystem vehicleManager;
@@ -19,11 +20,78 @@ public class VehicleCooldown : MonoBehaviour
 
     public bool vehicleReturned = true;
 
+    bool _isTimerRunning;
+    [SerializeField] bool isFilling = true;
+
+    string PREF_IS_TIME_RUNNING_NAME;
+    string PREF_TIME_LEFT_NAME;
+    string PREF_LAST_SENT_COUNT_NAME;
+
+    private void Awake()
+    {
+        PREF_IS_TIME_RUNNING_NAME = $"{SceneManager.GetActiveScene().name}_isTimeRunning";
+        PREF_TIME_LEFT_NAME = $"{SceneManager.GetActiveScene().name}_timeLeft";
+        PREF_LAST_SENT_COUNT_NAME = $"{SceneManager.GetActiveScene().name}_lastSentCount";
+    }
+
+    private void Start()
+    {
+        int tempIsTimerRunning = PlayerPrefs.GetInt(PREF_IS_TIME_RUNNING_NAME, 0);
+
+        if (tempIsTimerRunning == 1)
+        {
+            float timeDiff = TimeManager.instance.TimeDiffBtwExitAndStart();
+            timeLeft = PlayerPrefs.GetFloat(PREF_TIME_LEFT_NAME);
+            lastSentCount = PlayerPrefs.GetInt(PREF_LAST_SENT_COUNT_NAME);
+            if (timeDiff < timeLeft)
+            {
+                timeLeft -= timeDiff;
+                InitializeOnStart();
+            }
+            else
+            {
+                vehicleReturned = true;
+                _isTimerRunning = false;
+                vehicleManager.ExchangeGarbageToMoney(lastSentCount);
+            }
+        }
+        else
+        {
+            _isTimerRunning = false;
+        }
+        
+    }
+
     public void Initialize ()
     {
+        SendVehicle();
+
+        if (isFilling)
+            cooldownImage.fillAmount = 0f;
+        else
+            cooldownImage.fillAmount = 1f;
+
+        timeLeft = timeoutSeconds;
+        _isTimerRunning = true;
         cooldownUI_container.SetActive(true);
-        //cooldownImage.fillAmount = 0;
-        StartCoroutine(nameof(CountdownLoop));
+        //StartCoroutine(nameof(CountdownLoop));
+    }
+
+    void InitializeOnStart()
+    {
+        GetComponent<Animator>().Play("TruckAway");
+        vehicleReturned = false;
+        currency.text = vehicleManager.GetGarbageToMoneyToString(lastSentCount);
+        _isTimerRunning= true;
+        cooldownUI_container.SetActive(true);
+    }
+
+    void SendVehicle()
+    {
+        vehicleReturned = false;
+        lastSentCount = vehicleManager.currentGarbageCount;
+        currency.text = vehicleManager.GetGarbageToMoneyToString(lastSentCount);
+        vehicleManager.RemoveAllGarbage();
     }
 
     public void TimerShutdown ()
@@ -32,23 +100,58 @@ public class VehicleCooldown : MonoBehaviour
         cooldownUI_container.SetActive(false);
         //GetComponent<Animator>().Play(string.Format("{0}Returns", gameObject.name));
         GetComponent<Animator>().Play("TruckReturns");
+        _isTimerRunning = false;
     }
 
-    private IEnumerator CountdownLoop ()
+    private void Update()
     {
-        vehicleReturned = false;
-        lastSentCount = vehicleManager.currentGarbageCount;
-        currency.text = vehicleManager.GetGarbageToMoneyToString(lastSentCount);
-        vehicleManager.RemoveAllGarbage();
-        for (int i=(int)timeoutSeconds; i>=0; i--)
+        if (_isTimerRunning)
         {
-            //timeString.text = string.Format("{0} s", i);
-            //cooldownImage.fillAmount = (float)((timeoutSeconds - i) / timeoutSeconds); //filling 
-            cooldownImage.fillAmount = (float)(i / timeoutSeconds); //emptying
-            yield return new WaitForSeconds(1f);
+            timeLeft -= Time.deltaTime;
+
+            if (isFilling)
+            {
+                cooldownImage.fillAmount = (float)((timeoutSeconds - timeLeft) / timeoutSeconds); //filling
+            }
+            else
+            {
+                cooldownImage.fillAmount = (float)(timeLeft / timeoutSeconds); // emptying
+            }
+
+
+            if (timeLeft <= 0)
+            {
+                TimerShutdown();
+                vehicleManager.ExchangeGarbageToMoney(lastSentCount);
+            }
         }
-        TimerShutdown();
-        vehicleManager.ExchangeGarbageToMoney(lastSentCount);
-        yield return null;
+    }
+
+    //private IEnumerator CountdownLoop ()
+    //{
+    //    vehicleReturned = false;
+    //    lastSentCount = vehicleManager.currentGarbageCount;
+    //    currency.text = vehicleManager.GetGarbageToMoneyToString(lastSentCount);
+    //    vehicleManager.RemoveAllGarbage();
+    //    for (int i=(int)timeoutSeconds; i>=0; i--)
+    //    {
+    //        //timeString.text = string.Format("{0} s", i);
+    //        //cooldownImage.fillAmount = (float)((timeoutSeconds - i) / timeoutSeconds); //filling 
+    //        cooldownImage.fillAmount = (float)(i / timeoutSeconds); //emptying
+    //        yield return new WaitForSeconds(1f);
+    //    }
+    //    TimerShutdown();
+    //    vehicleManager.ExchangeGarbageToMoney(lastSentCount);
+    //    yield return null;
+    //}
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt(PREF_IS_TIME_RUNNING_NAME, _isTimerRunning ? 1 : 0);
+        if (_isTimerRunning)
+        {
+            PlayerPrefs.SetFloat(PREF_TIME_LEFT_NAME, timeLeft);
+            PlayerPrefs.SetInt(PREF_LAST_SENT_COUNT_NAME, lastSentCount);
+        }
     }
 }

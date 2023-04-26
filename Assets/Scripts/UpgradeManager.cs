@@ -200,7 +200,7 @@ public class UpgradeManager : MonoBehaviour
     //-----------------load-----------------------
     void LoadStorageCapacity()
     {
-        int level = 1; // load from file here
+        int level = PersistantData.Instance.playerData.StorageCapacityCurrentLevel; // load from file here
         storageCapacityData.SetCurrLvl(level);
         int amount = storageCapacityIncrement * (storageCapacityData.currentLvl-1);
         _storage.SetMaxGarbageCount(_storage.GetMaxGarbageCount() + amount);
@@ -209,7 +209,7 @@ public class UpgradeManager : MonoBehaviour
     
     void LoadVehicleCapacity()
     {
-        int level = 1; // load from file here
+        int level = PersistantData.Instance.playerData.VehicleCapacityCurrentLevel; // load from file here
         vehicleCapacityData.SetCurrLvl(level);
         int amount = vehicleCapacityIncrement * (vehicleCapacityData.currentLvl-1);
         _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + amount);
@@ -218,7 +218,7 @@ public class UpgradeManager : MonoBehaviour
     
     void LoadPickerSpeed()
     {
-        int level = 1; // load from file here
+        int level = PersistantData.Instance.playerData.PickerSpeedCurrentLevel; // load from file here
         pickerSpeedData.SetCurrLvl(level);
         int amount = pickerSpeedIncrement * (pickerSpeedData.currentLvl-1);
         GameManager.Instance.spawner.IncreasePickerSpeed(amount);
@@ -227,7 +227,7 @@ public class UpgradeManager : MonoBehaviour
     
     void LoadLoaderSpeed()
     {
-        int level = 1; // load from file here
+        int level = PersistantData.Instance.playerData.LoaderSpeedCurrentLevel; // load from file here
         loaderSpeedData.SetCurrLvl(level);
         int amount = loaderSpeedIncrement * (loaderSpeedData.currentLvl-1);
         GameManager.Instance.spawner.IncreaseLoaderSpeed(amount);
@@ -236,7 +236,7 @@ public class UpgradeManager : MonoBehaviour
     
     void LoadLoaderBag()
     {
-        int level = 1; // load from file here
+        int level = PersistantData.Instance.playerData.LoaderBagCurrentLevel; // load from file here
         loaderBagData.SetCurrLvl(level);
         int amount = loaderBagIncrement * (loaderBagData.currentLvl-1);
         GameManager.Instance.spawner.IncreaseLoaderVolunteerBag(amount);
