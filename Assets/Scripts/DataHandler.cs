@@ -21,7 +21,6 @@ public class DataHandler : MonoBehaviour
     {
         PlayerData playerData = SaveSystem.LoadPlayerData();
         PersistantData.Instance.GetLoadedData(playerData);
-
         CurrencyManager.instance.SetCurrency(playerData.Coins);
         GameManager.Instance.experienceManager.SetExperience(playerData.Level, playerData.Experience, playerData.ExpLimit);
     }

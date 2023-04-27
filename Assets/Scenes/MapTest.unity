@@ -296,7 +296,6 @@ MonoBehaviour:
   vehicleCooldown: {fileID: 0}
   spawner: {fileID: 0}
   volunteerRoot: {fileID: 0}
-  trash: []
 --- !u!4 &631652235
 Transform:
   m_ObjectHideFlags: 0
@@ -1597,6 +1596,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5240422251241729598, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
   m_PrefabInstance: {fileID: 1883083262}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1932642119
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1848794766138133742, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_Name
+      value: AppStartup
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239789060440798272, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
 --- !u!224 &1960847751 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5460962177884215040, guid: ddfa0ed2ecc7de846b5433a7a29f514d, type: 3}
@@ -1752,13 +1808,16 @@ MonoBehaviour:
   playerData:
     SaveDataVersion: 2
     Coins: 0
+    Level: 1
+    Experience: 0
+    ExpLimit: 100
+    isAreaUnlocked: 01000000000000000000
+  sceneData:
+    SaveDataVersion: 4
     StorageGarbageCount: 0
     VehicleGarbageCount: 0
     VolunteerPickerCount: 1
     VolunteerLoaderCount: 1
-    Level: 1
-    Experience: 0
-    ExpLimit: 100
     VehicleCapacityCurrentLevel: 1
     StorageCapacityCurrentLevel: 1
     PickerSpeedCurrentLevel: 1

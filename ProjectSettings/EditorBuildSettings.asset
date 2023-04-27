@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BeachScene_01.unity
     guid: 49d2de8afc3f9d449bac13d5ca4496df
   - enabled: 1
-    path: Assets/Scenes/TestScenes/MapTest.unity
+    path: Assets/Scenes/MapTest.unity
     guid: 3131803aff45f9a4a8f8714981dad39f
   - enabled: 1
     path: Assets/Scenes/TestScenes/Arvydo.unity
