@@ -88,6 +88,7 @@ public class VehicleCooldown : MonoBehaviour
 
     void SendVehicle()
     {
+        vehicleManager.fullWarning.gameObject.SetActive(false);
         vehicleReturned = false;
         lastSentCount = vehicleManager.currentGarbageCount;
         currency.text = vehicleManager.GetGarbageToMoneyToString(lastSentCount);
