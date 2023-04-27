@@ -19,7 +19,7 @@ public class CurrencyManager : MonoBehaviour
     private void Start()
     {
         GetParamsFromSave();
-        UpdateCurrency();
+        
     }
 
     public long GetCurrency()
@@ -117,12 +117,16 @@ public class CurrencyManager : MonoBehaviour
         //currencyAmount
         //mapID
 
-        currencyAmount = SaveSystem.LoadPlayer().Coins;
+        currencyAmount = SaveSystem.LoadPlayerData().Coins;
+        if (currencyUI != null)
+        {
+            currencyUI.text = CurrencyStringFormat();
+        }
     }
 
     void SaveParams()
     {
         PersistantData.Instance.playerData.Coins = currencyAmount;
-        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+        SaveSystem.SavePlayerData(PersistantData.Instance.playerData);
     }
 }

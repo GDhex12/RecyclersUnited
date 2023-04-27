@@ -105,7 +105,7 @@ public class Storage : MonoBehaviour
         //maxGarbageCount
         //currentGarbageCount
         //mapID
-        currentGarbageCount = PersistantData.Instance.playerData.StorageGarbageCount;
+        currentGarbageCount = PersistantData.Instance.sceneData.StorageGarbageCount;
     }
 
     void SaveParams()
@@ -113,7 +113,7 @@ public class Storage : MonoBehaviour
         //save parameters to savefile
         //maxGarbageCount
         //currentGarbageCount
-        PersistantData.Instance.playerData.StorageGarbageCount = currentGarbageCount;
-        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+        PersistantData.Instance.sceneData.StorageGarbageCount = currentGarbageCount;
+        SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
     }
 }
