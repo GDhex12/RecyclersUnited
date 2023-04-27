@@ -17,8 +17,6 @@ public static class SaveSystem
     {
         using StreamWriter stream = new(path);
         string json = JsonUtility.ToJson(data);
-        string jsondebug = JsonUtility.ToJson(data);
-        Debug.Log("Saved :" + jsondebug);
         stream.Write(json);
     }
     public static SceneData LoadSceneData()
