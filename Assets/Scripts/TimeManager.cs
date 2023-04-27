@@ -33,7 +33,12 @@ public class TimeManager : MonoBehaviour
         return (float)diff.TotalSeconds;
     }
 
-    private void OnDestroy()
+    private void OnApplicationPause()
+    {
+        SaveExitTime();
+    }
+
+    private void OnApplicationQuit()
     {
         SaveExitTime();
     }
