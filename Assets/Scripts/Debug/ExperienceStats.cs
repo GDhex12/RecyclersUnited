@@ -55,10 +55,10 @@ public class ExperienceStats : MonoBehaviour
 
     public void GetExperience()
     {
-        expPrevious = SaveSystem.LoadPlayer().Experience;
-        experienceToIncrease = SaveSystem.LoadPlayer().Experience;
-        level = SaveSystem.LoadPlayer().Level;
-        requiredAmountToNextLv = SaveSystem.LoadPlayer().ExpLimit;
+        expPrevious = SaveSystem.LoadPlayerData().Experience;
+        experienceToIncrease = SaveSystem.LoadPlayerData().Experience;
+        level = SaveSystem.LoadPlayerData().Level;
+        requiredAmountToNextLv = SaveSystem.LoadPlayerData().ExpLimit;
     }
 
     public void SetExperience(int expLevel, float expPoints, float expLimit)
@@ -75,7 +75,7 @@ public class ExperienceStats : MonoBehaviour
         PersistantData.Instance.playerData.Level = level;
         PersistantData.Instance.playerData.Experience = expPrevious;
         PersistantData.Instance.playerData.ExpLimit = requiredAmountToNextLv;
-        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+        SaveSystem.SavePlayerData(PersistantData.Instance.playerData);
     }
 
     public void UpdateExpPoints()

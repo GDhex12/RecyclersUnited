@@ -19,8 +19,8 @@ public class VehicleSystem : MonoBehaviour
 
     private void Start()
     {
-        GetParamsFromSave();
-        UpdateGarbage();
+        currentGarbageCount = PersistantData.Instance.sceneData.VehicleGarbageCount;
+
     }
 
     public int GetGarbageCount()
@@ -140,7 +140,8 @@ public class VehicleSystem : MonoBehaviour
         //maxGarbageCount
         //currentGarbageCount
         //mapID
-        currentGarbageCount = PersistantData.Instance.playerData.VehicleGarbageCount;
+        currentGarbageCount = PersistantData.Instance.sceneData.VehicleGarbageCount;
+        UpdateGarbage();
     }
 
     void SaveParams()
@@ -148,7 +149,7 @@ public class VehicleSystem : MonoBehaviour
         //save parameters to savefile
         //maxGarbageCount
         //currentGarbageCount
-        PersistantData.Instance.playerData.VehicleGarbageCount = currentGarbageCount;
-        SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+        PersistantData.Instance.sceneData.VehicleGarbageCount = currentGarbageCount;
+        SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
     }
 }

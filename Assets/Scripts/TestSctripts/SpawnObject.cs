@@ -33,13 +33,13 @@ public class SpawnObject : MonoBehaviour
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {
-            PersistantData.Instance.playerData.VolunteerPickerCount++;
+            PersistantData.Instance.sceneData.VolunteerPickerCount++;
 
             GameObject temp = Instantiate(picker, gameObject.transform.position, Quaternion.identity, gameObject.transform);
             temp.SetActive(true);
             //Instantiate(volunteer, gameObject.transform.position, Quaternion.identity, gameObject.transform).SetActive(true);
 
-            SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+            SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
             countManager.AddVolunteersToList(temp);
         }   
     }
@@ -48,10 +48,10 @@ public class SpawnObject : MonoBehaviour
     {
         if(CurrencyManager.instance.IsAffordable(price))
         {
-            PersistantData.Instance.playerData.VolunteerLoaderCount++;
+            PersistantData.Instance.sceneData.VolunteerLoaderCount++;
             GameObject temp = Instantiate(loader, gameObject.transform.position, Quaternion.identity, gameObject.transform);
             temp.SetActive(true);
-            SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+            SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
             countManager.AddVolunteersToList(temp);
         }   
     }

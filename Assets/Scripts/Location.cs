@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -140,6 +141,11 @@ public class Location : MonoBehaviour
         }
     }
 
+    void SaveBoughtArea()
+    {
+        PersistantData.Instance.playerData.isAreaUnlocked[buildIndex] = true;
+        SaveSystem.SavePlayerData(PersistantData.Instance.playerData);
+    }
     public void BuyLocation()
     {
         if (isUnlocked && !isBought)
@@ -147,6 +153,7 @@ public class Location : MonoBehaviour
             if (CurrencyManager.instance.IsAffordable(price))
             {
                 CurrencyManager.instance.RemoveCurrency(price);
+                SaveBoughtArea();
                 SetIsBought(true);
                 SetPopupActive(false);
                 UpdateUI();
