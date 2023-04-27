@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 4141fd2ced42d87499d58178e1eede62
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - blueButton: {instanceID: 0}
+  - grayButton: {instanceID: 0}
+  - greenButton: {instanceID: 0}
+  - yellowButton: {instanceID: 0}
+  - orangeButton: {instanceID: 0}
+  - redButton: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

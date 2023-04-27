@@ -38,7 +38,6 @@ public class SceneData
         VolunteerPickerCount = 1;
         VolunteerLoaderCount = 1;
 
-
         //Upgrade xp's and levels
         VehicleCapacityCurrentLevel = 1;
         StorageCapacityCurrentLevel = 1;
