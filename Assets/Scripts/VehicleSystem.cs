@@ -7,6 +7,7 @@ public class VehicleSystem : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI vehicleUI;
+    public TMP_Text fullWarning;
 
     [Header("Vehicle capacity")]
     [SerializeField] private int maxGarbageCount = 25;
@@ -42,18 +43,24 @@ public class VehicleSystem : MonoBehaviour
     public void AddGarbage(int amount)
     {
         if (IsFull())
-            return;
-
-        if (currentGarbageCount + amount > maxGarbageCount)
         {
-            currentGarbageCount = maxGarbageCount;
-        }
+            Debug.Log("1");
+            fullWarning.gameObject.SetActive(true);
+            return;
+        }    
         else
         {
-            currentGarbageCount += amount;
-        }
+            if (currentGarbageCount + amount > maxGarbageCount)
+            {
+                currentGarbageCount = maxGarbageCount;
+            }
+            else
+            {
+                currentGarbageCount += amount;
+            }
 
-        UpdateGarbage();
+            UpdateGarbage();
+        }
     }
 
     public void RemoveGarbage(int amount)
@@ -86,8 +93,11 @@ public class VehicleSystem : MonoBehaviour
     public void LoadVehicle(Storage storage, int amount)
     {
         if (IsFull())
+        {
+            Debug.Log("2");
+            fullWarning.gameObject.SetActive(true);
             return;
-
+        }
         if (!storage.IsEmpty() && amount <= storage.GetGarbageCount())
         {
             storage.RemoveGarbage(amount);
