@@ -4,17 +4,13 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class PowerUpUI : MonoBehaviour
 {
     [SerializeField] private int timerSeconds;
     [SerializeField] private int neededLevel;
-    private readonly TMP_Text timerText;
-    private readonly TMP_Text availabilityText;
-    private readonly string[] rectangleIcons = new string[2] {"BTN_BLUE_RECT_OUT", "BTN_GRAY_RECT_OUT"};
-    private Sprite greyRectangle;
+    [SerializeField] private TMP_Text timerText;
+    [SerializeField] private TMP_Text availabilityText;
     [SerializeField] private string[] setMessages = new string[3] 
     {"Available!",
      "Unlocked at \nlevel ",
@@ -28,11 +24,11 @@ public class PowerUpUI : MonoBehaviour
         if (timerSeconds == 0) Debug.LogError(string.Format("Please set the timerSeconds variable in {0}!", gameObject.name));
         if (neededLevel == 0) Debug.LogError(string.Format("Please set the neededLevel variable in {0}!", gameObject.name));
         timerText.text = Convert.ToString(timerSeconds);
-        if (neededLevel > refToExperience.level)
+        if (neededLevel <= refToExperience.level)
         {
-            availabilityText.text = setMessages[1];
+            availabilityText.text = setMessages[0];
         }
-        else availabilityText.text = string.Format("{0}{1}", setMessages[2], neededLevel);
+        else availabilityText.text = string.Format("{0}{1}", setMessages[1], neededLevel);
     }
 
     private void ChangeButtonStatus(bool enabled)
@@ -40,19 +36,19 @@ public class PowerUpUI : MonoBehaviour
         if (enabled == false)
         {
             useButton.interactable = false;
-            useButton.image = 
+            useButton.image.sprite = PressableButtons.i.grayButton;
         } 
-        else 
+        //else 
     }
 
-    private void InitiateSpeedPower()
+    public void InitiateSpeedPower()
     {
         ChangeButtonStatus(false);
         refToVolunteers.IncreaseVolunteersSpeed();
         InitiateTimer();
     }
 
-    private void InitiateMoreVolunteers()
+    public void InitiateMoreVolunteers()
     {
         ChangeButtonStatus(false);
         refToVolunteers.AddVolunteersTemporary(3, timerSeconds);

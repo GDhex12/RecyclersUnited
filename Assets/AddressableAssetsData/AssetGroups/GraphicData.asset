@@ -17,14 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 107e2ed3d52724b44be8fd31f252839d
   m_SerializeEntries:
-  - m_GUID: 2dccf33c048fa6541b56e5c12ffa0e6c
-    m_Address: BTN_BLUE_RECT_OUT
+  - m_GUID: 295cede5e3b8f434e841dbbfe1320f48
+    m_Address: PressableButtons
     m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 43d8ac51f4f5c97408192b40a66d80f0
-    m_Address: BTN_GRAY_RECT_OUT
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - PressableButtons
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 01a1be4d80a74114f9aa7482badfd5b6, type: 2}
   m_SchemaSet:
