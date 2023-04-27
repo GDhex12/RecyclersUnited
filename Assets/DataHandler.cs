@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DataHandler : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
         LoadSceneData();
         LoadPlayerData();
@@ -20,8 +20,6 @@ public class DataHandler : MonoBehaviour
     private void LoadPlayerData()
     {
         PlayerData playerData = SaveSystem.LoadPlayerData();
-        string jsondebug = JsonUtility.ToJson(playerData);
-        Debug.Log("Loaded :" + jsondebug);
         PersistantData.Instance.GetLoadedData(playerData);
 
         CurrencyManager.instance.SetCurrency(playerData.Coins);
