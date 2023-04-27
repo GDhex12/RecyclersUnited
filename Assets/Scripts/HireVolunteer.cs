@@ -28,8 +28,8 @@ public class HireVolunteer : MonoBehaviour
 
     private void Start()
     {
-        //CalculatePrice();
-        price = initPrice;
+        CalculatePriceOnStart();
+        
         UpdateUI();
     }
 
@@ -49,6 +49,20 @@ public class HireVolunteer : MonoBehaviour
         price = (long)(price * priceMultiplier );
         UpdateUI();
     }
+    
+    void CalculatePriceOnStart()
+    {
+
+        switch (volunteerType)
+        {
+            case VolunteerType.volunteer:
+                price = (long)(initPrice * MathF.Pow(priceMultiplier, PersistantData.Instance.playerData.VolunteerPickerCount - 1));
+                break;
+            case VolunteerType.loader:
+                price = (long)(initPrice * MathF.Pow(priceMultiplier, PersistantData.Instance.playerData.VolunteerLoaderCount - 1));
+                break;
+        }
+    }
 
     public void UpdateUI()
     {
@@ -65,11 +79,13 @@ public class HireVolunteer : MonoBehaviour
         switch (volunteerType)
         {
             case VolunteerType.volunteer:
-                _spawnObject.SpawnVolunteerInSceneIfAfforded(price);
+                _spawnObject.SpawnVolunteerPickerInSceneIfAfforded(price);
                 break;
             case VolunteerType.loader:
                 _spawnObject.SpawnLoaderInSceneIfAfforded(price);
                 break;
         }
     }
+    
+    
 }

@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/MapTest.unity
     guid: 3131803aff45f9a4a8f8714981dad39f
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Arvydo.unity
+    guid: e887aa2f34d066c41ae06bcb24c7ed1a
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 026c98cb5c5b861408c2a4b7b310c3f4, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 8bc0e657f552cd94b8e0cafdd7c503f4, type: 2}

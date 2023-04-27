@@ -19,8 +19,13 @@ public class UpgradeManager : MonoBehaviour
 
         public UpgradeData()
         {
-            //currentLvl = (save file data)
-            price = (long)(initPrice * Mathf.Pow(priceMultiplier, currentLvl-1));
+            price = initPrice;
+        }
+
+        public void SetCurrLvl(int currentLvl)
+        {
+            this.currentLvl = currentLvl;
+            price = (long)(initPrice * Mathf.Pow(priceMultiplier, currentLvl - 1));
         }
 
         public bool Upgrade()
@@ -99,21 +104,31 @@ public class UpgradeManager : MonoBehaviour
         _storage = FindObjectOfType<Storage>();
         _vehicleSystem = FindObjectOfType<VehicleSystem>();
 
-        vehicleCapacityUI.UpdateUI(vehicleCapacityData);
-        storageCapacityUI.UpdateUI(storageCapacityData);
-        pickerSpeedUI.UpdateUI(pickerSpeedData);
-        loaderSpeedUI.UpdateUI(loaderSpeedData);
-        loaderBagUI.UpdateUI(loaderBagData);
+        SetupData();
 
         
     }
 
+    void SetupData()
+    {
+        LoadStorageCapacity();
+        LoadVehicleCapacity();
+        LoadPickerSpeed();
+        LoadLoaderSpeed();
+        LoadLoaderBag();
+    }
+
+    //------------------Upgrade--------------------
     public void UpgradeStorageCapacity()
     {
         if (CurrencyManager.instance.IsAffordable(storageCapacityData.price))
         {
             if (storageCapacityData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.StorageCapacityCurrentLevel = storageCapacityData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 _storage.SetMaxGarbageCount(_storage.GetMaxGarbageCount() + storageCapacityIncrement);
                 storageCapacityUI.UpdateUI(storageCapacityData);
             }
@@ -126,6 +141,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (vehicleCapacityData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.VehicleCapacityCurrentLevel = vehicleCapacityData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + vehicleCapacityIncrement);
                 vehicleCapacityUI.UpdateUI(vehicleCapacityData);
             }
@@ -138,6 +157,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (pickerSpeedData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.PickerSpeedCurrentLevel = pickerSpeedData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 GameManager.Instance.spawner.IncreasePickerSpeed(pickerSpeedIncrement);
                 pickerSpeedUI.UpdateUI(pickerSpeedData);
             }
@@ -149,6 +172,10 @@ public class UpgradeManager : MonoBehaviour
         {
             if (loaderSpeedData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.LoaderSpeedCurrentLevel = loaderSpeedData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 GameManager.Instance.spawner.IncreaseLoaderSpeed(loaderSpeedIncrement);
                 loaderSpeedUI.UpdateUI(loaderSpeedData);
             }
@@ -160,9 +187,59 @@ public class UpgradeManager : MonoBehaviour
         {
             if (loaderBagData.Upgrade())
             {
+                //Save in file
+                PersistantData.Instance.playerData.LoaderBagCurrentLevel = loaderBagData.currentLvl;
+                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                //Upgrade
                 GameManager.Instance.spawner.IncreaseLoaderVolunteerBag(loaderBagIncrement);
                 loaderBagUI.UpdateUI(loaderBagData);
             }
         }
+    }
+
+    //-----------------load-----------------------
+    void LoadStorageCapacity()
+    {
+        int level = PersistantData.Instance.playerData.StorageCapacityCurrentLevel; // load from file here
+        storageCapacityData.SetCurrLvl(level);
+        int amount = storageCapacityIncrement * (storageCapacityData.currentLvl-1);
+        _storage.SetMaxGarbageCount(_storage.GetMaxGarbageCount() + amount);
+        storageCapacityUI.UpdateUI(storageCapacityData);
+    }
+    
+    void LoadVehicleCapacity()
+    {
+        int level = PersistantData.Instance.playerData.VehicleCapacityCurrentLevel; // load from file here
+        vehicleCapacityData.SetCurrLvl(level);
+        int amount = vehicleCapacityIncrement * (vehicleCapacityData.currentLvl-1);
+        _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + amount);
+        vehicleCapacityUI.UpdateUI(vehicleCapacityData);
+    }
+    
+    void LoadPickerSpeed()
+    {
+        int level = PersistantData.Instance.playerData.PickerSpeedCurrentLevel; // load from file here
+        pickerSpeedData.SetCurrLvl(level);
+        int amount = pickerSpeedIncrement * (pickerSpeedData.currentLvl-1);
+        GameManager.Instance.spawner.IncreasePickerSpeed(amount);
+        pickerSpeedUI.UpdateUI(pickerSpeedData);
+    }
+    
+    void LoadLoaderSpeed()
+    {
+        int level = PersistantData.Instance.playerData.LoaderSpeedCurrentLevel; // load from file here
+        loaderSpeedData.SetCurrLvl(level);
+        int amount = loaderSpeedIncrement * (loaderSpeedData.currentLvl-1);
+        GameManager.Instance.spawner.IncreaseLoaderSpeed(amount);
+        loaderSpeedUI.UpdateUI(loaderSpeedData);
+    }
+    
+    void LoadLoaderBag()
+    {
+        int level = PersistantData.Instance.playerData.LoaderBagCurrentLevel; // load from file here
+        loaderBagData.SetCurrLvl(level);
+        int amount = loaderBagIncrement * (loaderBagData.currentLvl-1);
+        GameManager.Instance.spawner.IncreaseLoaderVolunteerBag(amount);
+        loaderBagUI.UpdateUI(loaderBagData);
     }
 }

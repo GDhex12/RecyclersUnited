@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeoutSeconds: 15
+  timeLeft: 0
   timeString: {fileID: 0}
   cooldownContainer: {fileID: 0}
   vehicleManager: {fileID: 0}
@@ -108,6 +109,7 @@ MonoBehaviour:
   cooldownUI_container: {fileID: 0}
   currency: {fileID: 0}
   vehicleReturned: 1
+  isFilling: 0
 --- !u!1001 &2309873509999808296
 PrefabInstance:
   m_ObjectHideFlags: 0
