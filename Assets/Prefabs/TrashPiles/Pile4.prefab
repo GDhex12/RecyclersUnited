@@ -78,7 +78,7 @@ MonoBehaviour:
   - {fileID: 1417595262719186398}
   - {fileID: 6139115335081493921}
   - {fileID: 8738640186932140287}
-  trashAmount: 50
+  trashAmount: 30
   trashSpawner: {fileID: 0}
 --- !u!111 &1202176628
 Animation:
