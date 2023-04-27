@@ -56,10 +56,10 @@ public class HireVolunteer : MonoBehaviour
         switch (volunteerType)
         {
             case VolunteerType.volunteer:
-                price = (long)(initPrice * MathF.Pow(priceMultiplier, PersistantData.Instance.playerData.VolunteerPickerCount - 1));
+                price = (long)(initPrice * MathF.Pow(priceMultiplier, PersistantData.Instance.sceneData.VolunteerPickerCount - 1));
                 break;
             case VolunteerType.loader:
-                price = (long)(initPrice * MathF.Pow(priceMultiplier, PersistantData.Instance.playerData.VolunteerLoaderCount - 1));
+                price = (long)(initPrice * MathF.Pow(priceMultiplier, PersistantData.Instance.sceneData.VolunteerLoaderCount - 1));
                 break;
         }
     }

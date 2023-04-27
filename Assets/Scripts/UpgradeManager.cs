@@ -126,8 +126,8 @@ public class UpgradeManager : MonoBehaviour
             if (storageCapacityData.Upgrade())
             {
                 //Save in file
-                PersistantData.Instance.playerData.StorageCapacityCurrentLevel = storageCapacityData.currentLvl;
-                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                PersistantData.Instance.sceneData.StorageCapacityCurrentLevel = storageCapacityData.currentLvl;
+                SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
                 //Upgrade
                 _storage.SetMaxGarbageCount(_storage.GetMaxGarbageCount() + storageCapacityIncrement);
                 storageCapacityUI.UpdateUI(storageCapacityData);
@@ -142,8 +142,8 @@ public class UpgradeManager : MonoBehaviour
             if (vehicleCapacityData.Upgrade())
             {
                 //Save in file
-                PersistantData.Instance.playerData.VehicleCapacityCurrentLevel = vehicleCapacityData.currentLvl;
-                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                PersistantData.Instance.sceneData.VehicleCapacityCurrentLevel = vehicleCapacityData.currentLvl;
+                SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
                 //Upgrade
                 _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + vehicleCapacityIncrement);
                 vehicleCapacityUI.UpdateUI(vehicleCapacityData);
@@ -158,8 +158,8 @@ public class UpgradeManager : MonoBehaviour
             if (pickerSpeedData.Upgrade())
             {
                 //Save in file
-                PersistantData.Instance.playerData.PickerSpeedCurrentLevel = pickerSpeedData.currentLvl;
-                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                PersistantData.Instance.sceneData.PickerSpeedCurrentLevel = pickerSpeedData.currentLvl;
+                SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
                 //Upgrade
                 GameManager.Instance.spawner.IncreasePickerSpeed(pickerSpeedIncrement);
                 pickerSpeedUI.UpdateUI(pickerSpeedData);
@@ -173,8 +173,8 @@ public class UpgradeManager : MonoBehaviour
             if (loaderSpeedData.Upgrade())
             {
                 //Save in file
-                PersistantData.Instance.playerData.LoaderSpeedCurrentLevel = loaderSpeedData.currentLvl;
-                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                PersistantData.Instance.sceneData.LoaderSpeedCurrentLevel = loaderSpeedData.currentLvl;
+                SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
                 //Upgrade
                 GameManager.Instance.spawner.IncreaseLoaderSpeed(loaderSpeedIncrement);
                 loaderSpeedUI.UpdateUI(loaderSpeedData);
@@ -188,8 +188,8 @@ public class UpgradeManager : MonoBehaviour
             if (loaderBagData.Upgrade())
             {
                 //Save in file
-                PersistantData.Instance.playerData.LoaderBagCurrentLevel = loaderBagData.currentLvl;
-                SaveSystem.SavePlayer(PersistantData.Instance.playerData);
+                PersistantData.Instance.sceneData.LoaderBagCurrentLevel = loaderBagData.currentLvl;
+                SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
                 //Upgrade
                 GameManager.Instance.spawner.IncreaseLoaderVolunteerBag(loaderBagIncrement);
                 loaderBagUI.UpdateUI(loaderBagData);
@@ -200,7 +200,7 @@ public class UpgradeManager : MonoBehaviour
     //-----------------load-----------------------
     void LoadStorageCapacity()
     {
-        int level = PersistantData.Instance.playerData.StorageCapacityCurrentLevel; // load from file here
+        int level = PersistantData.Instance.sceneData.StorageCapacityCurrentLevel; // load from file here
         storageCapacityData.SetCurrLvl(level);
         int amount = storageCapacityIncrement * (storageCapacityData.currentLvl-1);
         _storage.SetMaxGarbageCount(_storage.GetMaxGarbageCount() + amount);
@@ -209,7 +209,7 @@ public class UpgradeManager : MonoBehaviour
     
     void LoadVehicleCapacity()
     {
-        int level = PersistantData.Instance.playerData.VehicleCapacityCurrentLevel; // load from file here
+        int level = PersistantData.Instance.sceneData.VehicleCapacityCurrentLevel; // load from file here
         vehicleCapacityData.SetCurrLvl(level);
         int amount = vehicleCapacityIncrement * (vehicleCapacityData.currentLvl-1);
         _vehicleSystem.SetMaxGarbageCount(_vehicleSystem.GetMaxGarbageCount() + amount);
@@ -218,7 +218,7 @@ public class UpgradeManager : MonoBehaviour
     
     void LoadPickerSpeed()
     {
-        int level = PersistantData.Instance.playerData.PickerSpeedCurrentLevel; // load from file here
+        int level = PersistantData.Instance.sceneData.PickerSpeedCurrentLevel; // load from file here
         pickerSpeedData.SetCurrLvl(level);
         int amount = pickerSpeedIncrement * (pickerSpeedData.currentLvl-1);
         GameManager.Instance.spawner.IncreasePickerSpeed(amount);
@@ -227,7 +227,7 @@ public class UpgradeManager : MonoBehaviour
     
     void LoadLoaderSpeed()
     {
-        int level = PersistantData.Instance.playerData.LoaderSpeedCurrentLevel; // load from file here
+        int level = PersistantData.Instance.sceneData.LoaderSpeedCurrentLevel; // load from file here
         loaderSpeedData.SetCurrLvl(level);
         int amount = loaderSpeedIncrement * (loaderSpeedData.currentLvl-1);
         GameManager.Instance.spawner.IncreaseLoaderSpeed(amount);
@@ -236,7 +236,7 @@ public class UpgradeManager : MonoBehaviour
     
     void LoadLoaderBag()
     {
-        int level = PersistantData.Instance.playerData.LoaderBagCurrentLevel; // load from file here
+        int level = PersistantData.Instance.sceneData.LoaderBagCurrentLevel; // load from file here
         loaderBagData.SetCurrLvl(level);
         int amount = loaderBagIncrement * (loaderBagData.currentLvl-1);
         GameManager.Instance.spawner.IncreaseLoaderVolunteerBag(amount);

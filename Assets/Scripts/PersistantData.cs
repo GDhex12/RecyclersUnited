@@ -4,7 +4,8 @@ public class PersistantData : MonoBehaviour
 {
     public static PersistantData Instance { get; private set; }
     public PlayerData playerData = new();
-    public int SaveDataVerToCheck = 2;
+    public SceneData sceneData = new();
+    public int SaveDataVerToCheck = 5;
 
     private void Awake()
     {
@@ -22,12 +23,12 @@ public class PersistantData : MonoBehaviour
         }
     }
 
+    public void GetLoadedData(SceneData data)
+    {
+        sceneData = data;
+    }
     public void GetLoadedData(PlayerData data)
     {
         playerData = data;
-        if (playerData.SaveDataVersion != SaveDataVerToCheck)
-        {
-            SaveSystem.RemoveAllData();
-        }
     }
 }
