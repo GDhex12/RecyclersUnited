@@ -13,11 +13,18 @@ public class PowerUpUI : MonoBehaviour
     [SerializeField] private TMP_Text availabilityText;
     [SerializeField] private string[] setMessages = new string[3] 
     {"Available!",
-     "Unlocked at \nlevel ",
-     "Available after "};
+     "Unlocks at \nlevel ",
+     "Active!"};
+    [SerializeField] private Color32[] textColor = 
+    {
+        new Color32(0x00, 0x7B, 0x2F, 0xFF), // Dark Green
+        new Color32(0xE5, 0x0B, 0x00, 0xFF)  // Dark Red
+    };
     [SerializeField] private ExperienceStats refToExperience;
     [SerializeField] private VolunteerCountManager refToVolunteers;
     [SerializeField] private Button useButton;
+    [SerializeField] private bool isPowerUpActive = false;
+    private FunctionTimer refToTimer;
 
     private void Awake()
     {
@@ -26,9 +33,15 @@ public class PowerUpUI : MonoBehaviour
         timerText.text = Convert.ToString(timerSeconds);
         if (neededLevel <= refToExperience.level)
         {
-            availabilityText.text = setMessages[0];
+            availabilityText.text = setMessages[0]; 
+            availabilityText.color = textColor[0];
         }
-        else availabilityText.text = string.Format("{0}{1}", setMessages[1], neededLevel);
+        else
+        {
+            availabilityText.text = string.Format("{0}{1}", setMessages[1], neededLevel);
+            availabilityText.color = textColor[1];
+            ChangeButtonStatus(false);
+        }
     }
 
     private void ChangeButtonStatus(bool enabled)
@@ -38,30 +51,48 @@ public class PowerUpUI : MonoBehaviour
             useButton.interactable = false;
             useButton.image.sprite = PressableButtons.i.grayButton;
         } 
-        //else 
+        else
+        {
+            availabilityText.text = setMessages[0];
+            availabilityText.color = textColor[0];
+            useButton.interactable = true;
+            useButton.image.sprite = PressableButtons.i.blueButton;
+        }
     }
 
     public void InitiateSpeedPower()
     {
         ChangeButtonStatus(false);
         refToVolunteers.IncreaseVolunteersSpeed();
-        InitiateTimer();
+        refToTimer = FunctionTimer.Create(() => ChangeButtonStatus(true), timerSeconds);
+        availabilityText.text = setMessages[2];
+        availabilityText.color = textColor[1];
+        isPowerUpActive = true;
     }
 
     public void InitiateMoreVolunteers()
     {
         ChangeButtonStatus(false);
         refToVolunteers.AddVolunteersTemporary(3, timerSeconds);
-        InitiateTimer();
+        refToTimer = FunctionTimer.Create(() => ChangeButtonStatus(true), timerSeconds);
+        availabilityText.text = setMessages[2];
+        availabilityText.color = textColor[1];
+        isPowerUpActive = true;
     }
 
-    private void InitiateTimer()
+    private void Update()
     {
-
-    }
-
-    void Update()
-    {
-        
+        if (isPowerUpActive)
+        {
+            string timeLeft = Convert.ToString((int)refToTimer.GetTimeLeft());
+            if (Convert.ToInt32(timeLeft) == 0)
+            {
+                timerText.text = Convert.ToString(timerSeconds);
+                ChangeButtonStatus(true);
+                refToTimer = null;
+                isPowerUpActive = false;
+            }
+            else timerText.text = timeLeft;
+        }
     }
 }

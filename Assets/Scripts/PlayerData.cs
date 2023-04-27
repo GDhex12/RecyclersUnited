@@ -18,7 +18,7 @@ public class PlayerData
     [Header("Player xp and levels")]
     public int Level = 1;
     public float Experience = 0;
-    public float ExpLimit = 100;
+    public float ExpLimit = 50;
 
     [Header("Upgrade xp's and levels")]
     public int VehicleCapacityCurrentLevel = 1;
@@ -52,7 +52,7 @@ public class PlayerData
         //Player xp and levels
         Level = 1;
         Experience = 0;
-        ExpLimit = 100;
+        ExpLimit = 50;
 
         //Upgrade xp's and levels
         VehicleCapacityCurrentLevel = 1;

@@ -20,7 +20,6 @@ public class ExperienceStats : MonoBehaviour
 
     private void Awake()
     {
-        
         CalculateNewLimit();
     }
 
@@ -50,7 +49,7 @@ public class ExperienceStats : MonoBehaviour
 
     private void CalculateNewLimit()
     {
-        requiredAmountToNextLv = (float)((level / 10 + level % 10) * 100 * Math.Pow(10, level / 10));
+        requiredAmountToNextLv = (float)((level / 10 + level % 10) * 50 * Math.Pow(10, level / 10));
     }
 
     public void GetExperience()
