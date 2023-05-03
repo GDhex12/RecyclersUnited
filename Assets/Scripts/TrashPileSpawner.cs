@@ -14,7 +14,11 @@ public class TrashPileSpawner : MonoBehaviour
 
     public void LaunchRespawn (Vector3 removedLoc)
     {
-        StartCoroutine(InitiateNewSpawn(removedLoc));
+        //spawn trash pile if total trash amount is bigger than 0
+        if (!TrashController.Instance.IsCompleted())
+        {
+            StartCoroutine(InitiateNewSpawn(removedLoc));
+        }
     }
 
     public IEnumerator InitiateNewSpawn (Vector3 removedLoc)

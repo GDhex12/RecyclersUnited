@@ -38,6 +38,7 @@ public class TrashPile : MonoBehaviour
     {
         trashAmount--;
         _trashTaken++;
+        TrashController.Instance.DecreaseTotalTrashAmount();
         int trashToTake = _trashLeftAfterDivision > 0 ? _trashPerChange + 1 : _trashPerChange;
         if (trashToTake <= _trashTaken)
         {

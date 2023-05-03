@@ -10,6 +10,15 @@ public class TrashController : MonoBehaviour
     public NavMeshAgent navMesh;
     [SerializeField] List<TrashPile> trashPiles;
 
+    [Header("Total location trash amount")]
+    [SerializeField] int maxTotalTrashAmount = 500;
+    [SerializeField] int currentTotalTrashAmount = 0;
+    [SerializeField] int completionPercentage = 100;
+
+    bool _isCompleted = false;
+
+    public bool IsCompleted() { return _isCompleted; }
+
     private void Awake()
     {
         Instance = this;
@@ -23,6 +32,7 @@ public class TrashController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentTotalTrashAmount = maxTotalTrashAmount;
         trashPiles = FindObjectsOfType<TrashPile>().ToList();
     }
 
@@ -52,5 +62,33 @@ public class TrashController : MonoBehaviour
         /*
          * TO-DO: clear all NavMesh data and regenerate new paths based on newly spawned trash here
          */
+    }
+
+    //----------------- total location trash amount ----------------
+
+    public void DecreaseTotalTrashAmount(int amount)
+    {
+        if (!_isCompleted)
+        {
+            currentTotalTrashAmount -= amount;
+            completionPercentage = GetCompletionPercentage();
+            if (currentTotalTrashAmount <= 0)
+            {
+                _isCompleted = true;
+            }
+        }
+    }
+
+    public void DecreaseTotalTrashAmount()
+    {
+        DecreaseTotalTrashAmount(1);
+    }
+
+    public int GetCompletionPercentage()
+    {
+        float max = maxTotalTrashAmount;
+        float curr = currentTotalTrashAmount;
+        int percentige = (int)Mathf.Round((curr / max) * 100);
+        return percentige < 0 ? 0 : percentige;
     }
 }

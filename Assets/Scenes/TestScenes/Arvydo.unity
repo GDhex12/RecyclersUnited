@@ -403,6 +403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMesh: {fileID: 1300048620}
   trashPiles: []
+  maxTotalTrashAmount: 50
+  currentTotalTrashAmount: 0
+  completionPercentage: 100
 --- !u!1 &126768345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3627,7 +3630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1601693967802005805, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2333152634366561086, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
       propertyPath: m_RootOrder
