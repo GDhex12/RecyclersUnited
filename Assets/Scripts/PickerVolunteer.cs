@@ -7,9 +7,10 @@ public class PickerVolunteer : Volunteer
     private TrashPile trashImGoingTo;
     private void Update()
     {
-        if (!isGoingOfMap)
+        
+        if (!carryingTrash) // going to get trash
         {
-            if (!carryingTrash) // going to get trash
+            if (!isGoingOfMap)
             {
                 if (TrashController.Instance.GetCount() <= 0 && trashImGoingTo == null)
                 {
@@ -43,26 +44,31 @@ public class PickerVolunteer : Volunteer
                 }
 
             }
-            else // going to storage
+            
+        }
+        else // going to storage
+        {
+
+            if (GameManager.Instance.storage.IsFull())
+            {
+                GoToLocation(gameObject);
+                return;
+            }
+            GoToLocation(storage);
+            if (CloseToDestination())
             {
 
-                if (GameManager.Instance.storage.IsFull())
+                GameManager.Instance.storage.AddGarbage(bagStorage);
+                refToExpManager.experienceToIncrease += 2;
+                carryingTrash = false;
+                thrashInHand.SetActive(false);
+                if (isGoingOfMap)
                 {
-                    GoToLocation(gameObject);
-                    return;
+                    MoveTo(walkOffPoint);
                 }
-                GoToLocation(storage);
-                if (CloseToDestination())
-                {
 
-                    GameManager.Instance.storage.AddGarbage(bagStorage);
-                    refToExpManager.experienceToIncrease+=2;
-                    carryingTrash = false;
-                    thrashInHand.SetActive(false);
-
-                }
             }
         }
-        
+
     }
 }

@@ -24,6 +24,7 @@ public class Volunteer : MonoBehaviour
     public bool carryingTrash = false;
 
     protected bool isGoingOfMap = false;
+    protected Vector3 walkOffPoint;
 
 
 
@@ -55,6 +56,7 @@ public class Volunteer : MonoBehaviour
 
     public void WalkOutOfMap(Vector3 walkOffPoint)
 	{
+        this.walkOffPoint = walkOffPoint;
         StopAllCoroutines();
         StartCoroutine(WalkOffMapAndDestroy(walkOffPoint));
 	}
@@ -63,7 +65,7 @@ public class Volunteer : MonoBehaviour
     {
         
         MoveTo(walkOffPoint);
-        navMeshAgent.SetDestination(walkOffPoint);
+        //navMeshAgent.SetDestination(walkOffPoint);
         isGoingOfMap = true;
         yield return new WaitForSeconds(20f);
         Destroy(gameObject);
