@@ -11,13 +11,16 @@ public class TrashController : MonoBehaviour
     [SerializeField] List<TrashPile> trashPiles;
 
     [Header("Total location trash amount")]
-    [SerializeField] int maxTotalTrashAmount = 500;
+    [SerializeField] int maxTotalTrashAmount = 1000;
     [SerializeField] int currentTotalTrashAmount = 0;
     [SerializeField] int completionPercentage = 100;
 
     bool _isCompleted = false;
 
-    public bool IsCompleted() { return _isCompleted; }
+    public bool IsCompleted() 
+    { 
+        return _isCompleted;
+    }
 
     private void Awake()
     {
@@ -90,5 +93,14 @@ public class TrashController : MonoBehaviour
         float curr = currentTotalTrashAmount;
         int percentige = (int)Mathf.Round((curr / max) * 100);
         return percentige < 0 ? 0 : percentige;
+    }
+
+    public bool NeedsToSpawn()
+    {
+        int sum = 0;
+        foreach (TrashPile pile in trashPiles)
+            sum += pile.GetTrashAmount();
+
+        return currentTotalTrashAmount - sum > 0;
     }
 }
