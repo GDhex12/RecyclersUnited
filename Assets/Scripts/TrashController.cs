@@ -35,7 +35,11 @@ public class TrashController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentTotalTrashAmount = maxTotalTrashAmount;
+        if (!_isCompleted && currentTotalTrashAmount == 0)
+        {
+            currentTotalTrashAmount = maxTotalTrashAmount;
+            SaveTotalGarbageCount();
+        }
         trashPiles = FindObjectsOfType<TrashPile>().ToList();
     }
 
@@ -79,6 +83,7 @@ public class TrashController : MonoBehaviour
             {
                 _isCompleted = true;
             }
+            SaveTotalGarbageCount();
         }
     }
 
@@ -102,5 +107,25 @@ public class TrashController : MonoBehaviour
             sum += pile.GetTrashAmount();
 
         return currentTotalTrashAmount - sum > 0;
+    }
+
+    public void LoadTotalGarbageCount()
+    {
+        currentTotalTrashAmount = PersistantData.Instance.sceneData.TotalCollectedGarbageCount;
+        _isCompleted = PersistantData.Instance.sceneData.IsLocationCompleted;
+    }
+
+    public void SaveTotalGarbageCount()
+    {
+        PersistantData.Instance.sceneData.TotalCollectedGarbageCount = currentTotalTrashAmount;
+        PersistantData.Instance.sceneData.IsLocationCompleted = _isCompleted;
+        SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
+    }
+
+    public void ResetTotalGarbageCount()
+    {
+        currentTotalTrashAmount = maxTotalTrashAmount;
+        completionPercentage = GetCompletionPercentage();
+        SaveTotalGarbageCount();
     }
 }

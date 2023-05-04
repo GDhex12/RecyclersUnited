@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1870732892}
     m_Modifications:
     - target: {fileID: -3435740075437496155, guid: 10900dcd89a70244fb940ebc671ba371, type: 3}
+      propertyPath: trashAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -3435740075437496155, guid: 10900dcd89a70244fb940ebc671ba371, type: 3}
       propertyPath: trashSpawner
       value: 
       objectReference: {fileID: 1107132464}
@@ -403,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMesh: {fileID: 1300048620}
   trashPiles: []
-  maxTotalTrashAmount: 50
+  maxTotalTrashAmount: 1000
   currentTotalTrashAmount: 0
   completionPercentage: 100
 --- !u!1 &126768345
@@ -798,6 +802,8 @@ MonoBehaviour:
     SaveDataVersion: 4
     StorageGarbageCount: 0
     VehicleGarbageCount: 0
+    TotalCollectedGarbageCount: 0
+    IsLocationCompleted: 0
     VolunteerPickerCount: 1
     VolunteerLoaderCount: 1
     VehicleCapacityCurrentLevel: 1
@@ -1228,6 +1234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1870732892}
     m_Modifications:
+    - target: {fileID: 82567458063999391, guid: c97bf06e433ae144f87685a957089cf5, type: 3}
+      propertyPath: trashAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 82567458063999391, guid: c97bf06e433ae144f87685a957089cf5, type: 3}
       propertyPath: trashSpawner
       value: 
@@ -1858,6 +1868,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1870732892}
     m_Modifications:
     - target: {fileID: 1760494208674635943, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
+      propertyPath: trashAmount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760494208674635943, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
       propertyPath: trashSpawner
       value: 
       objectReference: {fileID: 1107132464}
@@ -2062,6 +2076,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1870732892}
     m_Modifications:
+    - target: {fileID: 1369097197675260886, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
+      propertyPath: trashAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1369097197675260886, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: trashSpawner
       value: 
@@ -3905,6 +3923,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1870732892}
     m_Modifications:
+    - target: {fileID: -7322284863734133046, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
+      propertyPath: trashAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: -7322284863734133046, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
       propertyPath: trashSpawner
       value: 
