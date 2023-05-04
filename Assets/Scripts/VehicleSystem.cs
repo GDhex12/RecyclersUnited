@@ -28,6 +28,12 @@ public class VehicleSystem : MonoBehaviour
         return currentGarbageCount;
     }
 
+    public void SetGarbageCount(int count)
+    {
+        currentGarbageCount = count;
+        UpdateGarbage();
+    }
+    
     public void SetMaxGarbageCount(int count)
     {
         maxGarbageCount = count;

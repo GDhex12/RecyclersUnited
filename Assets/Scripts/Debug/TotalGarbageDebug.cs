@@ -8,4 +8,6 @@ public class TotalGarbageDebug : MonoBehaviour
     {
         TrashController.Instance.ResetTotalGarbageCount();
     }
+
+    
 }
