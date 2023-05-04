@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BeachScene_01.unity
     guid: 49d2de8afc3f9d449bac13d5ca4496df
   - enabled: 1
-    path: Assets/Scenes/TestScenes/MapTest.unity
+    path: Assets/Scenes/MapTest.unity
     guid: 3131803aff45f9a4a8f8714981dad39f
   - enabled: 1
     path: Assets/Scenes/TestScenes/Arvydo.unity
@@ -18,4 +18,5 @@ EditorBuildSettings:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 026c98cb5c5b861408c2a4b7b310c3f4, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 8bc0e657f552cd94b8e0cafdd7c503f4, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: bb02e60cddc89234987ac891448e5175, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: bfe5804283a741a4488be4a5e7bb656b, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: fd94d42a382b55142815dcbab4263a00, type: 2}

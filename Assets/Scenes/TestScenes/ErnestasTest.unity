@@ -796,15 +796,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData:
-    SaveDataVersion: 2
+    SaveDataVersion: 4
     Coins: 0
-    VolunteerCount: 1
-    StorageGarbageCount: 0
-    VehicleGarbageCount: 0
     Level: 1
     Experience: 0
     ExpLimit: 100
-  SaveDataVerToCheck: 2
+    isAreaLocked: 01000000000000000000
+  sceneData:
+    SaveDataVersion: 4
+    StorageGarbageCount: 0
+    VehicleGarbageCount: 0
+    VolunteerPickerCount: 1
+    VolunteerLoaderCount: 1
+    VehicleCapacityCurrentLevel: 1
+    StorageCapacityCurrentLevel: 1
+    PickerSpeedCurrentLevel: 1
+    LoaderSpeedCurrentLevel: 1
+    LoaderBagCurrentLevel: 1
+  SaveDataVerToCheck: 4
 --- !u!114 &275319753 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9203847998983109599, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
@@ -934,7 +943,6 @@ MonoBehaviour:
   vehicleCooldown: {fileID: 1049905959}
   spawner: {fileID: 471543196}
   volunteerRoot: {fileID: 471543195}
-  trash: []
 --- !u!4 &351914033
 Transform:
   m_ObjectHideFlags: 0
@@ -2271,6 +2279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8c30467463fd0449614d1e7157f30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   possibleVariants:
   - {fileID: 1760494208674635943, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
   - {fileID: -7322284863734133046, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
@@ -3445,6 +3454,8 @@ MonoBehaviour:
   currrentVolunteersCount: 0
   temporaryAddedVolunteersList: []
   allVolunteers: []
+  spawnedPickerVolunteersList: []
+  spawnedLoaderVolunteersList: []
   volunteersSpawnTransform: {fileID: 471543195}
   spawnObjectScript: {fileID: 471543196}
   walkOffPoint: {fileID: 518718671}
@@ -4516,6 +4527,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011250219612, guid: 145166ff5ca66964ebee41bbda15dee2, type: 3}
   m_PrefabInstance: {fileID: 2089606912}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2106739862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106739864}
+  - component: {fileID: 2106739863}
+  m_Layer: 0
+  m_Name: DataLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2106739863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106739862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e970d1db239742e429c770bf2855e4d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2106739864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106739862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117493106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4689,7 +4744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &2869897793290302149
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4808,6 +4863,10 @@ PrefabInstance:
     - target: {fileID: 6542045452420167993, guid: 1a4b08fab218a16458f8ac85dea7a114, type: 3}
       propertyPath: m_Name
       value: VolunteerPicker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542045452420167993, guid: 1a4b08fab218a16458f8ac85dea7a114, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9132342890968264113, guid: 1a4b08fab218a16458f8ac85dea7a114, type: 3}
       propertyPath: m_RootOrder
