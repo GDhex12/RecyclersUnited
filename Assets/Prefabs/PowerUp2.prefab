@@ -133,9 +133,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   speed: 5
-  pickUp: {fileID: 0}
+  maxAmplitude: 0.5
+  maxSpeedY: 1
+  flyDuration: 40
   rb: {fileID: 8118786480714607935}
   powerUpSpawner: {fileID: 0}
+  pickUpEffect: {fileID: 0}
+  AddPowerUpColor: {fileID: 0}
+  SpeedPowerUpColor: {fileID: 0}
+  PowerUpMesh: {fileID: 0}
 --- !u!54 &8118786480714607935
 Rigidbody:
   m_ObjectHideFlags: 0
