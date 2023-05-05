@@ -24,7 +24,6 @@ public class PowerUpSpawner : MonoBehaviour
 
     public void SpawnPowerUp()
 	{
-
         if (activePowerUps.Count < allPowerUps.Count - 1)
         {
             GameObject powerUp = allPowerUps[activePowerUps.Count];
