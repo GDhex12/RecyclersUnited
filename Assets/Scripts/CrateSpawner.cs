@@ -18,7 +18,7 @@ public class CrateSpawner : MonoBehaviour
     [SerializeField] private Transform spawnFromRight;
     [SerializeField] private Transform spawnToRight;
     private float timeToNextPowerUp;
-    private MoveDirection moveDirection = MoveDirection.Right;
+    //private MoveDirection moveDirection = MoveDirection.Right;
     private enum MoveDirection
     {
         Right,
