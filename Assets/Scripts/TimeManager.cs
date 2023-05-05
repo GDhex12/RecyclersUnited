@@ -38,7 +38,7 @@ public class TimeManager : MonoBehaviour
         SaveExitTime();
     }
 
-    private void OnApplicationQuit()
+    private void OnDestroy()
     {
         SaveExitTime();
     }
