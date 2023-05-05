@@ -7,9 +7,11 @@ public class VehicleManager : MonoBehaviour
     [SerializeField] private List<GameObject> allVehiclesPrefabs;
     [SerializeField] private List<Vehicle> allVehiclesSO;
 
+
     // Start is called before the first frame update
     void Start()
     {
+
 		if (SaveSystem.IsVehicleDataCreated())
 		{
             ReadData();
@@ -17,8 +19,9 @@ public class VehicleManager : MonoBehaviour
 		else
 		{
             WriteData();
-
+ 
         }
+       
     }
 
     // Update is called once per frame
@@ -55,6 +58,10 @@ public class VehicleManager : MonoBehaviour
 			{
                 allVehiclesPrefabs[vehicle.id].SetActive(true);
 			}
+			else
+			{
+                allVehiclesPrefabs[vehicle.id].SetActive(false);
+            }
 		}
     }
 

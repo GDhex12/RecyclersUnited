@@ -8,11 +8,13 @@ public class VehicleShop : MonoBehaviour
     [SerializeField] private List<Vehicle> allVehicles;
     [SerializeField] private List<Button> buyButtons;
     [SerializeField] private VehicleManager vehicleManager;
+    [SerializeField] private List<GameObject> vehicleRows;
 
     // Start is called before the first frame update
     void Start()
     {
-       // BuyNewVehicle(1);
+
+        CreateShop();
     }
 
     // Update is called once per frame
@@ -21,21 +23,27 @@ public class VehicleShop : MonoBehaviour
         
     }
 
-    public void BuyNewVehicle(int id=1)
+    public void BuyNewVehicle(int id)
 	{
 
-		if (allVehicles[1].GetPrice() < 100000)
+		if (allVehicles[id].GetPrice() < 100000000)
 		{
             WriteData(id);
-            //buy
+            CreateShop();
         }
-		else
-		{
-            //
-		}
+
 
 
 	}
+    public void SelectVehilce(int id)
+    {
+
+
+        WriteData(id);
+        CreateShop();
+
+
+    }
 
     void WriteData(int id)
     {
@@ -60,6 +68,15 @@ public class VehicleShop : MonoBehaviour
 
 
     }
+	public void CreateShop()
+	{
+        VehicleDataList vehicleDataList = SaveSystem.LoadShopData();
+        for (int i=0; i<allVehicles.Count; i++)
+		{
+            vehicleRows[i].SetActive(true);
+            vehicleRows[i].GetComponent<SetUpVehicleRow>().Setup(allVehicles[i], vehicleDataList.dataList[i]);
+		}
+	}
 
 
 

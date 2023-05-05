@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VehiclePrefab: {fileID: 4080108481220529861, guid: 126c50539545c6b43acce466e1995651, type: 3}
   id: 1
-  price: 10000
+  price: 200
   levelRequired: 10
   isDefault: 0
