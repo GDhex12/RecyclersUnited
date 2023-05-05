@@ -10,6 +10,18 @@ public class TrashController : MonoBehaviour
     public NavMeshAgent navMesh;
     [SerializeField] List<TrashPile> trashPiles;
 
+    [Header("Total location trash amount")]
+    [SerializeField] int maxTotalTrashAmount = 1000;
+    [SerializeField] int currentTotalTrashAmount = 0;
+    [SerializeField] int completionPercentage = 100;
+
+    bool _isCompleted = false;
+
+    public bool IsCompleted() 
+    { 
+        return _isCompleted;
+    }
+
     private void Awake()
     {
         Instance = this;
@@ -23,6 +35,11 @@ public class TrashController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!_isCompleted && currentTotalTrashAmount == 0)
+        {
+            currentTotalTrashAmount = maxTotalTrashAmount;
+            SaveTotalGarbageCount();
+        }
         trashPiles = FindObjectsOfType<TrashPile>().ToList();
     }
 
@@ -52,5 +69,63 @@ public class TrashController : MonoBehaviour
         /*
          * TO-DO: clear all NavMesh data and regenerate new paths based on newly spawned trash here
          */
+    }
+
+    //----------------- total location trash amount ----------------
+
+    public void DecreaseTotalTrashAmount(int amount)
+    {
+        if (!_isCompleted)
+        {
+            currentTotalTrashAmount -= amount;
+            completionPercentage = GetCompletionPercentage();
+            if (currentTotalTrashAmount <= 0)
+            {
+                _isCompleted = true;
+            }
+            SaveTotalGarbageCount();
+        }
+    }
+
+    public void DecreaseTotalTrashAmount()
+    {
+        DecreaseTotalTrashAmount(1);
+    }
+
+    public int GetCompletionPercentage()
+    {
+        float max = maxTotalTrashAmount;
+        float curr = currentTotalTrashAmount;
+        int percentige = (int)Mathf.Round((curr / max) * 100);
+        return percentige < 0 ? 0 : percentige;
+    }
+
+    public bool NeedsToSpawn()
+    {
+        int sum = 0;
+        foreach (TrashPile pile in trashPiles)
+            sum += pile.GetTrashAmount();
+
+        return currentTotalTrashAmount - sum > 0;
+    }
+
+    public void LoadTotalGarbageCount()
+    {
+        currentTotalTrashAmount = PersistantData.Instance.sceneData.TotalCollectedGarbageCount;
+        _isCompleted = PersistantData.Instance.sceneData.IsLocationCompleted;
+    }
+
+    public void SaveTotalGarbageCount()
+    {
+        PersistantData.Instance.sceneData.TotalCollectedGarbageCount = currentTotalTrashAmount;
+        PersistantData.Instance.sceneData.IsLocationCompleted = _isCompleted;
+        SaveSystem.SaveSceneData(PersistantData.Instance.sceneData);
+    }
+
+    public void ResetTotalGarbageCount()
+    {
+        currentTotalTrashAmount = maxTotalTrashAmount;
+        completionPercentage = GetCompletionPercentage();
+        SaveTotalGarbageCount();
     }
 }

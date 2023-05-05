@@ -14,14 +14,21 @@ public class TrashPileSpawner : MonoBehaviour
 
     public void LaunchRespawn (Vector3 removedLoc)
     {
-        StartCoroutine(InitiateNewSpawn(removedLoc));
+        //spawn trash pile if total trash amount is bigger than 0
+        if (TrashController.Instance.NeedsToSpawn())
+        {
+            StartCoroutine(InitiateNewSpawn(removedLoc));
+        }
     }
 
     public IEnumerator InitiateNewSpawn (Vector3 removedLoc)
     {
         yield return new WaitForSeconds(Random.Range(timeToSpawnMin, timeToSpawnMax));
-        GameObject newTrash = Instantiate(possibleVariants[Random.Range(0, possibleVariants.Count-1)].gameObject, removedLoc, Quaternion.identity, parent);
-        newTrash.GetComponent<Animation>().Play();
-        TrashController.Instance.AddTrashPile(newTrash.GetComponent<TrashPile>());
+        if (TrashController.Instance.NeedsToSpawn())
+        {
+            GameObject newTrash = Instantiate(possibleVariants[Random.Range(0, possibleVariants.Count - 1)].gameObject, removedLoc, Quaternion.identity, parent);
+            newTrash.GetComponent<Animation>().Play();
+            TrashController.Instance.AddTrashPile(newTrash.GetComponent<TrashPile>());
+        }
     }
 }

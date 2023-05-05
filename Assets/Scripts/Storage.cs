@@ -24,6 +24,12 @@ public class Storage : MonoBehaviour
         maxGarbageCount = count;
         UpdateGarbage();
     }
+    
+    public void SetGarbageCount(int count)
+    {
+        currentGarbageCount = count;
+        UpdateGarbage();
+    }
 
     public int GetMaxGarbageCount()
     {
