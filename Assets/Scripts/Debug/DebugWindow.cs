@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DebugWindow : MonoBehaviour
 {
 #if UNITY_EDITOR
 
     [SerializeField] GameObject debugWindow;
-    [SerializeField] KeyCode debugKey;
+    [SerializeField] Key debugKey;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class DebugWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(debugKey))
+        if (Keyboard.current[debugKey].wasPressedThisFrame)
         {
             debugWindow.SetActive(!debugWindow.activeInHierarchy);
         }
