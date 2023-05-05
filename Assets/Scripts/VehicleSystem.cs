@@ -16,11 +16,12 @@ public class VehicleSystem : MonoBehaviour
     [Header("Money")]
     [SerializeField] private int moneyPerGarbage = 10;
 
-
+    
     private void Start()
     {
         currentGarbageCount = PersistantData.Instance.sceneData.VehicleGarbageCount;
 
+       
     }
 
     public int GetGarbageCount()
