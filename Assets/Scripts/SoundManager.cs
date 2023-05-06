@@ -6,7 +6,8 @@ public static class SoundManager
 {
     public enum Sound
     {
-       PickUp
+       PickUp,
+       TruckEngine
     }
 
     public static AudioClip GetAudioClip(Sound sound)
