@@ -7,6 +7,7 @@ public static class SaveSystem
 {
     public static string filepathScene = "/" + SceneManager.GetActiveScene().name + ".game";
     public static string filepathPlayer = "/playerData.game";
+    public static string shopFilepath = "/shop.game";
     public static void SaveSceneData(SceneData data)
     {
         string path = Application.persistentDataPath + filepathScene;
@@ -64,6 +65,14 @@ public static class SaveSystem
             File.Delete(path);
         }
     }
+    public static void RemoveAllVehicleData()
+    {
+        string path = Application.persistentDataPath + shopFilepath;
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+    }
 
 
     public static PlayerData LoadPlayerData()
@@ -83,4 +92,47 @@ public static class SaveSystem
         }
         return playerData;
     }
+
+    public static void SaveShopData(VehicleDataList data)
+    {
+        string path = Application.persistentDataPath + shopFilepath;
+
+        using StreamWriter stream = new(path);
+        string json = JsonUtility.ToJson(data);
+        stream.Write(json);
+    }
+
+    public static VehicleDataList LoadShopData()
+    {
+        string path = Application.persistentDataPath + shopFilepath;
+
+        if (!File.Exists(path))
+        {
+            SaveShopData(new VehicleDataList());
+        }
+        VehicleDataList playerData = new();
+
+        using (StreamReader stream = new(path))
+        {
+            string json = stream.ReadToEnd();
+            playerData = JsonUtility.FromJson<VehicleDataList>(json);
+        }
+        return playerData;
+    }
+
+    public static bool IsVehicleDataCreated()
+    {
+        string path = Application.persistentDataPath + shopFilepath;
+        if (!File.Exists(path))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    
+    
+
 }
