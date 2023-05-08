@@ -1483,6 +1483,7 @@ GameObject:
   - component: {fileID: 915616627880287587}
   - component: {fileID: 1146801340435463790}
   - component: {fileID: 1721503885354860787}
+  - component: {fileID: 1795457482835532965}
   m_Layer: 5
   m_Name: Powerup Panel
   m_TagString: Untagged
@@ -1553,6 +1554,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1795457482835532965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034079329094430674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3860bdf09c3a7fc4a803e559df1e0069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupTab: {fileID: 7036932069714065915}
 --- !u!1 &1132370118681898201
 GameObject:
   m_ObjectHideFlags: 0
