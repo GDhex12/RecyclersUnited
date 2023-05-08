@@ -11,6 +11,7 @@ public class TrashPile : MonoBehaviour
     int _trashPerChange, _trashLeftAfterDivision;
     int _trashTaken = 0;
 
+    public int GetTrashAmount() { return trashAmount; }
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class TrashPile : MonoBehaviour
     {
         trashAmount--;
         _trashTaken++;
+        TrashController.Instance.DecreaseTotalTrashAmount();
         int trashToTake = _trashLeftAfterDivision > 0 ? _trashPerChange + 1 : _trashPerChange;
         if (trashToTake <= _trashTaken)
         {

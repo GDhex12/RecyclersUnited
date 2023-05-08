@@ -88,15 +88,28 @@ public class VehicleCooldown : MonoBehaviour
 
     void SendVehicle()
     {
+        SoundManager.PlaySound(SoundManager.Sound.TruckEngine);
+        PlayParticleEffect();
         vehicleManager.fullWarning.gameObject.SetActive(false);
         vehicleReturned = false;
         lastSentCount = vehicleManager.currentGarbageCount;
         currency.text = vehicleManager.GetGarbageToMoneyToString(lastSentCount);
         vehicleManager.RemoveAllGarbage();
     }
+    void PlayParticleEffect()
+    {
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            if (gameObject.transform.GetChild(i).gameObject.activeSelf == true)
+            {
+                gameObject.transform.GetChild(i).GetComponent<PlaySmokeEffect>().PlayParticles();
+            }
+        }
+    }
 
     public void TimerShutdown ()
     {
+        PlayParticleEffect();
         vehicleReturned = true;
         cooldownUI_container.SetActive(false);
         //GetComponent<Animator>().Play(string.Format("{0}Returns", gameObject.name));

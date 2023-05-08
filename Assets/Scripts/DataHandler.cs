@@ -34,6 +34,7 @@ public class DataHandler : MonoBehaviour
             GameManager.Instance.spawner.SpawnCertainAmountOfLoaderVolunteers(PersistantData.Instance.sceneData.VolunteerLoaderCount);
             GameManager.Instance.storage.GetParamsFromSave();
             GameManager.Instance.vehicle.GetParamsFromSave();
+            TrashController.Instance.LoadTotalGarbageCount();
         }
     }
 }

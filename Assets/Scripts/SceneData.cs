@@ -9,6 +9,8 @@ public class SceneData
     [Header("Current Collected Amount")]
     public int StorageGarbageCount = 0;
     public int VehicleGarbageCount = 0;
+    public int TotalCollectedGarbageCount = 0;
+    public bool IsLocationCompleted = false;
 
     [Header("Bought object counts")]
     public int VolunteerPickerCount = 1;
@@ -33,6 +35,8 @@ public class SceneData
         //Current Collected Amount
         StorageGarbageCount = 0;
         VehicleGarbageCount = 0;
+        TotalCollectedGarbageCount = 0;
+        IsLocationCompleted = false;
 
         //Bought object counts
         VolunteerPickerCount = 1;
