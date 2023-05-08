@@ -20,7 +20,6 @@ public class PowerUpUI : MonoBehaviour
         new Color32(0x00, 0x7B, 0x2F, 0xFF), // Dark Green
         new Color32(0xE5, 0x0B, 0x00, 0xFF)  // Dark Red
     };
-    [SerializeField] private ExperienceStats refToExperience;
     [SerializeField] private VolunteerCountManager refToVolunteers;
     [SerializeField] private Button useButton;
     [SerializeField] private bool isPowerUpActive = false;
@@ -31,10 +30,15 @@ public class PowerUpUI : MonoBehaviour
         if (timerSeconds == 0) Debug.LogError(string.Format("Please set the timerSeconds variable in {0}!", gameObject.name));
         if (neededLevel == 0) Debug.LogError(string.Format("Please set the neededLevel variable in {0}!", gameObject.name));
         timerText.text = Convert.ToString(timerSeconds);
-        if (neededLevel <= refToExperience.level)
+        CheckNeededLevel();
+    }
+    public void CheckNeededLevel()
+    {
+        if (neededLevel <= PersistantData.Instance.playerData.Level)
         {
-            availabilityText.text = setMessages[0]; 
+            availabilityText.text = setMessages[0];
             availabilityText.color = textColor[0];
+            ChangeButtonStatus(true);
         }
         else
         {

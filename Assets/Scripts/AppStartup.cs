@@ -6,7 +6,6 @@ public class AppStartup : MonoBehaviour
     const int bootSceneNo = 0;
     public static bool veryFirstCallInApp = true;
     [SerializeField] private TimeManager refToTime;
-    [SerializeField] private Storage refToStorage;
 
     void Start()
     {
@@ -22,15 +21,27 @@ public class AppStartup : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void ProgramBegins()
+    private void ProgramBegins()
     {
         float timeDifference = TimeManager.instance.TimeDiffBtwExitAndStart();
         int storageDifference = (int)timeDifference / 3;
         int storageLevelFormula = 50 + (PersistantData.Instance.sceneData.StorageCapacityCurrentLevel * 25);
+        int garbageToAdd;
         if (PersistantData.Instance.sceneData.StorageGarbageCount + storageDifference > storageLevelFormula)
-        {
-            refToStorage.AddGarbage(refToStorage.GetMaxGarbageCount() - refToStorage.GetGarbageCount());
+        {        
+            garbageToAdd = GameManager.Instance.storage.GetMaxGarbageCount() -
+                GameManager.Instance.storage.GetGarbageCount();
+            GameManager.Instance.storage.AddGarbage(garbageToAdd);
         }
-        else refToStorage.AddGarbage(storageDifference);
+        else
+        {
+            garbageToAdd = storageDifference;
+            GameManager.Instance.storage.AddGarbage(garbageToAdd);
+        }
+        AddXpBasedOnGarbage(garbageToAdd);
+    }
+    private void AddXpBasedOnGarbage(int garbageAmount)
+    {
+        GameManager.Instance.experienceManager.experienceToIncrease += garbageAmount;
     }
 }
