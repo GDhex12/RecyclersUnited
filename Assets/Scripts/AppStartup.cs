@@ -33,7 +33,7 @@ public class AppStartup : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void ProgramBegins()
+    private void ProgramBegins()
     {
         float timeDifference = TimeManager.instance.TimeDiffBtwExitAndStart();
         AddStorageGarbage(timeDifference);
@@ -58,7 +58,7 @@ public class AppStartup : MonoBehaviour
 
         refToStorage.AddGarbage(storageDifference);
         TrashController.Instance.DecreaseTotalTrashAmount(storageDifference);
-        GameManager.Instance.experienceManager.experienceToIncrease += 2 * storageDifference;
+        AddXpBasedOnGarbage(garbageToAdd);
     }
 
     void AddVehicleGarbage(float timeDifference)
@@ -66,5 +66,10 @@ public class AppStartup : MonoBehaviour
         int volunteerCount = PersistantData.Instance.sceneData.VolunteerLoaderCount;
         int vehicleDifference = (int)(timeDifference / vehicle_timeBtwAdditions) * volunteerCount;
         refToVehicle.AddGarbage(vehicleDifference);
+    }
+    
+    private void AddXpBasedOnGarbage(int garbageAmount)
+    {
+        GameManager.Instance.experienceManager.experienceToIncrease += garbageAmount;
     }
 }
