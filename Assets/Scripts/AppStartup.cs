@@ -45,10 +45,7 @@ public class AppStartup : MonoBehaviour
         int volunteerCount = PersistantData.Instance.sceneData.VolunteerPickerCount;
         int storageDifference = (int)(timeDifference / storage_timeBtwAdditions) * volunteerCount;
 
-        // ------------maksimumas jau yra paskaiciuotas kitur---------------------
-        //int storageLevelFormula = 50 + (PersistantData.Instance.sceneData.StorageCapacityCurrentLevel * 25);
-
-        int maxStorage = refToStorage.GetMaxGarbageCount(); // asikesnis vardas
+        int maxStorage = refToStorage.GetMaxGarbageCount();
 
         if (PersistantData.Instance.sceneData.StorageGarbageCount + storageDifference > maxStorage)
         {
@@ -58,7 +55,7 @@ public class AppStartup : MonoBehaviour
 
         refToStorage.AddGarbage(storageDifference);
         TrashController.Instance.DecreaseTotalTrashAmount(storageDifference);
-        AddXpBasedOnGarbage(garbageToAdd);
+        AddXpBasedOnGarbage(storageDifference);
     }
 
     void AddVehicleGarbage(float timeDifference)
