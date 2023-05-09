@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028532, g: 0.22571635, b: 0.30692467, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028575, g: 0.22571759, b: 0.30692452, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2348,6 +2348,7 @@ MonoBehaviour:
   - {fileID: 571710846}
   - {fileID: 134570625}
   activePowerUps: []
+  helicopter: {fileID: 1701019085125913194}
 --- !u!1001 &595114880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2570,7 +2571,7 @@ GameObject:
   - component: {fileID: 724333514}
   m_Layer: 0
   m_Name: Rotor
-  m_TagString: PowerUp
+  m_TagString: Helicopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5333,7 +5334,7 @@ GameObject:
   - component: {fileID: 1871148659}
   m_Layer: 0
   m_Name: Prompt
-  m_TagString: PowerUp
+  m_TagString: Helicopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6248,7 +6249,7 @@ GameObject:
   - component: {fileID: 5714273870835295173}
   m_Layer: 0
   m_Name: helicopter-base
-  m_TagString: PowerUp
+  m_TagString: Helicopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6265,7 +6266,7 @@ GameObject:
   - component: {fileID: 2073379732}
   m_Layer: 0
   m_Name: helicopter
-  m_TagString: PowerUp
+  m_TagString: Helicopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6284,7 +6285,7 @@ GameObject:
   - component: {fileID: 670255492687131738}
   m_Layer: 0
   m_Name: helicopter-propeller-small
-  m_TagString: PowerUp
+  m_TagString: Helicopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -14,6 +14,7 @@ public class PowerUpSpawner : MonoBehaviour
     [SerializeField] private Transform[] powerUpsSpawnPoint = new Transform[2];
     [SerializeField] private List<GameObject> allPowerUps;
     [SerializeField] private List<GameObject> activePowerUps;
+    [SerializeField] GameObject helicopter;
     private float timeToNextPowerUp;
 
     void Start()
@@ -33,6 +34,16 @@ public class PowerUpSpawner : MonoBehaviour
             powerUp.SetActive(true);
             powerUp.GetComponent<PowerUp>().Setup(direction);
             activePowerUps.Add(powerUp);
+            
+        }
+        if(Random.value > 0.5)
+        {
+            helicopter.GetComponent<Animator>().Play("HelicopterComes");
+            helicopter.GetComponent<Animator>().ResetTrigger("MoveToExit");
+        }
+        else
+        {
+
         }
     }
 

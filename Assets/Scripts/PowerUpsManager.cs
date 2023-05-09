@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.UI;
 
 public class PowerUpsManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class PowerUpsManager : MonoBehaviour
     [SerializeField] private float speedUpButtonCoolDown;
     [SerializeField] private Color disabledButtonColor;
     [SerializeField] private Color enabledButtonColor;
+    private bool helicopterClicked = false;
 
     // Update is called once per frame
     void Update()
@@ -37,11 +39,21 @@ public class PowerUpsManager : MonoBehaviour
                             countManager.IncreaseVolunteersSpeed();
                         }
                     }
-                }else if (hit.transform.CompareTag("Crate"))
+                }
+                else if (hit.transform.CompareTag("Crate"))
                 {
                     hit.transform.gameObject.GetComponent<OnClickEffect>().OnClick();
                     hit.transform.gameObject.GetComponent<OnClickAddCoins>().OnClick();                    
                 }
+                else if (hit.transform.CompareTag("Helicopter") && !helicopterClicked)
+                {
+                    helicopterClicked = true;
+                    hit.transform.root.GetComponent<Animator>().SetTrigger("MoveToExit");
+                    countManager.AddVolunteersTemporary(3, 10f);
+                    FunctionTimer.Create(()=>{ helicopterClicked = false; },2f);
+
+                }
+
             }
         }
 
