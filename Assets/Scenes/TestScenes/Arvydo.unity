@@ -2628,6 +2628,7 @@ Transform:
   - {fileID: 351914033}
   - {fileID: 101566301}
   - {fileID: 1288885779}
+  - {fileID: 2012150156}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3209,22 +3210,6 @@ PrefabInstance:
       propertyPath: refToVolunteers
       value: 
       objectReference: {fileID: 1571467721}
-    - target: {fileID: 5450822109641392395, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5450822109641392395, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5450822109641392395, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 5450822109641392395, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -225
-      objectReference: {fileID: 0}
     - target: {fileID: 8024707335223833503, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3374,6 +3359,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1479468364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 980011344713383237, guid: d05d3fd1d77e31942ba1e4701066c335, type: 3}
+  m_PrefabInstance: {fileID: 980011344172963297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1479468366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 980011344713383239, guid: d05d3fd1d77e31942ba1e4701066c335, type: 3}
+  m_PrefabInstance: {fileID: 980011344172963297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479468364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1479468369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479468364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4a53f22acea024e9d17077ac93e2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showAdButton: {fileID: 1479468366}
+  _androidAdUnitId: Rewarded_Android
+  _iOSAdUnitId: Rewarded_iOS
+  rewardType: 0
+  moneyReward: 50
 --- !u!114 &1548153789 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1886783711151375965, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
@@ -4399,6 +4417,53 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4181594265989041246, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
   m_PrefabInstance: {fileID: 2010518135}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2012150155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012150156}
+  - component: {fileID: 2012150157}
+  m_Layer: 0
+  m_Name: AdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2012150156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012150155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1242293048}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2012150157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012150155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15439b8ea87f29349b2cfb8a69820a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidGameId: 5273237
+  _iOSGameId: 5273236
+  _testMode: 1
 --- !u!1 &2059581682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,6 +4744,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 980011344651547294, guid: d05d3fd1d77e31942ba1e4701066c335, type: 3}
+      propertyPath: m_text
+      value: Show ad(rewarded)
+      objectReference: {fileID: 0}
+    - target: {fileID: 980011344713383237, guid: d05d3fd1d77e31942ba1e4701066c335, type: 3}
+      propertyPath: m_Name
+      value: ShowRewardedAd
+      objectReference: {fileID: 0}
+    - target: {fileID: 980011344713383239, guid: d05d3fd1d77e31942ba1e4701066c335, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 980011345820994240, guid: d05d3fd1d77e31942ba1e4701066c335, type: 3}
       propertyPath: m_Name
       value: DebugCanvas
