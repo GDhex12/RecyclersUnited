@@ -407,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMesh: {fileID: 1300048620}
   trashPiles: []
-  maxTotalTrashAmount: 1000
+  maxTotalTrashAmount: 1000000
   currentTotalTrashAmount: 0
   completionPercentage: 100
 --- !u!1 &126768345
@@ -4982,6 +4982,10 @@ PrefabInstance:
       propertyPath: refToStorage
       value: 
       objectReference: {fileID: 1277677169}
+    - target: {fileID: 7376077013104562799, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
+      propertyPath: refToVehicle
+      value: 
+      objectReference: {fileID: 1338726064}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe4efbad9d2344742ab803beed504db2, type: 3}
 --- !u!1001 &6364046910760646556
