@@ -19,7 +19,7 @@ public class PersistantData : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
     }
 

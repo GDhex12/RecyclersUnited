@@ -946,7 +946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Test
+  m_text: Show ad(rewarded)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1027,8 +1027,9 @@ GameObject:
   - component: {fileID: 980011344713383241}
   - component: {fileID: 980011344713383238}
   - component: {fileID: 980011344713383239}
+  - component: {fileID: 1479468369}
   m_Layer: 5
-  m_Name: Test (2)
+  m_Name: ShowRewardedAd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,15 +1137,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 980011344713383238}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1479468369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980011344713383237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4a53f22acea024e9d17077ac93e2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showAdButton: {fileID: 980011344713383239}
+  _androidAdUnitId: Rewarded_Android
+  _iOSAdUnitId: Rewarded_iOS
+  OnRewardSuccess:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980011345820994240}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 980011345820994247}
+        m_TargetAssemblyTypeName: DebugWindow, Assembly-CSharp
+        m_MethodName: GiveReward_Money
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

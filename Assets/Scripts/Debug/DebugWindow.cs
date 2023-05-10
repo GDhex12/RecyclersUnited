@@ -51,5 +51,11 @@ public class DebugWindow : MonoBehaviour
             vehicle.SetGarbageCount(0);
         }
     }
+
+    public void GiveReward_Money(int moneyReward)
+    {
+        CurrencyManager.instance.AddCurrency(moneyReward);
+        Debug.Log($"Rewarded ${moneyReward}");
+    }
 #endif
 }
