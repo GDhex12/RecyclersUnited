@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
+using UnityEngine.Events;
 
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
@@ -11,10 +12,9 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     string _adUnitId = null; // This will remain null for unsupported platforms
 
     [Header("Rewards")]
-    [SerializeField] Reward rewardType = Reward.MONEY;
-    [SerializeField] int moneyReward = 50;
+    [SerializeField] UnityEvent OnRewardSuccess;
+    [SerializeField] UnityEvent OnRewardFailed;
 
-    enum Reward { MONEY}
 
     void Awake()
     {
@@ -91,13 +91,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
     void GiveReward()
     {
-        switch (rewardType)
-        {
-            case Reward.MONEY:
-                CurrencyManager.instance.AddCurrency(moneyReward);
-                Debug.Log($"Rewarded ${moneyReward}");
-                break;
-        }
+        OnRewardSuccess.Invoke();
     }
 
     // Implement Load and Show Listener error callbacks:
@@ -111,6 +105,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {
         Debug.Log($"Error showing Ad Unit {adUnitId}: {error.ToString()} - {message}");
         // Use the error details to determine whether to try to load another ad.
+        OnRewardFailed.Invoke();
     }
 
     public void OnUnityAdsShowStart(string adUnitId) { }

@@ -10,6 +10,7 @@ public static class SaveSystem
     public static string shopFilepath = "/shop.game";
     public static void SaveSceneData(SceneData data)
     {
+        filepathScene = "/" + SceneManager.GetActiveScene().name + ".game";
         string path = Application.persistentDataPath + filepathScene;
 
         SaveSceneData(data, path);
@@ -22,6 +23,7 @@ public static class SaveSystem
     }
     public static SceneData LoadSceneData()
     {
+        filepathScene = "/" + SceneManager.GetActiveScene().name + ".game";
         string path = Application.persistentDataPath + filepathScene;
 
         if (!File.Exists(path))
@@ -54,6 +56,7 @@ public static class SaveSystem
 
     public static void RemoveAllData()
     {
+        filepathScene = "/" + SceneManager.GetActiveScene().name + ".game";
         string path = Application.persistentDataPath + filepathScene;
         if (File.Exists(path))
         {
