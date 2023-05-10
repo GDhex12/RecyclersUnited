@@ -7,6 +7,7 @@ TagManager:
   - PowerUp
   - Volunteer
   - Crate
+  - Helicopter
   layers:
   - Default
   - TransparentFX
