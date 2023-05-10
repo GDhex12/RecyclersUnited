@@ -17,6 +17,7 @@ public class VehicleCooldown : MonoBehaviour
     [SerializeField] Image cooldownImage;
     [SerializeField] GameObject cooldownUI_container;
     [SerializeField] TextMeshProUGUI currency;
+    [SerializeField] Animator garbageFullnessAnimator;
 
     public bool vehicleReturned = true;
 
@@ -79,7 +80,7 @@ public class VehicleCooldown : MonoBehaviour
 
     void InitializeOnStart()
     {
-        GetComponent<Animator>().Play("TruckAway");
+        GetComponent<Animator>().Play("TruckAway");    
         vehicleReturned = false;
         currency.text = vehicleManager.GetGarbageToMoneyToString(lastSentCount);
         _isTimerRunning= true;
@@ -90,11 +91,13 @@ public class VehicleCooldown : MonoBehaviour
     {
         SoundManager.PlaySound(SoundManager.Sound.TruckEngine);
         PlayParticleEffect();
+        garbageFullnessAnimator.Play("Object_Dissapear");
         vehicleManager.fullWarning.gameObject.SetActive(false);
         vehicleReturned = false;
         lastSentCount = vehicleManager.currentGarbageCount;
         currency.text = vehicleManager.GetGarbageToMoneyToString(lastSentCount);
         vehicleManager.RemoveAllGarbage();
+
     }
     void PlayParticleEffect()
     {
@@ -114,6 +117,7 @@ public class VehicleCooldown : MonoBehaviour
         cooldownUI_container.SetActive(false);
         //GetComponent<Animator>().Play(string.Format("{0}Returns", gameObject.name));
         GetComponent<Animator>().Play("TruckReturns");
+        garbageFullnessAnimator.Play("Object_Appear");
         _isTimerRunning = false;
     }
 

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Storage : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI storageUI;
+    [SerializeField] private Image garbageFullnesImage;
 
     [SerializeField] int maxGarbageCount = 10;
     [SerializeField] int currentGarbageCount = 0;
@@ -66,8 +68,7 @@ public class Storage : MonoBehaviour
         {
             garbageTaken = amount;
             currentGarbageCount -= amount;
-        }
-
+        }     
         UpdateGarbage();
         return garbageTaken;
     }
@@ -97,7 +98,13 @@ public class Storage : MonoBehaviour
             storageUI.text = StorageStringFormat();
         }
         // Update save data
+        UpdateGarbageUI();
         SaveParams();
+    }
+
+    void UpdateGarbageUI()
+    {
+        garbageFullnesImage.fillAmount = (float)currentGarbageCount / (float)maxGarbageCount;
     }
 
     string StorageStringFormat()
@@ -112,6 +119,7 @@ public class Storage : MonoBehaviour
         //currentGarbageCount
         //mapID
         currentGarbageCount = PersistantData.Instance.sceneData.StorageGarbageCount;
+        UpdateGarbage();
     }
 
     void SaveParams()

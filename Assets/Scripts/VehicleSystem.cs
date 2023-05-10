@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class VehicleSystem : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI vehicleUI;
+    [SerializeField] private Image garbageFullnesImage;
     public TMP_Text fullWarning;
 
     [Header("Vehicle capacity")]
@@ -51,7 +53,7 @@ public class VehicleSystem : MonoBehaviour
     {
         if (IsFull())
         {
-            Debug.Log("1");
+            UpdateGarbageUI();
             fullWarning.gameObject.SetActive(true);
             return;
         }    
@@ -68,6 +70,7 @@ public class VehicleSystem : MonoBehaviour
 
             UpdateGarbage();
         }
+        
     }
 
     public void RemoveGarbage(int amount)
@@ -110,6 +113,7 @@ public class VehicleSystem : MonoBehaviour
             storage.RemoveGarbage(amount);
             AddGarbage(amount);
         }
+        UpdateGarbageUI();
     }
 
     public void ExchangeGarbageToMoney(int garbageCount)
@@ -134,7 +138,13 @@ public class VehicleSystem : MonoBehaviour
         {
             vehicleUI.text = StorageStringFormat();
         }
+        UpdateGarbageUI();
         SaveParams();
+    }
+
+    void UpdateGarbageUI()
+    {
+        garbageFullnesImage.fillAmount = (float)currentGarbageCount / (float)maxGarbageCount;
     }
 
     string StorageStringFormat()
