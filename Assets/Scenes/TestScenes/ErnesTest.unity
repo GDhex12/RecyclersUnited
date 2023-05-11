@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028575, g: 0.22571759, b: 0.30692452, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028529, g: 0.22571687, b: 0.3069234, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -212,10 +212,6 @@ PrefabInstance:
       propertyPath: cooldownUI_container
       value: 
       objectReference: {fileID: 669434662}
-    - target: {fileID: 1225927542, guid: 3d4c791f66ea82249a63fd38245b702b, type: 3}
-      propertyPath: garbageFullnessAnimator
-      value: 
-      objectReference: {fileID: 419699588}
     - target: {fileID: 1196318954156613258, guid: 3d4c791f66ea82249a63fd38245b702b, type: 3}
       propertyPath: m_Name
       value: Vehicle
@@ -1055,11 +1051,6 @@ MonoBehaviour:
   garbageFullnesImage: {fileID: 463631429}
   maxGarbageCount: 10
   currentGarbageCount: 0
---- !u!95 &419699588 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7729437067608906273, guid: 3d4c791f66ea82249a63fd38245b702b, type: 3}
-  m_PrefabInstance: {fileID: 24022148}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &428529685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3469,6 +3460,22 @@ PrefabInstance:
       propertyPath: truck
       value: 
       objectReference: {fileID: 1214479276}
+    - target: {fileID: 3851772195377810021, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851772195377810021, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851772195377810021, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851772195377810021, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4970065204174460948, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4875,14 +4882,6 @@ PrefabInstance:
       propertyPath: storageUI
       value: 
       objectReference: {fileID: 596634631}
-    - target: {fileID: 6264980204922629233, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
-      propertyPath: maxGarbageCount
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6264980204922629233, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
-      propertyPath: garbageFullnesImage
-      value: 
-      objectReference: {fileID: 463631429}
     - target: {fileID: 7329764626917324607, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
       propertyPath: m_RootOrder
       value: 0

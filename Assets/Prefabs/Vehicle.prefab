@@ -384,7 +384,7 @@ MonoBehaviour:
   cooldownImage: {fileID: 0}
   cooldownUI_container: {fileID: 0}
   currency: {fileID: 0}
-  garbageFullnessAnimator: {fileID: 0}
+  garbageFullnessAnimator: {fileID: 7729437067608906273}
   vehicleReturned: 1
   isFilling: 0
 --- !u!1001 &119970307
