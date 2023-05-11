@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storageUI: {fileID: 0}
-  maxGarbageCount: 100
+  garbageFullnesImage: {fileID: 1398554836647502899}
+  maxGarbageCount: 50
   currentGarbageCount: 0
 --- !u!1 &5202775698824739967
 GameObject:
