@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836375517910940805, guid: 10900dcd89a70244fb940ebc671ba371, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.32
+      value: 4.79
       objectReference: {fileID: 0}
     - target: {fileID: 5836375517910940805, guid: 10900dcd89a70244fb940ebc671ba371, type: 3}
       propertyPath: m_LocalPosition.y
@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836375517910940805, guid: 10900dcd89a70244fb940ebc671ba371, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.98
+      value: -8.53
       objectReference: {fileID: 0}
     - target: {fileID: 5836375517910940805, guid: 10900dcd89a70244fb940ebc671ba371, type: 3}
       propertyPath: m_LocalRotation.w
@@ -318,6 +318,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2146431531174499846, guid: c8134dd87be4906419f13922ddc5bf4f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146431531174499849, guid: c8134dd87be4906419f13922ddc5bf4f, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Pile_Forest_Moss_10 (1)
@@ -400,7 +404,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8082612214144964266, guid: d5b8de414112a004a82d0437b5f7a780, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5b8de414112a004a82d0437b5f7a780, type: 3}
 --- !u!4 &87934300 stripped
 Transform:
@@ -1247,6 +1252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storageUI: {fileID: 596634631}
+  garbageFullnesImage: {fileID: 0}
   maxGarbageCount: 10
   currentGarbageCount: 0
 --- !u!1 &429883356
@@ -1384,15 +1390,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6588230396811940180, guid: c97bf06e433ae144f87685a957089cf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.7
+      value: 5.24
       objectReference: {fileID: 0}
     - target: {fileID: 6588230396811940180, guid: c97bf06e433ae144f87685a957089cf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.74
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 6588230396811940180, guid: c97bf06e433ae144f87685a957089cf5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.97
+      value: -2.79
       objectReference: {fileID: 0}
     - target: {fileID: 6588230396811940180, guid: c97bf06e433ae144f87685a957089cf5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1615,7 +1621,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Tree_10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6846767348704259192, guid: 273b8f4150121d249ac7e2fd11da7005, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 273b8f4150121d249ac7e2fd11da7005, type: 3}
 --- !u!4 &479847467 stripped
 Transform:
@@ -2025,6 +2032,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   activePowerUps: []
+  helicopter: {fileID: 0}
 --- !u!1001 &596624313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2166,7 +2174,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Pile_Forest_Moss_10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2146431531174499846, guid: c8134dd87be4906419f13922ddc5bf4f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c8134dd87be4906419f13922ddc5bf4f, type: 3}
 --- !u!4 &624675541 stripped
 Transform:
@@ -2245,7 +2254,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2636820298107493409, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
 --- !u!4 &686914572 stripped
 Transform:
@@ -2445,7 +2455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8000002
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2511,7 +2521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4116942801788225376, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.71
+      value: -4.86
       objectReference: {fileID: 0}
     - target: {fileID: 4116942801788225376, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2519,7 +2529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4116942801788225376, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.78
+      value: 5.38
       objectReference: {fileID: 0}
     - target: {fileID: 4116942801788225376, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2572,6 +2582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1204864323}
     m_Modifications:
+    - target: {fileID: 2636820298107493409, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2636820298107493410, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
       propertyPath: m_Name
       value: PP_Birch_Tree_06 (2)
@@ -2711,7 +2725,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Mushroom_Fantasy_Orange_10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8954726919292774954, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
 --- !u!4 &788135224 stripped
 Transform:
@@ -3005,7 +3020,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2636820298107493409, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2bd798ea40c7e341aa61ad124d95342, type: 3}
 --- !u!4 &855463452 stripped
 Transform:
@@ -3033,7 +3049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.51
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3041,23 +3057,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.45
+      value: 2.79
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.838376
+      value: 0.9961947
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.54509246
+      value: 0.08715578
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3065,7 +3081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 66.062
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2667253310934035939, guid: ec5b6e24dd9443248834f8f4fc507efa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3537,6 +3553,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7570405467501425084, guid: 0ab22827d0f3f0b40a97e9430d684283, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7570405467501425085, guid: 0ab22827d0f3f0b40a97e9430d684283, type: 3}
       propertyPath: m_Name
       value: PP_Mushroom_Fantasy_Orange_09 (2)
@@ -3877,7 +3897,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4577034113271871887, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
 --- !u!4 &1234631155 stripped
 Transform:
@@ -4175,6 +4196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicleUI: {fileID: 1258954467}
+  garbageFullnesImage: {fileID: 0}
   fullWarning: {fileID: 1294510786}
   maxGarbageCount: 20
   currentGarbageCount: 0
@@ -5133,7 +5155,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Mushroom_Fantasy_Purple_05 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7749838506462483411, guid: d354c41a99993964baca0254487708d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d354c41a99993964baca0254487708d1, type: 3}
 --- !u!4 &1499019798 stripped
 Transform:
@@ -5575,7 +5598,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Tree_10 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6846767348704259192, guid: 273b8f4150121d249ac7e2fd11da7005, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 273b8f4150121d249ac7e2fd11da7005, type: 3}
 --- !u!4 &1648281379 stripped
 Transform:
@@ -29248,7 +29272,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4500668923149335751, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &1789183472 stripped
 Transform:
@@ -29276,7 +29301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4956029899301745945, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.16
+      value: -5.65
       objectReference: {fileID: 0}
     - target: {fileID: 4956029899301745945, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29284,7 +29309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4956029899301745945, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.26
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 4956029899301745945, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30045,7 +30070,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Mushroom_Fantasy_Orange_09 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7570405467501425084, guid: 0ab22827d0f3f0b40a97e9430d684283, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ab22827d0f3f0b40a97e9430d684283, type: 3}
 --- !u!4 &2025303835 stripped
 Transform:
@@ -30190,7 +30216,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Forest_Mountain_Moss_02 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5752586314121210876, guid: 034023ff02a37fc47aab6bc6c49bf15b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 034023ff02a37fc47aab6bc6c49bf15b, type: 3}
 --- !u!4 &2099348502 stripped
 Transform:
