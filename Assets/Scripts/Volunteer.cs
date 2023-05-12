@@ -26,15 +26,7 @@ public class Volunteer : MonoBehaviour
     protected bool isGoingOfMap = false;
     protected Vector3 walkOffPoint;
 
-
-
     public GameObject thrashInHand; // for enabling thrash model when volunteer is coming back
-
-    void Start()
-    {
-        thrashInHand = transform.Find("pickedupThrash").gameObject; //gets thrash GameObject
-        
-    }
 
     public bool CloseToDestination()
     {
@@ -51,7 +43,7 @@ public class Volunteer : MonoBehaviour
 
     public bool CheckIfClose(GameObject targetObject)
     {
-        return navMeshAgent.remainingDistance <= distanceThreshold && targetObject != null && Vector3.Distance(transform.position, targetObject.transform.position) <= distanceThreshold;
+        return navMeshAgent.remainingDistance <= distanceThreshold && targetObject != null;
     }
 
     public void WalkOutOfMap(Vector3 walkOffPoint)

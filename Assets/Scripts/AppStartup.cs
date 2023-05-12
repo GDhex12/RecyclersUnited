@@ -35,6 +35,10 @@ public class AppStartup : MonoBehaviour
 
     private void ProgramBegins()
     {
+        if (PersistantData.Instance.playerData.NewGameTutorial)
+        {
+            TutorialManager.Instance.Initialize();
+        }
         float timeDifference = TimeManager.instance.TimeDiffBtwExitAndStart();
         AddStorageGarbage(timeDifference);
         AddVehicleGarbage(timeDifference);

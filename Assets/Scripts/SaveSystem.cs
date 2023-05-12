@@ -46,6 +46,7 @@ public static class SaveSystem
 
         SavePlayerData(data, path);
     }
+
     public static void SavePlayerData(PlayerData data, string path)
     {
         using StreamWriter stream = new(path);
