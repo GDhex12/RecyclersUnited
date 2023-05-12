@@ -5,9 +5,9 @@ using UnityEngine;
 public class PickerVolunteer : Volunteer
 {
     private TrashPile trashImGoingTo;
+
     private void Update()
-    {
-        
+    {   
         if (!carryingTrash) // going to get trash
         {
             if (!isGoingOfMap)
