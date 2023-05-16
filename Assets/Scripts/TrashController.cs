@@ -41,6 +41,36 @@ public class TrashController : MonoBehaviour
             SaveTotalGarbageCount();
         }
         trashPiles = FindObjectsOfType<TrashPile>().ToList();
+
+
+        // total amount check on load
+        if (_isCompleted)
+        {
+            DestroyAllPiles();
+        }
+        else
+        {
+            if (currentTotalTrashAmount - (trashPiles[0].GetTrashAmount() * trashPiles.Count) < 0)
+            {
+                int fullPilesNeeded = currentTotalTrashAmount / trashPiles[0].GetTrashAmount();
+                int trashAmountInNotFullPile = currentTotalTrashAmount % trashPiles[0].GetTrashAmount();
+
+                int pilesToDestroy = trashPiles.Count - (fullPilesNeeded + (trashAmountInNotFullPile>0 ? 1 : 0));
+                //Debug.Log($"{fullPilesNeeded}   {trashAmountInNotFullPile}   {pilesToDestroy}");
+                if (pilesToDestroy != 0)
+                {
+                    for(int i = 0;i< pilesToDestroy;i++)
+                        DestryTrashPile(trashPiles[0]);
+                    //trashPiles.RemoveRange(0, pilesToDestroy);
+                    if (trashAmountInNotFullPile > 0)
+                    {
+                        int i = Random.Range(0, trashPiles.Count);
+                        trashPiles[i].RemoveTrash_TotalAmount(trashPiles[i].GetTrashAmount() - trashAmountInNotFullPile);
+                    }
+                }
+            }
+        }
+        
     }
 
     //for volunteers
@@ -53,7 +83,15 @@ public class TrashController : MonoBehaviour
     //for spawning
     public void AddTrashPile(TrashPile pile)
     {
+        int currTrashAmountInPiles = GetCurrTrashAmountInPiles();
+        int trashAmountInOnePile = pile.GetTrashAmount();
+        if (currentTotalTrashAmount - currTrashAmountInPiles < trashAmountInOnePile)
+        {
+            pile.RemoveTrash_TotalAmount(trashAmountInOnePile - (currentTotalTrashAmount - currTrashAmountInPiles));
+        }
+
         trashPiles.Add(pile);
+        
     }
     
     //for collected piles
@@ -69,6 +107,19 @@ public class TrashController : MonoBehaviour
         /*
          * TO-DO: clear all NavMesh data and regenerate new paths based on newly spawned trash here
          */
+    }
+
+    void DestryTrashPile(TrashPile pile)
+    {
+        RemoveTrashPile(pile);
+        Destroy(pile.gameObject);
+    }
+    
+    void DestroyAllPiles()
+    {
+        foreach(TrashPile pile in trashPiles)
+            Destroy(pile.gameObject);
+        trashPiles.Clear();
     }
 
     //----------------- total location trash amount ----------------
@@ -109,6 +160,14 @@ public class TrashController : MonoBehaviour
         return currentTotalTrashAmount - sum > 0;
     }
 
+    int GetCurrTrashAmountInPiles()
+    {
+        int sum = 0;
+        foreach (TrashPile pile in trashPiles)
+            sum += pile.GetTrashAmount();
+        return sum;
+    }
+
     public void LoadTotalGarbageCount()
     {
         currentTotalTrashAmount = PersistantData.Instance.sceneData.TotalCollectedGarbageCount;
@@ -126,6 +185,7 @@ public class TrashController : MonoBehaviour
     {
         currentTotalTrashAmount = maxTotalTrashAmount;
         completionPercentage = GetCompletionPercentage();
+        _isCompleted = false;
         SaveTotalGarbageCount();
     }
 }

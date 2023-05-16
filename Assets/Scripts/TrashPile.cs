@@ -13,11 +13,9 @@ public class TrashPile : MonoBehaviour
 
     public int GetTrashAmount() { return trashAmount; }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
-        if(trashList.Count > 0)
+        if (trashList.Count > 0)
         {
             if (trashAmount < trashList.Count)
                 trashAmount = trashList.Count;
@@ -32,6 +30,13 @@ public class TrashPile : MonoBehaviour
             Debug.LogWarning($"Empty list in {gameObject.name}");
             gameObject.SetActive(false);
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        
     }
 
     //evens amount of trash to take between visual change
@@ -56,7 +61,6 @@ public class TrashPile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     public void RemoveTrash(int amount)
     {
         for (int i=0; i < amount; i++)
@@ -64,6 +68,28 @@ public class TrashPile : MonoBehaviour
             RemoveTrash();
         }
     }
+
+    public void RemoveTrash_TotalAmount()
+    {
+        trashAmount--;
+        _trashTaken++;
+        int trashToTake = _trashLeftAfterDivision > 0 ? _trashPerChange + 1 : _trashPerChange;
+        if (trashToTake <= _trashTaken)
+        {
+            ReduceVisualy();
+            if (_trashLeftAfterDivision > 0)
+                _trashLeftAfterDivision--;
+            _trashTaken = 0;
+        }
+    }
+    public void RemoveTrash_TotalAmount(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            RemoveTrash_TotalAmount();
+        }
+    }
+
 
     void ReduceVisualy()
     {
