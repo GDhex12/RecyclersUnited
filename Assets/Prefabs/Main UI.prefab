@@ -5080,7 +5080,6 @@ MonoBehaviour:
   priceMultiplier: 1.5
   btnText: {fileID: 1155479134176444618}
   volunteerType: 0
-  _spawnObject: {fileID: 0}
 --- !u!1 &3509173908563153134
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,7 +5977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1554087457582109798
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8413,7 +8412,6 @@ MonoBehaviour:
   priceMultiplier: 2
   btnText: {fileID: 7664048453210756258}
   volunteerType: 1
-  _spawnObject: {fileID: 0}
 --- !u!1 &5850110609181413584
 GameObject:
   m_ObjectHideFlags: 0
