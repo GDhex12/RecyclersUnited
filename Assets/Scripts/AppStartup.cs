@@ -16,6 +16,9 @@ public class AppStartup : MonoBehaviour
     VehicleSystem refToVehicle;
     [SerializeField] float vehicle_timeBtwAdditions = 4;
 
+    [Header("Testing")]
+    [SerializeField] bool isCountingOffScene = true;
+
     void Start()
     {
         refToStorage = GameManager.Instance.storage;
@@ -39,9 +42,13 @@ public class AppStartup : MonoBehaviour
         {
             TutorialManager.Instance.Initialize();
         }
-        float timeDifference = TimeManager.instance.TimeDiffBtwExitAndStart();
-        AddStorageGarbage(timeDifference);
-        AddVehicleGarbage(timeDifference);
+
+        if (!TrashController.Instance.IsCompleted() && isCountingOffScene)
+        {
+            float timeDifference = TimeManager.instance.TimeDiffBtwExitAndStart();
+            AddStorageGarbage(timeDifference);
+            AddVehicleGarbage(timeDifference);
+        }
     }
 
     void AddStorageGarbage(float timeDifference)
