@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 561692932744305764}
   m_HandleRect: {fileID: 7203365009459958585}
   m_Direction: 3
-  m_Value: 0.99818313
+  m_Value: 1.0000005
   m_Size: 0.70430106
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5382,7 +5382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &498956297098646816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5399,9 +5399,9 @@ RectTransform:
   m_Father: {fileID: 8729681642991836875}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 651.83997, y: -24.5}
   m_SizeDelta: {x: 381, y: 138}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7961792106891819970
@@ -6405,7 +6405,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00001812, y: -137.00034}
+  m_AnchoredPosition: {x: -0.00001812, y: -137.50009}
   m_SizeDelta: {x: 890, y: 930}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8668944835912147250
@@ -6590,6 +6590,7 @@ GameObject:
   - component: {fileID: 4459453356914257103}
   - component: {fileID: 1922526690344044195}
   - component: {fileID: 7323984412700337963}
+  - component: {fileID: 3157331977986295582}
   m_Layer: 5
   m_Name: PriceBtn
   m_TagString: Untagged
@@ -6700,9 +6701,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3978056421406931611}
-        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: UpgradeLoaderVolunteerBag
+      - m_Target: {fileID: 3157331977986295582}
+        m_TargetAssemblyTypeName: HireVolunteer, Assembly-CSharp
+        m_MethodName: BuyVolunteer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6712,6 +6713,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3157331977986295582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294855164382152639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d9b23a4c66b9449b23b55fe4072c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 0
+  initPrice: 100
+  priceMultiplier: 2
+  btnText: {fileID: 7925974185625435455}
+  volunteerType: 1
 --- !u!1 &4492059757402781835
 GameObject:
   m_ObjectHideFlags: 0
@@ -9032,7 +9050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1422908033350956629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9049,9 +9067,9 @@ RectTransform:
   m_Father: {fileID: 8729681642991836875}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 384.5, y: -24.5}
   m_SizeDelta: {x: 381, y: 138}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4021407096375073099
@@ -9177,6 +9195,7 @@ GameObject:
   - component: {fileID: 965838994466497729}
   - component: {fileID: 3302029511128806726}
   - component: {fileID: 5128226598914111907}
+  - component: {fileID: 1633737162707832052}
   m_Layer: 5
   m_Name: PriceBtn
   m_TagString: Untagged
@@ -9287,9 +9306,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3978056421406931611}
-        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: UpgradeLoaderVolunteerBag
+      - m_Target: {fileID: 1633737162707832052}
+        m_TargetAssemblyTypeName: HireVolunteer, Assembly-CSharp
+        m_MethodName: BuyVolunteer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9299,6 +9318,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1633737162707832052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808652322763707539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d9b23a4c66b9449b23b55fe4072c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 0
+  initPrice: 100
+  priceMultiplier: 1.5
+  btnText: {fileID: 1713311647495986540}
+  volunteerType: 0
 --- !u!1 &5850110609181413584
 GameObject:
   m_ObjectHideFlags: 0
@@ -11258,7 +11294,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3827115201309082028}
-  - component: {fileID: 6433888351397164514}
   m_Layer: 5
   m_Name: SafeAreaSet
   m_TagString: Untagged
@@ -11299,18 +11334,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6433888351397164514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6890336780625371679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c21604ffd4f6af3439076f180a102b98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7022127024521400995
 GameObject:
   m_ObjectHideFlags: 0
