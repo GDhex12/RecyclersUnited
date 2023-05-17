@@ -24,23 +24,8 @@ public class PowerUpsManager : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                if (hit.transform.CompareTag("PowerUp"))
-                {
-                    if (hit.transform.gameObject.GetComponent<PowerUp>().IsPowerUpActive())
-                    {
-                        hit.transform.gameObject.GetComponent<PowerUp>().OnClick();
-                        PowerUpType type = hit.transform.gameObject.GetComponent<PowerUp>().GetType();
-                        if (type == PowerUpType.Add)
-                        {
-                            countManager.AddVolunteersTemporary(3, 10f);
-                        }
-                        else if (type == PowerUpType.Speed)
-                        {
-                            countManager.IncreaseVolunteersSpeed();
-                        }
-                    }
-                }
-                else if (hit.transform.CompareTag("Crate"))
+                
+                if (hit.transform.CompareTag("Crate"))
                 {
                     hit.transform.gameObject.GetComponent<OnClickEffect>().OnClick();
                     hit.transform.gameObject.GetComponent<OnClickAddCoins>().OnClick();                    
@@ -51,6 +36,13 @@ public class PowerUpsManager : MonoBehaviour
                     hit.transform.root.GetComponent<Animator>().SetTrigger("MoveToExit");
                     countManager.AddVolunteersTemporary(3, 10f);
                     FunctionTimer.Create(()=>{ helicopterClicked = false; },2f);
+
+                }
+                else if (hit.transform.CompareTag("Plane") && !helicopterClicked)
+                {
+                    helicopterClicked = true;
+                    countManager.IncreaseVolunteersSpeed();
+                    FunctionTimer.Create(() => { helicopterClicked = false; }, 2f);
 
                 }
 
