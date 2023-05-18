@@ -15,6 +15,7 @@ public class PickerVolunteer : Volunteer
                 if (TrashController.Instance.GetCount() <= 0 && trashImGoingTo == null)
                 {
                     GoToLocation(gameObject);
+                    SetAnimationVelocity(0);
                     return;
                 }
                 if (trashImGoingTo == null)
@@ -23,10 +24,12 @@ public class PickerVolunteer : Volunteer
                     if (trashImGoingTo != null)
                     {
                         GoToLocation(trashImGoingTo.gameObject);
+                        SetAnimationVelocity(1);
                     }
                     else
                     {
                         GoToLocation(gameObject);
+                        SetAnimationVelocity(0);
                     }
                     return;
                 }
@@ -40,6 +43,7 @@ public class PickerVolunteer : Volunteer
                     carryingTrash = true;
                     thrashInHand.SetActive(true);
                     GoToLocation(storage);
+                    SetAnimationVelocity(1);
 
                 }
 
@@ -52,9 +56,11 @@ public class PickerVolunteer : Volunteer
             if (GameManager.Instance.storage.IsFull())
             {
                 GoToLocation(gameObject);
+                SetAnimationVelocity(0);
                 return;
             }
             GoToLocation(storage);
+            SetAnimationVelocity(1);
             if (CloseToDestination())
             {
 
