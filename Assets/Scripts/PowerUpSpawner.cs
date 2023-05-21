@@ -8,13 +8,16 @@ using Random = UnityEngine.Random;
 public class PowerUpSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private int spawnRate=0;
+    [SerializeField] private int SpawnRateMin = 0;
+    [SerializeField] private int SpawnRateMax=0;
+    
     [SerializeField] private int maxPowerUps;
     [SerializeField] private GameObject powerUpPrefab;
     [SerializeField] private Transform[] powerUpsSpawnPoint = new Transform[2];
     [SerializeField] private List<GameObject> allPowerUps;
     [SerializeField] private List<GameObject> activePowerUps;
     [SerializeField] GameObject helicopter;
+    [SerializeField] GameObject plane;
     private float timeToNextPowerUp;
 
     void Start()
@@ -33,14 +36,14 @@ public class PowerUpSpawner : MonoBehaviour
         }
         else
         {
-
+            plane.GetComponent<Animator>().Play("PlaneFlyBy");
         }
-        FunctionTimer.Create(PrepNextPowerUp, spawnRate);
+        FunctionTimer.Create(PrepNextPowerUp, SpawnRateMax);
     }
 
     public void PrepNextPowerUp()
 	{
-        timeToNextPowerUp = Random.Range(5f, spawnRate);
+        timeToNextPowerUp = Random.Range(SpawnRateMin, SpawnRateMax);
         FunctionTimer.Create(SpawnPowerUp, timeToNextPowerUp);
         
     }
