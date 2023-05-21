@@ -1,6 +1,7 @@
 using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -104,6 +105,7 @@ public class Location : MonoBehaviour
     {
         if (IsLoadable())
         {
+            UnlockLocationAchievements();
             LocationLoader.Instance.LoadScene_Transition(sceneName);
         }
         else
@@ -168,7 +170,20 @@ public class Location : MonoBehaviour
             Debug.Log("Not unlocked or already bought");
         }
     }
-
+    private void UnlockLocationAchievements()
+    {
+        switch(sceneName)
+        {
+            case "ValleyScene_02":
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_valley_depths);
+                break;
+            case "ArcticScene_03":
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_arctic_cold);
+                break;
+            default:
+                break;
+        }
+    }
     public void OnLocationPress()
     {
         if (!isUnlocked && !isBought)

@@ -99,14 +99,22 @@ public class PowerUp : MonoBehaviour
 		{
 			isActive = false;
 		}
-		Instantiate(pickUpEffect, gameObject.transform.position, Quaternion.identity);
-		//powerUpSpawner.DecreasePowerUp(gameObject);
+		UnlockPowerupAchievements();
 
+        Instantiate(pickUpEffect, gameObject.transform.position, Quaternion.identity);
+		//powerUpSpawner.DecreasePowerUp(gameObject);
+		
 		PowerUpMesh.GetComponent<PowerUpPickUp>().PickUp();
 
 	}
    
+	private void UnlockPowerupAchievements()
+	{
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_1);
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_2);
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_3);
 
+    }
 
 
 	float FCalculateRandomNumbers(float rangeStart, float rangeEnd)
