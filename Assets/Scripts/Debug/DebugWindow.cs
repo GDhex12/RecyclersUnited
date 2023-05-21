@@ -57,5 +57,10 @@ public class DebugWindow : MonoBehaviour
         CurrencyManager.instance.AddCurrency(moneyReward);
         Debug.Log($"Rewarded ${moneyReward}");
     }
+
+    public void GiveMoney(int amount)
+    {
+        CurrencyManager.instance.AddCurrency(amount);
+    }
 #endif
 }
