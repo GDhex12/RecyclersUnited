@@ -8,6 +8,7 @@ TagManager:
   - Volunteer
   - Crate
   - Helicopter
+  - Plane
   layers:
   - Default
   - TransparentFX
