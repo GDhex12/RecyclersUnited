@@ -26,6 +26,12 @@ public class TrashController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        if (!_isCompleted && currentTotalTrashAmount == 0)
+        {
+            currentTotalTrashAmount = maxTotalTrashAmount;
+            SaveTotalGarbageCount();
+        }
     }
 
     public int GetCount()
@@ -36,11 +42,7 @@ public class TrashController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!_isCompleted && currentTotalTrashAmount == 0)
-        {
-            currentTotalTrashAmount = maxTotalTrashAmount;
-            SaveTotalGarbageCount();
-        }
+        
         trashPiles = FindObjectsOfType<TrashPile>().ToList();
 
 

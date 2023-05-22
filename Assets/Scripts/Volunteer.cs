@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Volunteer : MonoBehaviour
 {
-    [SerializeField] private NavMeshAgent navMeshAgent;
+    [SerializeField] protected NavMeshAgent navMeshAgent;
 
     [Header("Movement Settings")]
     public GameObject storage;
@@ -27,6 +27,8 @@ public class Volunteer : MonoBehaviour
     protected Vector3 walkOffPoint;
 
     public GameObject thrashInHand; // for enabling thrash model when volunteer is coming back
+
+    [SerializeField] protected Animator animator;
 
     public bool CloseToDestination()
     {
@@ -61,6 +63,11 @@ public class Volunteer : MonoBehaviour
         isGoingOfMap = true;
         yield return new WaitForSeconds(20f);
         Destroy(gameObject);
+    }
+
+    protected void SetAnimationVelocity(float vel)
+    {
+        animator.SetFloat("Velocity", vel);
     }
 
 }
