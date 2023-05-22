@@ -57,6 +57,7 @@ public class VehicleManager : MonoBehaviour
             if(vehicle.isSelected && vehicle.isUnlocked)
 			{
                 allVehiclesPrefabs[vehicle.id].SetActive(true);
+
 			}
 			else
 			{
