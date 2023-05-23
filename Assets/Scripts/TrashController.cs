@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,7 @@ public class TrashController : MonoBehaviour
     [SerializeField] int maxTotalTrashAmount = 1000;
     [SerializeField] int currentTotalTrashAmount = 0;
     [SerializeField] int completionPercentage = 100;
+    [SerializeField] Slider meterUI;
 
     bool _isCompleted = false;
 
@@ -31,6 +33,7 @@ public class TrashController : MonoBehaviour
         {
             currentTotalTrashAmount = maxTotalTrashAmount;
             SaveTotalGarbageCount();
+            UpdateMeterUI();
         }
     }
 
@@ -139,8 +142,18 @@ public class TrashController : MonoBehaviour
                 UnlockTrashCompletionAchievements();
             }
             SaveTotalGarbageCount();
+            UpdateMeterUI();
         }
     }
+
+    void UpdateMeterUI()
+    {
+        float max = maxTotalTrashAmount;
+        float curr = currentTotalTrashAmount;
+        float percentige = 1-(curr / max);
+        meterUI.value = percentige;
+    }
+
     private void UnlockTrashCompletionAchievements()
     {
         switch(SceneManager.GetActiveScene().name)
@@ -208,5 +221,6 @@ public class TrashController : MonoBehaviour
         completionPercentage = GetCompletionPercentage();
         _isCompleted = false;
         SaveTotalGarbageCount();
+        UpdateMeterUI();
     }
 }
