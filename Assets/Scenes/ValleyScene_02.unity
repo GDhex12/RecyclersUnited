@@ -952,6 +952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData:
     SaveDataVersion: 2
+    NewGameTutorial: 1
     Coins: 0
     Level: 1
     Experience: 0
@@ -1438,14 +1439,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429883356}
-  m_LocalRotation: {x: -0.34552836, y: 0.0061865062, z: -0.0022778783, w: -0.9383852}
-  m_LocalPosition: {x: 9.598867, y: 20.507856, z: -28.632607}
+  m_LocalRotation: {x: 0.4266383, y: -0.0059588975, z: 0.0028110333, w: 0.9043984}
+  m_LocalPosition: {x: 9.598867, y: 23.8, z: -24.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 49.27, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.51, y: -0.755, z: 0}
 --- !u!114 &429883360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,6 +1843,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7a0968aa61dcfcc4185c8d836fba6ca8, type: 2}
   buyButtons: []
   vehicleManager: {fileID: 1338726065}
+  vehicleSystem: {fileID: 0}
   vehicleRows:
   - {fileID: 121637854}
   - {fileID: 769714163}
@@ -2214,7 +2216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f78bb88b759ba3d42a42d3c70e90a504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 20
+  SpawnRateMin: 0
+  SpawnRateMax: 0
   maxPowerUps: 0
   powerUpPrefab: {fileID: 0}
   powerUpsSpawnPoint:
@@ -2226,6 +2229,7 @@ MonoBehaviour:
   - {fileID: 0}
   activePowerUps: []
   helicopter: {fileID: 1306958322}
+  plane: {fileID: 0}
 --- !u!1001 &596624313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4419,6 +4423,10 @@ PrefabInstance:
       propertyPath: refToVolunteers
       value: 
       objectReference: {fileID: 1571467721}
+    - target: {fileID: 1464938317, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 498956297098646816, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4850,6 +4858,14 @@ PrefabInstance:
     - target: {fileID: 7036932069714065915, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058918668361643091, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058918669325968184, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7395317407479708424, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
