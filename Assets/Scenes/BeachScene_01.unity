@@ -2814,8 +2814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f78bb88b759ba3d42a42d3c70e90a504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnRateMin: 20
-  SpawnRateMax: 50
+  SpawnRateMin: 30
+  SpawnRateMax: 120
   maxPowerUps: 0
   powerUpPrefab: {fileID: 243237610}
   powerUpsSpawnPoint:
