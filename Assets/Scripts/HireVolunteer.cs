@@ -71,7 +71,7 @@ public class HireVolunteer : MonoBehaviour
 
     public string StringFormat()
     {
-        return $"Hire {volunteerType}\n-{CurrencyManager.instance.CurrencyStringFormat(price)}";
+        return $"{CurrencyManager.instance.CurrencyStringFormat(price)}";
     }
 
     void SpawnUnit()
