@@ -8,6 +8,7 @@ public class VehicleShop : MonoBehaviour
     [SerializeField] private List<Vehicle> allVehicles;
     [SerializeField] private List<Button> buyButtons;
     [SerializeField] private VehicleManager vehicleManager;
+    [SerializeField] private VehicleSystem vehicleSystem;
     [SerializeField] private List<GameObject> vehicleRows;
 
     // Start is called before the first frame update
@@ -58,13 +59,15 @@ public class VehicleShop : MonoBehaviour
 			{
                 vehicle.isSelected = true;
                 vehicle.isUnlocked = true;
-			}
+                
+            }
 
 
 		}
         SaveSystem.SaveShopData(vehicleDataList);
         vehicleManager.ChangeVehicle();
-
+        vehicleSystem.SetMaxGarbageCount(allVehicles[id].GetCapacity());
+        vehicleSystem.SetGarbageCount(0);
 
 
     }
