@@ -21,4 +21,12 @@ public class MenuActions : MonoBehaviour
             panel.SetActive(false);
         }
     }
+    public void OpenLeaderboard()
+    {
+        GooglePlayLogin.Instance.ShowLeaderboard();
+    }
+    public void OpenAchievements()
+    {
+        GooglePlayLogin.Instance.ShowAchievements();
+    }
 }

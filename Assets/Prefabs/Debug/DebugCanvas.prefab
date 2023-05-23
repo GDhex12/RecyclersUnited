@@ -280,7 +280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Test (does nothing)
+  m_text: Give $2000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 696228130d4205a499585a4f0a1cc955, type: 2}
   m_sharedMaterial: {fileID: -1309413584385281642, guid: 696228130d4205a499585a4f0a1cc955, type: 2}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 980011344393267382}
   - component: {fileID: 980011344393267383}
   m_Layer: 5
-  m_Name: Test (3)
+  m_Name: GiveMoney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,14 +471,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980011345820994240}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 980011345820994247}
+        m_TargetAssemblyTypeName: DebugWindow, Assembly-CSharp
+        m_MethodName: GiveMoney
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2000
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

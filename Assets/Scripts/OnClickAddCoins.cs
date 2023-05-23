@@ -16,4 +16,5 @@ public class OnClickAddCoins : MonoBehaviour
             transform.position = Vector3.zero;
         }
     }
+
 }

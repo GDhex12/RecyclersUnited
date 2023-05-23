@@ -99,9 +99,10 @@ public class PowerUp : MonoBehaviour
 		{
 			isActive = false;
 		}
-		Instantiate(pickUpEffect, gameObject.transform.position, Quaternion.identity);
-		//powerUpSpawner.DecreasePowerUp(gameObject);
 
+        Instantiate(pickUpEffect, gameObject.transform.position, Quaternion.identity);
+		//powerUpSpawner.DecreasePowerUp(gameObject);
+		
 		PowerUpMesh.GetComponent<PowerUpPickUp>().PickUp();
 
 	}

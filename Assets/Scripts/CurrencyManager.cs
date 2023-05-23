@@ -30,12 +30,14 @@ public class CurrencyManager : MonoBehaviour
     public void AddCurrency(int amount)
     {
         AddCurrency((long)amount);
+        UnlockCurrencyAchievements();
     }
 
     public void AddCurrency(long amount)
     {
         currencyAmount += amount;
         UpdateCurrency();
+        UnlockCurrencyAchievements();
     }
 
     public void RemoveCurrency(int amount)
@@ -128,5 +130,21 @@ public class CurrencyManager : MonoBehaviour
     {
         PersistantData.Instance.playerData.Coins = currencyAmount;
         SaveSystem.SavePlayerData(PersistantData.Instance.playerData);
+    }
+
+    private void UnlockCurrencyAchievements()
+    {
+        if(currencyAmount > 10000)
+        {
+            GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_money_hoarder_1);
+            if (currencyAmount > 100000)
+            {
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_money_hoarder_2);
+                if (currencyAmount > 1000000)
+                {
+                    GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_money_hoarder_3);
+                }
+            }
+        }
     }
 }

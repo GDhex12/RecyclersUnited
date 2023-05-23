@@ -24,8 +24,24 @@
 
 public static class GPGSIds
 {
-        public const string achievement_trash_hoarder = "CgkIp4-6pbEUEAIQAQ"; // <GPGSID>
-        public const string leaderboard_test = "CgkIp4-6pbEUEAIQAg"; // <GPGSID>
+    public const string achievement_hands_on_2 = "CgkIp4-6pbEUEAIQDw"; // <GPGSID>
+    public const string leaderboard_level = "CgkIp4-6pbEUEAIQAg"; // <GPGSID>
+    public const string achievement_valley_depths = "CgkIp4-6pbEUEAIQBA"; // <GPGSID>
+    public const string achievement_hands_on_1 = "CgkIp4-6pbEUEAIQDg"; // <GPGSID>
+    public const string achievement_crate_collector_1 = "CgkIp4-6pbEUEAIQCw"; // <GPGSID>
+    public const string achievement_sparkling_sweep_3 = "CgkIp4-6pbEUEAIQEw"; // <GPGSID>
+    public const string achievement_crate_collector_3 = "CgkIp4-6pbEUEAIQDQ"; // <GPGSID>
+    public const string achievement_sparkling_sweep_1 = "CgkIp4-6pbEUEAIQEQ"; // <GPGSID>
+    public const string achievement_sparkling_sweep_2 = "CgkIp4-6pbEUEAIQEg"; // <GPGSID>
+    public const string achievement_money_hoarder_3 = "CgkIp4-6pbEUEAIQCg"; // <GPGSID>
+    public const string achievement_money_hoarder_2 = "CgkIp4-6pbEUEAIQCQ"; // <GPGSID>
+    public const string achievement_money_hoarder_1 = "CgkIp4-6pbEUEAIQCA"; // <GPGSID>
+    public const string achievement_crate_collector_2 = "CgkIp4-6pbEUEAIQDA"; // <GPGSID>
+    public const string achievement_hands_on_3 = "CgkIp4-6pbEUEAIQEA"; // <GPGSID>
+    public const string achievement_level_climber_2 = "CgkIp4-6pbEUEAIQBg"; // <GPGSID>
+    public const string achievement_level_climber_3 = "CgkIp4-6pbEUEAIQBw"; // <GPGSID>
+    public const string achievement_arctic_cold = "CgkIp4-6pbEUEAIQAw"; // <GPGSID>
+    public const string achievement_level_climber_1 = "CgkIp4-6pbEUEAIQBQ"; // <GPGSID>
 
 }
 

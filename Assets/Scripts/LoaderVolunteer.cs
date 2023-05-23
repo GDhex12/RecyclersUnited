@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LoaderVolunteer : Volunteer
 {
@@ -14,9 +16,11 @@ public class LoaderVolunteer : Volunteer
             if (GameManager.Instance.storage.IsEmpty())
             {
                 GoToLocation(gameObject);
+                SetAnimationVelocity(0);
                 return;
             }
             GoToLocation(storage);
+            SetAnimationVelocity(1);
             if (CheckIfClose(storage))
             {
                 bagStorageCurrent = GameManager.Instance.storage.RemoveGarbage(bagStorage);
@@ -29,10 +33,12 @@ public class LoaderVolunteer : Volunteer
             if (GameManager.Instance.vehicle.IsFull() || !GameManager.Instance.vehicleCooldown.vehicleReturned)
             {
                 GoToLocation(gameObject);
+                SetAnimationVelocity(0);
                 return;
             }
 
             GoToLocation(vehicle);
+            SetAnimationVelocity(1);
             if (CheckIfClose(vehicle))
             {
                 GameManager.Instance.vehicle.AddGarbage(bagStorageCurrent);
@@ -40,5 +46,6 @@ public class LoaderVolunteer : Volunteer
                 thrashInHand.SetActive(false);
             }
         }
+        
     }
 }

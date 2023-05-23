@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using UnityEngine.InputSystem;
 
 public class GooglePlayLogin : MonoBehaviour
 {
@@ -42,4 +43,40 @@ public class GooglePlayLogin : MonoBehaviour
             Debug.Log(status);
         }
     }
+    public void PostLeaderboardLevelToGPS(int level)
+    {
+        Social.ReportScore(level, GPGSIds.leaderboard_level, (bool success) => {
+            // handle success or failure
+        });
+    }
+    #region GPGS_UI
+    public void ShowLeaderboard()
+    {
+        // show leaderboard UI
+        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_level);
+    }
+    public void ShowAchievements()
+    {
+        // show achievement UI
+        Social.ShowAchievementsUI();
+    }
+    #endregion
+
+    #region AchievementManaging
+
+    public void UnlockAchievement(string achievement)
+    {
+        Social.ReportProgress(achievement, 100.0f, (bool success) => {
+            // handle success or failure
+        });
+    }
+    public void IncrementAchievement(string achievement)
+    {
+        PlayGamesPlatform.Instance.IncrementAchievement(
+        achievement, 1, (bool success) => {
+            // handle success or failure
+        });
+    }
+
+    #endregion
 }

@@ -1,12 +1,15 @@
 using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Location : MonoBehaviour
 {
+    enum UnlockedSaveIndex { _0,_1,_2,_3,_4,_5,_6,_7,_8,_9}
+
     [Header("Location info")]
     [SerializeField] int buildIndex;
     [SerializeField] bool isUnlocked = false;
@@ -14,12 +17,10 @@ public class Location : MonoBehaviour
     [SerializeField] long price = 100;
     [SerializeField] string sceneName;
     [SerializeField] int lvlToUnlock = 0;
+    [SerializeField] UnlockedSaveIndex sceneSaveIndex = UnlockedSaveIndex._0;
 
     [Header("Visuals")]
     [SerializeField] Image imageRef;
-    //[SerializeField] Color lockedColor;
-    //[SerializeField] Color unlockedColor;
-    //[SerializeField] Color boughtColor;
 
 
     //for later iteration
@@ -40,7 +41,7 @@ public class Location : MonoBehaviour
     private void Start()
     {
         _popupActive = false;
-
+        isBought = PersistantData.Instance.playerData.isAreaUnlocked[(int)sceneSaveIndex];
         
         UpdateUI();
     }
@@ -71,7 +72,9 @@ public class Location : MonoBehaviour
     public void SetIsBought(bool isBought)
     {
         this.isBought = isBought;
+        SaveIsBought();
     }
+
     public bool GetIsBought()
     {
         return isBought;
@@ -82,17 +85,14 @@ public class Location : MonoBehaviour
         if (!isUnlocked && !isBought)
         {
             imageRef.sprite = lockedSprite;
-            //imageRef.color = lockedColor;
         }
         else if (isUnlocked && !isBought)
         {
             imageRef.sprite = unlockedSprite;
-            //imageRef.color = unlockedColor;
         }
         else if (isUnlocked && isBought)
         {
             imageRef.sprite = boughtSprite;
-            //imageRef.color = boughtColor;
         }
         else
         {
@@ -104,6 +104,7 @@ public class Location : MonoBehaviour
     {
         if (IsLoadable())
         {
+            UnlockLocationAchievements();
             LocationLoader.Instance.LoadScene_Transition(sceneName);
         }
         else
@@ -140,12 +141,6 @@ public class Location : MonoBehaviour
             }
         }
     }
-
-    void SaveBoughtArea()
-    {
-        PersistantData.Instance.playerData.isAreaUnlocked[buildIndex] = true;
-        SaveSystem.SavePlayerData(PersistantData.Instance.playerData);
-    }
     public void BuyLocation()
     {
         if (isUnlocked && !isBought)
@@ -153,7 +148,6 @@ public class Location : MonoBehaviour
             if (CurrencyManager.instance.IsAffordable(price))
             {
                 CurrencyManager.instance.RemoveCurrency(price);
-                SaveBoughtArea();
                 SetIsBought(true);
                 SetPopupActive(false);
                 UpdateUI();
@@ -168,7 +162,20 @@ public class Location : MonoBehaviour
             Debug.Log("Not unlocked or already bought");
         }
     }
-
+    private void UnlockLocationAchievements()
+    {
+        switch(sceneName)
+        {
+            case "ValleyScene_02":
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_valley_depths);
+                break;
+            case "ArcticScene_03":
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_arctic_cold);
+                break;
+            default:
+                break;
+        }
+    }
     public void OnLocationPress()
     {
         if (!isUnlocked && !isBought)
@@ -199,5 +206,11 @@ public class Location : MonoBehaviour
     {
         //_popup.SetActive(active);
         _animator.SetBool("popup", active);
+    }
+
+    void SaveIsBought()
+    {
+        PersistantData.Instance.playerData.isAreaUnlocked[(int)sceneSaveIndex] = isBought;
+        SaveSystem.SavePlayerData(PersistantData.Instance.playerData);
     }
 }
