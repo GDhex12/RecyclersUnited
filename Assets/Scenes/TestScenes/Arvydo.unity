@@ -514,6 +514,21 @@ MonoBehaviour:
   currentTotalTrashAmount: 0
   completionPercentage: 100
   meterUI: {fileID: 1433836798}
+  onLocationComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1392604759}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &105387655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4698,6 +4713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+--- !u!1 &1392604759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8843211695972454902, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+  m_PrefabInstance: {fileID: 1343300754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1433836798 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8354676080380574669, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}

@@ -118,6 +118,12 @@ public class VehicleCooldown : MonoBehaviour
         GetComponent<Animator>().Play("TruckReturns");
         garbageFullnessAnimator.Play("Object_Appear");
         _isTimerRunning = false;
+
+        // completion 
+        if (TrashController.Instance.IsCompleted() && GameManager.Instance.storage.IsEmpty())
+        {
+            TrashController.Instance.OnLocationCompletion();
+        }
     }
 
     private void Update()

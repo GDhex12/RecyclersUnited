@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class TrashController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class TrashController : MonoBehaviour
     [SerializeField] int currentTotalTrashAmount = 0;
     [SerializeField] int completionPercentage = 100;
     [SerializeField] Slider meterUI;
+    [SerializeField] UnityEvent onLocationComplete;
 
     bool _isCompleted = false;
 
@@ -53,6 +55,7 @@ public class TrashController : MonoBehaviour
         if (_isCompleted)
         {
             DestroyAllPiles();
+            OnLocationCompletion();
         }
         else
         {
@@ -222,5 +225,10 @@ public class TrashController : MonoBehaviour
         _isCompleted = false;
         SaveTotalGarbageCount();
         UpdateMeterUI();
+    }
+
+    public void OnLocationCompletion()
+    {
+        onLocationComplete.Invoke();
     }
 }
