@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class TrashController : MonoBehaviour
 {
@@ -135,8 +136,26 @@ public class TrashController : MonoBehaviour
             if (currentTotalTrashAmount <= 0)
             {
                 _isCompleted = true;
+                UnlockTrashCompletionAchievements();
             }
             SaveTotalGarbageCount();
+        }
+    }
+    private void UnlockTrashCompletionAchievements()
+    {
+        switch(SceneManager.GetActiveScene().name)
+        {
+            case "BeachScene_01":
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_sparkling_sweep_1);
+                break;
+            case "ValleyScene_02":
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_sparkling_sweep_2);
+                break;
+            case "ArcticScene_03":
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_sparkling_sweep_3);
+                break;
+            default:
+                break;
         }
     }
 

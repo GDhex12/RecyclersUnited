@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Rendering;
 
 public class ExperienceStats : MonoBehaviour
 {
@@ -89,6 +90,8 @@ public class ExperienceStats : MonoBehaviour
             // Determine new value
             CalculateNewLimit();
             UpdateWithNewValues();
+            UnlockLevelAchievements(level);
+            GooglePlayLogin.Instance.PostLeaderboardLevelToGPS(level);
         }
         else
         {
@@ -103,5 +106,22 @@ public class ExperienceStats : MonoBehaviour
         float expBarSize = 295f;
         expBarSize -= (difference / requiredAmountToNextLv) * expBarWidth;
         return expBarSize;
+    }
+    private void UnlockLevelAchievements(int levelReached)
+    {
+        switch (levelReached)
+        {
+            case 5:
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_level_climber_1);
+                break;
+            case 10:
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_level_climber_2);
+                break;
+            case 20:
+                GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_level_climber_3);
+                break;
+            default:
+                break;
+        }
     }
 }

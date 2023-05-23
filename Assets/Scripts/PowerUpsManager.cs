@@ -28,7 +28,8 @@ public class PowerUpsManager : MonoBehaviour
                 if (hit.transform.CompareTag("Crate"))
                 {
                     hit.transform.gameObject.GetComponent<OnClickEffect>().OnClick();
-                    hit.transform.gameObject.GetComponent<OnClickAddCoins>().OnClick();                    
+                    hit.transform.gameObject.GetComponent<OnClickAddCoins>().OnClick();
+                    UnlockCrateAchievements();
                 }
                 else if (hit.transform.CompareTag("Helicopter") && !helicopterClicked)
                 {
@@ -36,6 +37,7 @@ public class PowerUpsManager : MonoBehaviour
                     hit.transform.root.GetComponent<Animator>().SetTrigger("MoveToExit");
                     countManager.AddVolunteersTemporary(3, 10f);
                     FunctionTimer.Create(()=>{ helicopterClicked = false; },2f);
+                    UnlockPowerupAchievements();
 
                 }
                 else if (hit.transform.CompareTag("Plane") && !helicopterClicked)
@@ -43,7 +45,7 @@ public class PowerUpsManager : MonoBehaviour
                     helicopterClicked = true;
                     countManager.IncreaseVolunteersSpeed();
                     FunctionTimer.Create(() => { helicopterClicked = false; }, 2f);
-
+                    UnlockPowerupAchievements();
                 }
 
             }
@@ -51,7 +53,20 @@ public class PowerUpsManager : MonoBehaviour
 
 
     }
-
+    #region AchivementUnlocking
+    private void UnlockCrateAchievements()
+    {
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_crate_collector_1);
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_crate_collector_2);
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_crate_collector_3);
+    }
+    private void UnlockPowerupAchievements()
+    {
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_1);
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_2);
+        GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_3);
+    }
+    #endregion
     public void SpeedUpVolunteers()
     {
         speedUpButton.interactable = false;
