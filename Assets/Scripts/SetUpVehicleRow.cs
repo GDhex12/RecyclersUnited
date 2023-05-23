@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class SetUpVehicleRow : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer vehicleImage;
+    [SerializeField] private Image vehicleImage;
     [SerializeField] private Button buyButton;
     [SerializeField] private TMPro.TextMeshProUGUI buttonText;
     [SerializeField] private VehicleShop vehicleShop;
@@ -40,6 +40,7 @@ public class SetUpVehicleRow : MonoBehaviour
 	{
         this.data = data;
         this.vehicle = vehicle;
+        this.vehicleImage.sprite = vehicle.GetImage();
         if(data.isUnlocked && !data.isSelected)
 		{
             buttonText.text = "Select";

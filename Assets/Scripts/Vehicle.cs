@@ -8,9 +8,13 @@ public class Vehicle : ScriptableObject
 {
 	[SerializeField]private GameObject VehiclePrefab;
 	[SerializeField] private int id;
-	[SerializeField] private int price;
+    [SerializeField] private string name;
+    [SerializeField] private Sprite image;
+    [SerializeField] private int price;
 	[SerializeField] private int levelRequired;
-	[SerializeField] private bool isDefault;
+    [SerializeField] private int capacity;
+    [SerializeField] private int speed;
+    [SerializeField] private bool isDefault;
 
 
 
@@ -30,5 +34,19 @@ public class Vehicle : ScriptableObject
 	public int GetId()
 	{
 		return id;
+	}
+    public string GetName()
+    {
+        return name;
+    }
+
+	public Sprite GetImage()
+	{
+		return image;
+	}
+
+	public int GetCapacity()
+	{
+		return capacity;
 	}
 }

@@ -89,7 +89,7 @@ public class VehicleCooldown : MonoBehaviour
 
     void SendVehicle()
     {
-        SoundManager.PlaySound(SoundManager.Sound.TruckEngine);
+        SoundManager.PlaySound(SoundManager.Sound.TruckEngine, PlayerPrefs.GetFloat("Sound"));
         PlayParticleEffect();
         garbageFullnessAnimator.Play("Object_Dissapear");
         vehicleReturned = false;
