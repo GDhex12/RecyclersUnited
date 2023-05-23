@@ -22,14 +22,16 @@ public static class SoundManager
         return null;
     }
 
-    public static void PlaySound(Sound sound)
+    public static void PlaySound(Sound sound,float vol)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.volume = 0.1f;
+        audioSource.volume = vol;
         audioSource.PlayOneShot(GetAudioClip(sound));
         GameObject.Destroy(soundGameObject, 5f);
     }
+
+    
 
    
 
