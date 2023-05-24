@@ -44,6 +44,7 @@ public class TutorialManager : MonoBehaviour
         PersistantData.Instance.playerData.NewGameTutorial = false;
         currentlyRunning = true;
         graphicalAssets[1].SetActive(true);
+        graphicalAssets[0].transform.GetChild(0).GetComponent<Animator>().SetFloat("Velocity", 0);
         MoveLayerForward();
     }
 
