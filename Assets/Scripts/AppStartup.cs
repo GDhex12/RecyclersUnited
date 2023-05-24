@@ -40,7 +40,10 @@ public class AppStartup : MonoBehaviour
     {
         if (PersistantData.Instance.playerData.NewGameTutorial)
         {
-            TutorialManager.Instance.Initialize();
+            if (TutorialManager.Instance != null)
+            {
+                TutorialManager.Instance.Initialize();
+            }
         }
 
         if (!TrashController.Instance.IsCompleted() && isCountingOffScene)

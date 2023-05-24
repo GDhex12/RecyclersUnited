@@ -11,7 +11,9 @@ public class OnClickAddCoins : MonoBehaviour
     {
         if (gameObject.activeSelf)
         {
-            CurrencyManager.instance.AddCurrency(Random.Range(coinsFrom, coinsTo));
+            int rngSelection = Random.Range(coinsFrom, coinsTo);
+            CurrencyManager.instance.AddCurrency(rngSelection);
+            gameObject.GetComponent<CoinFlightHelper>().RewardCoins(rngSelection / 10);
             gameObject.SetActive(false);
             transform.position = Vector3.zero;
         }

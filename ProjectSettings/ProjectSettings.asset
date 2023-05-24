@@ -60,8 +60,8 @@ PlayerSettings:
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
-  allowedAutorotateToLandscapeRight: 1
-  allowedAutorotateToLandscapeLeft: 1
+  allowedAutorotateToLandscapeRight: 0
+  allowedAutorotateToLandscapeLeft: 0
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
   preserveFramebufferAlpha: 0
@@ -136,11 +136,8 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2
-  preloadedAssets:
-  - {fileID: -924242778084034696, guid: 026c98cb5c5b861408c2a4b7b310c3f4, type: 2}
-  - {fileID: 11400000, guid: fd94d42a382b55142815dcbab4263a00, type: 2}
-  - {fileID: 11400000, guid: 8bc0e657f552cd94b8e0cafdd7c503f4, type: 2}
+  bundleVersion: 0.8
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -279,7 +276,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 2a35b8eb8498ad34987040eb39619d27, type: 3}
+      m_Icon: {fileID: 2800000, guid: b1942bc22f3f3dd4ba5b4e58b9439014, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -384,6 +381,36 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - m_Textures: []
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
       m_Width: 432
       m_Height: 432
       m_Kind: 2
@@ -442,36 +469,6 @@ PlayerSettings:
       m_Width: 36
       m_Height: 36
       m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 0
       m_SubKind: 
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
