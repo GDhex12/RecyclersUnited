@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4141fd2ced42d87499d58178e1eede62, type: 3}
   m_Name: PressableButtons
   m_EditorClassIdentifier: 
-  blueButton: {fileID: 21300000, guid: 2dccf33c048fa6541b56e5c12ffa0e6c, type: 3}
-  grayButton: {fileID: 21300000, guid: 43d8ac51f4f5c97408192b40a66d80f0, type: 3}
-  greenButton: {fileID: 21300000, guid: ec5835895d8f73e4bb63613fab58acbf, type: 3}
-  yellowButton: {fileID: 21300000, guid: df5dcd06bf6e8d344a13c42fb61cf5ff, type: 3}
-  orangeButton: {fileID: 21300000, guid: d6b1f93a42beec1429441c8144f7d6bc, type: 3}
-  redButton: {fileID: 21300000, guid: f16d745ae9c836b44a8cb9eb4d526850, type: 3}
+  blueButton: {fileID: 21300000, guid: 587ec1d84339f8c4c87de19bfc7d8575, type: 3}
+  grayButton: {fileID: 21300000, guid: a36f7c54dfef4fc48b0d23ef6f402219, type: 3}
+  greenButton: {fileID: 21300000, guid: 6dd206fb186331c42a8facf2479df0d1, type: 3}
+  yellowButton: {fileID: 21300000, guid: 3df27cddcb49e7c4dabaef71757ba491, type: 3}
+  orangeButton: {fileID: 21300000, guid: 1d4b65f1c72c0a844848b6987793b594, type: 3}
+  redButton: {fileID: 21300000, guid: faae095479197dc43848ce7783a673b5, type: 3}

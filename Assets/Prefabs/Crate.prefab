@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3327419797435247107}
   - component: {fileID: 2952318579752050742}
   - component: {fileID: 3692597789770236491}
+  - component: {fileID: 7564620462300048095}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Crate
@@ -113,6 +114,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect: {fileID: 6908319076973097748, guid: 05871fca8dfdc9a4e847a7775ed93340, type: 3}
   offset: {x: 0, y: 2.5, z: -0.5}
+--- !u!114 &7564620462300048095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269518087017468476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0970a923eff145744a66a980e20b235c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighterSettings:
+    depthMask: 3
+    infoRenderScale: 1
+    useOuterGlow: 1
+    useSingleOuterGlow: 1
+    outerGlowColorFront: {r: 0.12626725, g: 1, b: 0.0141509175, a: 1}
+    outerGlowColorBack: {r: 0, g: 0, b: 0, a: 1}
+    outlineVisibleBeforeObject: 1
+    blurType: 1
+    blendType: 0
+    boxBlurSize: 0.032
+    blurIterations: 40
+    blurRenderScale: 1
+    blurIntensity: 1.3
+    blurIntensityMultiplier: 1
+    blurAdaptiveThickness: 0
+    cameraDistanceMultiplier: 1
+    useMeshOutline: 1
+    useSingleMeshOutline: 1
+    meshOutlineFront:
+      color: {r: 0.11399722, g: 1, b: 0, a: 1}
+    meshOutlineBack:
+      color: {r: 1, g: 1, b: 1, a: 1}
+    meshOutlineThickness: 0.1
+    meshOutlineAdaptiveThickness: 0
+    useInnerGlow: 0
+    useSingleInnerGlow: 1
+    innerGlowFront:
+      color: {r: 0, g: 1, b: 1, a: 1}
+      power: 3.48
+    innerGlowBack:
+      color: {r: 0, g: 1, b: 1, a: 1}
+      power: 4
+    useOverlay: 1
+    useSingleOverlay: 1
+    overlayFront:
+      color: {r: 0, g: 1, b: 0.052033424, a: 0.12941177}
+      useTexture: 0
+      texture: {fileID: 0}
+      background: 0
+      tilling: 60
+      rotation: 0
+    overlayBack:
+      color: {r: 0, g: 1, b: 1, a: 1}
+      useTexture: 0
+      texture: {fileID: 0}
+      background: 0
+      tilling: 60
+      rotation: 0
+    RenderingBoundsSizeIncrease: 0.2
+    RenderingBoundsDistanceFix: 0
+    RenderingBoundsMaxDistanceFix: 1
+    RenderingBoundsMinDistanceFix: 0
+  findRenderers: 0
+  renderers:
+  - renderer: {fileID: 8392011481452375657}
+    useCutout: 0
+    clippingThreshold: 0
+    clippingSource: 0
+    clipTexture: {fileID: 0}
+    submeshIndexes: 000000000100000002000000
+    cullMode: 2
+  id: 4
+  showRenderBounds: 0
+  showScreenAdjustedRenderBounds: 0
 --- !u!1001 &8368409706294010629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -185,5 +263,10 @@ PrefabInstance:
 --- !u!4 &8372977483169776607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4603530400243930, guid: 9ec89c1577003453abd60ed56703775a, type: 3}
+  m_PrefabInstance: {fileID: 8368409706294010629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8392011481452375657 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23918434507165036, guid: 9ec89c1577003453abd60ed56703775a, type: 3}
   m_PrefabInstance: {fileID: 8368409706294010629}
   m_PrefabAsset: {fileID: 0}

@@ -121,6 +121,11 @@ public class VehicleCooldown : MonoBehaviour
         garbageFullnessAnimator.Play("Object_Appear");
         _isTimerRunning = false;
         StartCoroutine(DelayReward(2));   
+		// completion 
+        if (TrashController.Instance.IsCompleted() && GameManager.Instance.storage.IsEmpty())
+        {
+            TrashController.Instance.OnLocationCompletion();
+        }
     }
 
     private IEnumerator DelayReward(float time)
