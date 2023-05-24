@@ -69,6 +69,17 @@ public static class SaveSystem
             File.Delete(path);
         }
     }
+
+    public static void RemoveSceneData()
+    {
+        filepathScene = "/" + SceneManager.GetActiveScene().name + ".game";
+        string path = Application.persistentDataPath + filepathScene;
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+    }
+
     public static void RemoveAllVehicleData()
     {
         string path = Application.persistentDataPath + shopFilepath;

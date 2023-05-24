@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028541, g: 0.22571713, b: 0.30692393, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028529, g: 0.22571687, b: 0.3069234, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -345,6 +345,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2642104585272567218, guid: 3d4c791f66ea82249a63fd38245b702b, type: 3}
   m_PrefabInstance: {fileID: 24022148}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &24022150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1196318954156613258, guid: 3d4c791f66ea82249a63fd38245b702b, type: 3}
+  m_PrefabInstance: {fileID: 24022148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &47190837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010023497172, guid: 9ea763ea0d2368e4c9d475627663863c, type: 3}
@@ -463,6 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101566301}
   - component: {fileID: 101566302}
+  - component: {fileID: 101566303}
   m_Layer: 0
   m_Name: TrashController
   m_TagString: Untagged
@@ -499,7 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMesh: {fileID: 0}
   trashPiles: []
-  maxTotalTrashAmount: 1000000
+  maxTotalTrashAmount: 400
   currentTotalTrashAmount: 0
   completionPercentage: 100
   meterUI: {fileID: 1343300756}
@@ -518,6 +524,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &101566303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101566300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87df3b4cbcb3cd745921b67d1fccb11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &105387655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1667,7 +1685,7 @@ MonoBehaviour:
   vehicleCooldown: {fileID: 1049905959}
   spawner: {fileID: 471543196}
   volunteerRoot: {fileID: 471543195}
-  VehiclePrefab: {fileID: 0}
+  VehiclePrefab: {fileID: 24022150}
 --- !u!4 &351914033
 Transform:
   m_ObjectHideFlags: 0
