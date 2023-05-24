@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 
 public class VehicleCooldown : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class VehicleCooldown : MonoBehaviour
     public TMP_Text timeString;
     public GameObject cooldownContainer;
     public VehicleSystem vehicleManager;
+    private float returnAnimTime;
     [SerializeField] private int lastSentCount = 0;
 
     //visual update
@@ -89,7 +91,7 @@ public class VehicleCooldown : MonoBehaviour
 
     void SendVehicle()
     {
-        SoundManager.PlaySound(SoundManager.Sound.TruckEngine, PlayerPrefs.GetFloat("Sound"));
+        SoundManager.PlaySound(SoundManager.Sound.TruckEngine, PlayerPrefs.GetFloat("Sound"), 1f);
         PlayParticleEffect();
         garbageFullnessAnimator.Play("Object_Dissapear");
         vehicleReturned = false;
@@ -119,12 +121,18 @@ public class VehicleCooldown : MonoBehaviour
         GetComponent<Animator>().Play("TruckReturns");
         garbageFullnessAnimator.Play("Object_Appear");
         _isTimerRunning = false;
-
-        // completion 
+        StartCoroutine(DelayReward(2));   
+		// completion 
         if (TrashController.Instance.IsCompleted() && GameManager.Instance.storage.IsEmpty())
         {
             TrashController.Instance.OnLocationCompletion();
         }
+    }
+
+    private IEnumerator DelayReward(float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
+        gameObject.GetComponent<CoinFlightHelper>().RewardCoins(10);
     }
 
     private void Update()
