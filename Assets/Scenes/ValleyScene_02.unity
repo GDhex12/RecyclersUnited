@@ -4138,7 +4138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2aea14a1fb54149b114b7ef3c9041e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refToCoinPileRoot: {fileID: 1668361229}
+  refToCoinPileRoot: {fileID: 0}
   initialCoinPos: []
   initialCoinRot: []
   refToCoinUI: {fileID: 971695972}
@@ -6221,11 +6221,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6075155838382831309, guid: 273b8f4150121d249ac7e2fd11da7005, type: 3}
   m_PrefabInstance: {fileID: 1648281378}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1668361229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 108502856647602718, guid: 0800a4def70dce543849c54998d21cac, type: 3}
-  m_PrefabInstance: {fileID: 1946215155}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1691988781
 PrefabInstance:
@@ -30602,6 +30597,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &1946823936
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2667253310722458262}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 956210e81aac2e84f83de004757e938a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 956210e81aac2e84f83de004757e938a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1946215155
 PrefabInstance:
   m_ObjectHideFlags: 0
