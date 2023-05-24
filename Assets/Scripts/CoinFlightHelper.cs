@@ -39,7 +39,6 @@ public class CoinFlightHelper : MonoBehaviour
     {
         Reset();
         refToCoinPileRoot.SetActive(true);
-        Transform originalPosition = refToCoinPileRoot.transform;
         Vector3 targetPosition = gameObject.transform.position;
         Vector2 screenPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, targetPosition);
         refToCoinPileRoot.GetComponent<RectTransform>().position = screenPosition;
@@ -48,20 +47,17 @@ public class CoinFlightHelper : MonoBehaviour
             // Enlarge coins
             refToCoinPileRoot.transform.GetChild(i).DOScale(1f, 0.3f).SetDelay(flightDelay).SetEase(Ease.OutBack);
             // Fly them to dest
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(refToCoinUI.rectTransform.position);
-            screenPos /= refToMainUICanvas.GetComponent<Canvas>().scaleFactor;
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(screenPos);
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(refToMainUICanvas, worldPos, Camera.main, out Vector2 anchoredPos);
-            anchoredPos.y = -anchoredPos.y;
-            // TO-DO: figure out why 1.25 fixes the issue
-            originalPosition.GetChild(i).GetComponent<RectTransform>().DOAnchorPos(anchoredPos, 1f)
+            refToCoinPileRoot.transform.GetChild(i).GetComponent<RectTransform>().DOMove(refToCoinUI.rectTransform.position, 1f)
                 .SetDelay(flightDelay + 0.5f).SetEase(Ease.InBack);
             // Rotate to origin
             refToCoinPileRoot.transform.GetChild(i).DORotate(Vector3.zero, 0.5f).SetDelay(flightDelay + 0.5f).SetEase(Ease.Flash);
             // Minimize them to 0
             refToCoinPileRoot.transform.GetChild(i).DOScale(0f, 0.3f).SetDelay(flightDelay + 1.8f).SetEase(Ease.OutBack);
+            FunctionTimer.Create(() => SoundManager.PlaySound(SoundManager.Sound.CoinCollect, PlayerPrefs.GetFloat("Sound"), 
+                Random.Range(0.7f, 1.3f)), flightDelay + 1.5f);
             // Make each coin scale in a row
             flightDelay += 0.1f;
+            
         }
     }
 }
