@@ -457,7 +457,6 @@ GameObject:
   - component: {fileID: 1225927541}
   - component: {fileID: 1225927542}
   - component: {fileID: 4664246355619985835}
-  - component: {fileID: 9216477960026444461}
   m_Layer: 0
   m_Name: VehicleObj
   m_TagString: Untagged
@@ -614,25 +613,9 @@ MonoBehaviour:
     clipTexture: {fileID: 0}
     submeshIndexes: 0000000001000000
     cullMode: 2
-  id: 3
+  id: -1
   showRenderBounds: 0
   showScreenAdjustedRenderBounds: 0
---- !u!114 &9216477960026444461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6137184522307849747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a561d97d471ddec4088eee1d4331c906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultColor: {r: 0.9734455, g: 1, b: 0, a: 1}
-  fullColor: {r: 0, g: 1, b: 0.043819427, a: 1}
-  truckParts: []
-  miniParts: []
 --- !u!1 &8737476957758729767
 GameObject:
   m_ObjectHideFlags: 0
