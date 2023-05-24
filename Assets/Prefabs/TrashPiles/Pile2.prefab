@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4956029899301745945}
   - component: {fileID: -7322284863734133046}
-  - component: {fileID: 1824741452}
+  - component: {fileID: 2004625466015683531}
+  - component: {fileID: 8661568429460514328}
   m_Layer: 0
   m_Name: Pile2
-  m_TagString: Untagged
+  m_TagString: Pile
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,22 +85,39 @@ MonoBehaviour:
   - {fileID: 5218276777689309830}
   trashAmount: 30
   trashSpawner: {fileID: 0}
---- !u!111 &1824741452
-Animation:
+--- !u!65 &2004625466015683531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4956029899301745944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6125237, y: 0.67853343, z: 1.3692518}
+  m_Center: {x: 0.06299001, y: 0.26499265, z: 0.65813726}
+--- !u!95 &8661568429460514328
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4956029899301745944}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 956210e81aac2e84f83de004757e938a, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 956210e81aac2e84f83de004757e938a, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11c20011bf0cb974bb9f2011091a0f29, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &424002162754906688
 PrefabInstance:
   m_ObjectHideFlags: 0

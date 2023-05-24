@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e5811d9aeb3e04fb48321dce46f24d, type: 3}
   m_Name: HighlightsManagerURP
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   DepthLayerMask:
     serializedVersion: 2
     m_Bits: 0
