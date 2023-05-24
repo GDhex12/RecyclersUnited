@@ -27,7 +27,7 @@ public class TrashPileSpawner : MonoBehaviour
         if (TrashController.Instance.NeedsToSpawn())
         {
             GameObject newTrash = Instantiate(possibleVariants[Random.Range(0, possibleVariants.Count - 1)].gameObject, removedLoc, Quaternion.identity, parent);
-            newTrash.GetComponent<Animation>().Play();
+            //newTrash.GetComponent<Animation>().Play();
             TrashPile newPile = newTrash.GetComponent<TrashPile>();
             TrashController.Instance.AddTrashPile(newPile);
             Debug.Log(newPile.GetTrashAmount());
