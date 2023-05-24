@@ -114,6 +114,7 @@ public class VehicleCooldown : MonoBehaviour
         PlayParticleEffect();
         vehicleReturned = true;
         cooldownUI_container.SetActive(false);
+        GetComponent<VehicleOutliner>().UpdateOutlineOnFullness();
         //GetComponent<Animator>().Play(string.Format("{0}Returns", gameObject.name));
         GetComponent<Animator>().Play("TruckReturns");
         garbageFullnessAnimator.Play("Object_Appear");
