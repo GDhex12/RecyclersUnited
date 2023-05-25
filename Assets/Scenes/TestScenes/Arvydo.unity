@@ -327,6 +327,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4664246355619985835, guid: 3d4c791f66ea82249a63fd38245b702b, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664246355619985835, guid: 3d4c791f66ea82249a63fd38245b702b, type: 3}
       propertyPath: renderers.Array.data[3].cullMode
       value: 2
       objectReference: {fileID: 0}
@@ -523,7 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMesh: {fileID: 0}
   trashPiles: []
-  maxTotalTrashAmount: 10
+  maxTotalTrashAmount: 200
   currentTotalTrashAmount: 0
   completionPercentage: 100
   meterUI: {fileID: 1433836798}
@@ -2666,6 +2670,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1870732892}
     m_Modifications:
+    - target: {fileID: 1310962781706263809, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1760494208674635943, guid: 84bd04d60eee39e4981a7c250aecc1fe, type: 3}
       propertyPath: trashSpawner
       value: 
@@ -2792,7 +2800,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh300448
+  m_Name: pb_Mesh137774
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4663,6 +4671,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5157366198729765851, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -44
+      objectReference: {fileID: 0}
     - target: {fileID: 5223461170910166662, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: refToVolunteers
       value: 
@@ -4808,6 +4820,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3588138880248181891, guid: 367c9eb55bdd1fc459280c94849eee3e, type: 3}
+      propertyPath: id
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5100108722244982696, guid: 367c9eb55bdd1fc459280c94849eee3e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5535,6 +5551,10 @@ PrefabInstance:
       propertyPath: trashSpawner
       value: 
       objectReference: {fileID: 1107132464}
+    - target: {fileID: 478377815188934965, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4956029899301745944, guid: c21307816cddbd54c8c8ee8bf317fe16, type: 3}
       propertyPath: m_Name
       value: Pile2
@@ -5673,6 +5693,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6641809566852144420, guid: b0e4e97921d970f41bc8178a77b831db, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8191450947845645446, guid: b0e4e97921d970f41bc8178a77b831db, type: 3}
       propertyPath: m_Name
       value: FloatPlaneSpeed
@@ -6235,6 +6259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1942417868}
     m_Modifications:
+    - target: {fileID: 1653820507830534847, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4181594265989041246, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
       propertyPath: m_Icon
       value: 

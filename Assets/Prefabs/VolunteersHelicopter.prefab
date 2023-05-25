@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5100108722244982696}
   - component: {fileID: 5862563033545261686}
   - component: {fileID: 3588138880248181891}
+  - component: {fileID: 2847759753082610247}
   m_Layer: 0
   m_Name: VolunteersHelicopter
   m_TagString: Helicopter
@@ -64,35 +65,35 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5100108722245405576}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0970a923eff145744a66a980e20b235c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlighterSettings:
-    depthMask: 3
-    infoRenderScale: 1
+    depthMask: 1
+    infoRenderScale: 0.7
     useOuterGlow: 1
     useSingleOuterGlow: 1
-    outerGlowColorFront: {r: 0.11443538, g: 1, b: 0, a: 1}
+    outerGlowColorFront: {r: 0.087417364, g: 1, b: 0, a: 1}
     outerGlowColorBack: {r: 0, g: 0, b: 0, a: 1}
     outlineVisibleBeforeObject: 1
     blurType: 1
     blendType: 0
-    boxBlurSize: 0.032
-    blurIterations: 40
-    blurRenderScale: 1
-    blurIntensity: 1.3
-    blurIntensityMultiplier: 1
+    boxBlurSize: 0.006
+    blurIterations: 37.5
+    blurRenderScale: 0.434
+    blurIntensity: 1.09
+    blurIntensityMultiplier: 1.6
     blurAdaptiveThickness: 0
     cameraDistanceMultiplier: 1
-    useMeshOutline: 1
+    useMeshOutline: 0
     useSingleMeshOutline: 1
     meshOutlineFront:
-      color: {r: 0.11399722, g: 1, b: 0, a: 1}
+      color: {r: 0.9734455, g: 1, b: 0, a: 1}
     meshOutlineBack:
       color: {r: 1, g: 1, b: 1, a: 1}
-    meshOutlineThickness: 0.1
+    meshOutlineThickness: 0.059
     meshOutlineAdaptiveThickness: 0
     useInnerGlow: 0
     useSingleInnerGlow: 1
@@ -145,9 +146,27 @@ MonoBehaviour:
     clipTexture: {fileID: 0}
     submeshIndexes: 0000000001000000
     cullMode: 2
-  id: -1
+  id: 4
   showRenderBounds: 0
   showScreenAdjustedRenderBounds: 0
+--- !u!114 &2847759753082610247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100108722245405576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 1, b: 0.08817577, a: 1}
+  outlineWidth: 2.78
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5100108722245405578
 GameObject:
   m_ObjectHideFlags: 0

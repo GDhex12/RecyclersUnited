@@ -8,59 +8,36 @@ using UnityEditor;
 public class VehicleOutliner : MonoBehaviour
 {
     [Header("Colors")]
-    Highlighters.Highlighter _highlighter;
-    [ColorUsage(true, true)]
     [SerializeField] Color defaultColor = new();
-    [ColorUsage(true, true)]
     [SerializeField] Color fullColor = new();
 
-    [Header("Vehicle parts (meshes)")]
-    [SerializeField] List<HighlighterRenderer> truckParts = new List<HighlighterRenderer>();
-    [SerializeField] List<HighlighterRenderer> miniParts = new List<HighlighterRenderer>();
+    Outline _outline;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        _highlighter = GetComponent<Highlighters.Highlighter>();
+        _outline = GetComponent<Outline>();
+        VehicleSystem.OnFullUpdate += UpdateOutlineOnFullness;
 
-        UpdateOutlineOnFullness();
-    }
-
-    public void UpdateOutline()
-    {
-
-        _highlighter.GetRenderersInChildren();
-    }
-    public void UpdateOutlineOnTruck()
-    {
-        _highlighter.Renderers.Clear();
-        foreach (HighlighterRenderer part in truckParts)
-        {
-            //_highlighter.GetRenderersInChildren;
-        }
+        UpdateOutlineOnFullness();  
     }
     
-    public void UpdateOutlineOnMini()
-    {
-        _highlighter.Renderers.Clear();
-        foreach (HighlighterRenderer part in miniParts)
-        {
-            _highlighter.Renderers.Add(part);
-        }
-    }
     
     public void UpdateOutlineOnFullness()
     {
         if (GameManager.Instance.vehicle.IsFull())
         {
-            _highlighter.Settings.MeshOutlineFront.Color = fullColor;
-            _highlighter.Settings.OuterGlowColorFront = fullColor;
+            _outline.OutlineColor = fullColor;
         }
         else
         {
-            _highlighter.Settings.MeshOutlineFront.Color = defaultColor;
-            _highlighter.Settings.OuterGlowColorFront = defaultColor;
+            _outline.OutlineColor = defaultColor;
         }
+    }
+
+    private void OnDestroy()
+    {
+        VehicleSystem.OnFullUpdate -= UpdateOutlineOnFullness;
     }
 }
