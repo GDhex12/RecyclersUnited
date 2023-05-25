@@ -29,8 +29,7 @@ public class HireVolunteer : MonoBehaviour
     private void Start()
     {
         CalculatePriceOnStart();
-        
-        UpdateUI();
+        VolunteerPriceUpdater.OnPriceChange += CalculatePriceOnStart;
     }
 
     public void BuyVolunteer()
@@ -39,7 +38,8 @@ public class HireVolunteer : MonoBehaviour
         {
             SpawnUnit();
             CurrencyManager.instance.RemoveCurrency(price);
-            CalculatePrice();
+            //CalculatePrice();
+            GameManager.Instance.upgradeManager.GetComponent<VolunteerPriceUpdater>().UpdateUI();
         }
     }
 
@@ -49,7 +49,8 @@ public class HireVolunteer : MonoBehaviour
         price = (long)(price * priceMultiplier );
         UpdateUI();
     }
-    
+
+
     void CalculatePriceOnStart()
     {
 
@@ -62,6 +63,7 @@ public class HireVolunteer : MonoBehaviour
                 price = (long)(initPrice * MathF.Pow(priceMultiplier, PersistantData.Instance.sceneData.VolunteerLoaderCount - 1));
                 break;
         }
+        UpdateUI();
     }
 
     public void UpdateUI()
@@ -71,7 +73,7 @@ public class HireVolunteer : MonoBehaviour
 
     public string StringFormat()
     {
-        return $"{CurrencyManager.instance.CurrencyStringFormat(price)}";
+        return $"-{CurrencyManager.instance.CurrencyStringFormat(price)}";
     }
 
     void SpawnUnit()
@@ -86,6 +88,9 @@ public class HireVolunteer : MonoBehaviour
                 break;
         }
     }
-    
-    
+
+    private void OnDestroy()
+    {
+        VolunteerPriceUpdater.OnPriceChange -= CalculatePriceOnStart;
+    }
 }

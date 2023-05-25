@@ -33,10 +33,12 @@ public class PowerUpSpawner : MonoBehaviour
         {
             helicopter.GetComponent<Animator>().Play("HelicopterComes");
             helicopter.GetComponent<Animator>().ResetTrigger("MoveToExit");
+            helicopter.GetComponent<Outline>().enabled = true;
         }
         else
         {
             plane.GetComponent<Animator>().Play("PlaneFlyBy");
+            plane.GetComponent<Outline>().enabled = true;
         }
         FunctionTimer.Create(PrepNextPowerUp, SpawnRateMax);
     }
