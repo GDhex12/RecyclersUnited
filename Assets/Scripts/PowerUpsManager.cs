@@ -27,7 +27,6 @@ public class PowerUpsManager : MonoBehaviour
                 
                 if (hit.transform.CompareTag("Crate"))
                 {
-                    hit.transform.gameObject.GetComponent<OnClickEffect>().OnClick();
                     hit.transform.gameObject.GetComponent<OnClickAddCoins>().OnClick();
                     UnlockCrateAchievements();
                 }
