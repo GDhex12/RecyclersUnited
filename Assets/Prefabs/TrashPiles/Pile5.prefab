@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6588230396811940180
 Transform:
@@ -105,6 +105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: steel-rod
       objectReference: {fileID: 0}
+    - target: {fileID: 4821945366704376012, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 4821945366704739564, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -165,7 +169,12 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4821945366706640396, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7249139392635177699, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
 --- !u!4 &5857333166775764672 stripped
 Transform:
@@ -187,6 +196,10 @@ PrefabInstance:
     - target: {fileID: 1369400643385496, guid: 3c26b62b100db45969d64fbfed03cab7, type: 3}
       propertyPath: m_Name
       value: barricade-window
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369400643385496, guid: 3c26b62b100db45969d64fbfed03cab7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4188295027179056, guid: 3c26b62b100db45969d64fbfed03cab7, type: 3}
       propertyPath: m_RootOrder
@@ -248,6 +261,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23286617006703132, guid: 3c26b62b100db45969d64fbfed03cab7, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c26b62b100db45969d64fbfed03cab7, type: 3}
 --- !u!1 &2415651006774392422 stripped
@@ -270,6 +287,10 @@ PrefabInstance:
     - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_Name
       value: toilet-paper (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4006224310600210, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_RootOrder
@@ -327,6 +348,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23862489821183948, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
 --- !u!4 &2460545829539013313 stripped
@@ -349,6 +374,10 @@ PrefabInstance:
     - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_Name
       value: toilet-paper (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4006224310600210, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_RootOrder
@@ -406,6 +435,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23862489821183948, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
 --- !u!1 &3428663094249921941 stripped
@@ -428,6 +461,10 @@ PrefabInstance:
     - target: {fileID: 1875389735474708, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
       propertyPath: m_Name
       value: water-bottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875389735474708, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4607707179994006, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
       propertyPath: m_RootOrder
@@ -489,6 +526,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23640863304328254, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
 --- !u!4 &3819839649323686880 stripped
@@ -511,6 +552,10 @@ PrefabInstance:
     - target: {fileID: 4821945366704376012, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
       propertyPath: m_Name
       value: steel-rod (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821945366704376012, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4821945366704739564, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
       propertyPath: m_RootOrder
@@ -573,10 +618,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4821945366706640396, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821945366706640396, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 64a4684ba67ced04c811f6174e678a22, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7249139392635177699, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 73d8a90537912654786a82d7a0aff406, type: 3}
 --- !u!4 &8714075386988957000 stripped
 Transform:
@@ -598,6 +648,10 @@ PrefabInstance:
     - target: {fileID: 1644375453210114, guid: be899316ac281464d8ac09ca602dd8ff, type: 3}
       propertyPath: m_Name
       value: sand-bucket
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644375453210114, guid: be899316ac281464d8ac09ca602dd8ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4016072232499226, guid: be899316ac281464d8ac09ca602dd8ff, type: 3}
       propertyPath: m_RootOrder
@@ -659,7 +713,12 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 23803864084209842, guid: be899316ac281464d8ac09ca602dd8ff, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 64292299578087812, guid: be899316ac281464d8ac09ca602dd8ff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: be899316ac281464d8ac09ca602dd8ff, type: 3}
 --- !u!1 &6568338233321531627 stripped
 GameObject:
@@ -681,6 +740,10 @@ PrefabInstance:
     - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_Name
       value: tire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4653328658019758, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_RootOrder
@@ -738,7 +801,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 23256373876954144, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 64205975903478774, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
 --- !u!1 &6586761705166019258 stripped
 GameObject:
@@ -757,9 +825,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6588230396811940180}
     m_Modifications:
+    - target: {fileID: 6736419520083250891, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_Name
       value: apple-core (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 6736419520085543979, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_RootOrder
@@ -817,7 +893,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6736419520085415636, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
 --- !u!4 &437563293788006480 stripped
 Transform:
@@ -839,6 +916,10 @@ PrefabInstance:
     - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_Name
       value: toilet-paper (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4006224310600210, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_RootOrder
@@ -884,6 +965,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 23862489821183948, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
 --- !u!4 &6584301140203192151 stripped
@@ -903,9 +988,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6588230396811940180}
     m_Modifications:
+    - target: {fileID: 6736419520083250891, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_Name
       value: apple-core (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 6736419520085543979, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_RootOrder
@@ -963,7 +1056,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 13.272
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6736419520085415636, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
 --- !u!4 &437563292710980676 stripped
 Transform:
@@ -985,6 +1079,10 @@ PrefabInstance:
     - target: {fileID: 913194965223494793, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
       propertyPath: m_Name
       value: banana-peel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 913194965223494793, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 913194965223721129, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
       propertyPath: m_RootOrder
@@ -1030,7 +1128,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -135.363
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 913194965225491017, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 913194965223592490, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
 --- !u!1 &6323697470904462825 stripped
 GameObject:
@@ -1049,9 +1152,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6588230396811940180}
     m_Modifications:
+    - target: {fileID: 6736419520083250891, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_Name
       value: apple-core (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 6736419520085543979, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_RootOrder
@@ -1109,7 +1220,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6736419520085415636, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
 --- !u!4 &437563293137149705 stripped
 Transform:
@@ -1131,6 +1243,10 @@ PrefabInstance:
     - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_Name
       value: toilet-paper (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4006224310600210, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_RootOrder
@@ -1188,6 +1304,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23862489821183948, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
 --- !u!1 &6973042153092700553 stripped
@@ -1210,6 +1330,10 @@ PrefabInstance:
     - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_Name
       value: toilet-paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002582289766552, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4006224310600210, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_RootOrder
@@ -1266,6 +1390,10 @@ PrefabInstance:
     - target: {fileID: 4006224310600210, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23862489821183948, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de019b2052344985ad2a12126ae93c3, type: 3}
