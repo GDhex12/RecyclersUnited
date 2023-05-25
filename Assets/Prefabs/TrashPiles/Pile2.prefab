@@ -129,6 +129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: container-take-empty (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4131331439586337311, guid: d85776e11b3ecd944bb3cd039b5252e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4131331439586573887, guid: d85776e11b3ecd944bb3cd039b5252e7, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -211,6 +215,10 @@ PrefabInstance:
     - target: {fileID: 1814860411461078, guid: 7a8727fe028624479bfe4674d466c786, type: 3}
       propertyPath: m_Name
       value: rice-box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814860411461078, guid: 7a8727fe028624479bfe4674d466c786, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4419857998971152, guid: 7a8727fe028624479bfe4674d466c786, type: 3}
       propertyPath: m_RootOrder
@@ -295,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: container-take-empty
       objectReference: {fileID: 0}
+    - target: {fileID: 4131331439586337311, guid: d85776e11b3ecd944bb3cd039b5252e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4131331439586573887, guid: d85776e11b3ecd944bb3cd039b5252e7, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -378,6 +390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pizza-frozen
       objectReference: {fileID: 0}
+    - target: {fileID: 1218420296499970, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4578469638673530, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -460,6 +476,10 @@ PrefabInstance:
     - target: {fileID: 1218420296499970, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
       propertyPath: m_Name
       value: pizza-frozen (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218420296499970, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4578469638673530, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
       propertyPath: m_RootOrder
@@ -604,6 +624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wine-bottle-red
       objectReference: {fileID: 0}
+    - target: {fileID: 9172805919927763937, guid: dce2a4860555e144ca8e283c6a7ee476, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dce2a4860555e144ca8e283c6a7ee476, type: 3}
 --- !u!4 &4666387151562462443 stripped
@@ -630,6 +654,10 @@ PrefabInstance:
     - target: {fileID: 1875389735474708, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875389735474708, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4607707179994006, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
       propertyPath: m_RootOrder
@@ -702,6 +730,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1875389735474708, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4607707179994006, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -772,6 +804,10 @@ PrefabInstance:
     - target: {fileID: 1596939623178858, guid: beb9d176bcdd44af3b178aaab4a4d67d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596939623178858, guid: beb9d176bcdd44af3b178aaab4a4d67d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4502963716672912, guid: beb9d176bcdd44af3b178aaab4a4d67d, type: 3}
       propertyPath: m_RootOrder
@@ -888,6 +924,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3084408282942329140, guid: ac43d0181d425284785c1498f4b398a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac43d0181d425284785c1498f4b398a9, type: 3}
 --- !u!1 &7928972053968479545 stripped
@@ -914,6 +954,10 @@ PrefabInstance:
     - target: {fileID: 913194965223494793, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 913194965223494793, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 913194965223721129, guid: 397792fdb44b84345bb322c7c92dec66, type: 3}
       propertyPath: m_RootOrder
@@ -1002,6 +1046,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6736419520085543979, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1088,6 +1136,10 @@ PrefabInstance:
     - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736419520085446667, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6736419520085543979, guid: 6ee22d10094735049a4b3f4d1d26d0ad, type: 3}
       propertyPath: m_RootOrder
@@ -1176,6 +1228,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1596939623178858, guid: beb9d176bcdd44af3b178aaab4a4d67d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4502963716672912, guid: beb9d176bcdd44af3b178aaab4a4d67d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1242,6 +1298,10 @@ PrefabInstance:
     - target: {fileID: 1218420296499970, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
       propertyPath: m_Name
       value: pizza-frozen (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218420296499970, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4578469638673530, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
       propertyPath: m_RootOrder
@@ -1326,6 +1386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rice-box
       objectReference: {fileID: 0}
+    - target: {fileID: 1814860411461078, guid: 7a8727fe028624479bfe4674d466c786, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4419857998971152, guid: 7a8727fe028624479bfe4674d466c786, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1409,6 +1473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: milk-box
       objectReference: {fileID: 0}
+    - target: {fileID: 1043437284869014, guid: 6587ef9dc25984005991caab8322bf50, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4481143152321082, guid: 6587ef9dc25984005991caab8322bf50, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1491,6 +1559,10 @@ PrefabInstance:
     - target: {fileID: 1218420296499970, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
       propertyPath: m_Name
       value: pizza-frozen (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218420296499970, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4578469638673530, guid: dc35b891544ef404097d196762cfb9aa, type: 3}
       propertyPath: m_RootOrder
