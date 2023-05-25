@@ -34,15 +34,24 @@ public class PowerUpUI : MonoBehaviour
     }
     public void CheckNeededLevel()
     {
-        if (neededLevel <= PersistantData.Instance.playerData.Level)
+        if (!isPowerUpActive)
         {
-            availabilityText.text = setMessages[0];
-            availabilityText.color = textColor[0];
-            ChangeButtonStatus(true);
+            if (neededLevel <= PersistantData.Instance.playerData.Level)
+            {
+                availabilityText.text = setMessages[0];
+                availabilityText.color = textColor[0];
+                ChangeButtonStatus(true);
+            }
+            else
+            {
+                availabilityText.text = string.Format("{0}{1}", setMessages[1], neededLevel);
+                availabilityText.color = textColor[1];
+                ChangeButtonStatus(false);
+            }
         }
         else
         {
-            availabilityText.text = string.Format("{0}{1}", setMessages[1], neededLevel);
+            availabilityText.text = setMessages[2];
             availabilityText.color = textColor[1];
             ChangeButtonStatus(false);
         }
