@@ -64,7 +64,6 @@ public class VehicleManager : MonoBehaviour
                 allVehiclesPrefabs[vehicle.id].SetActive(false);
             }
 		}
-        GameManager.Instance.vehicleCooldown.GetComponent<VehicleOutliner>().UpdateOutline();
     }
 
     public void ChangeVehicle()

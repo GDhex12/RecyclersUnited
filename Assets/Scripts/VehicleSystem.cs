@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class VehicleSystem : MonoBehaviour
 {
+    public static event Action OnFullUpdate;
+
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI vehicleUI;
     [SerializeField] private Image garbageFullnesImage;
@@ -68,7 +71,7 @@ public class VehicleSystem : MonoBehaviour
 
             UpdateGarbage();
         }
-        GameManager.Instance.vehicleCooldown.GetComponent<VehicleOutliner>().UpdateOutlineOnFullness();
+        
     }
 
     public void RemoveGarbage(int amount)
@@ -137,6 +140,7 @@ public class VehicleSystem : MonoBehaviour
         }
         UpdateGarbageUI();
         SaveParams();
+        OnFullUpdate?.Invoke();
     }
 
     void UpdateGarbageUI()

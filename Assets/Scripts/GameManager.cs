@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Transform volunteerRoot;
     public GameObject VehiclePrefab;
 
+    public UpgradeManager upgradeManager;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -25,5 +27,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Start()
+    {
+        upgradeManager = FindObjectOfType<UpgradeManager>();
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2952318579752050742}
   - component: {fileID: 3692597789770236491}
   - component: {fileID: 7564620462300048095}
+  - component: {fileID: 1803144455561059123}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Crate
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2269518087017468476}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0970a923eff145744a66a980e20b235c, type: 3}
   m_Name: 
@@ -191,6 +192,24 @@ MonoBehaviour:
   id: 4
   showRenderBounds: 0
   showScreenAdjustedRenderBounds: 0
+--- !u!114 &1803144455561059123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269518087017468476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 1, b: 0.08817577, a: 1}
+  outlineWidth: 2.78
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &8368409706294010629
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -33,15 +33,17 @@ public class PowerUpsManager : MonoBehaviour
                 else if (hit.transform.CompareTag("Helicopter") && !helicopterClicked)
                 {
                     helicopterClicked = true;
+                    hit.transform.root.GetComponent<Outline>().enabled = false;
                     hit.transform.root.GetComponent<Animator>().SetTrigger("MoveToExit");
                     countManager.AddVolunteersTemporary(3, 10f);
                     FunctionTimer.Create(()=>{ helicopterClicked = false; },2f);
                     UnlockPowerupAchievements();
-
+                    
                 }
                 else if (hit.transform.CompareTag("Plane") && !helicopterClicked)
                 {
                     helicopterClicked = true;
+                    hit.transform.root.GetComponent<Outline>().enabled = false;
                     countManager.IncreaseVolunteersSpeed();
                     FunctionTimer.Create(() => { helicopterClicked = false; }, 2f);
                     UnlockPowerupAchievements();

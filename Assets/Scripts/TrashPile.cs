@@ -95,5 +95,6 @@ public class TrashPile : MonoBehaviour
     {
         trashList[_trashIndex].SetActive(false);
         _trashIndex--;
+        GetComponent<Highlighters.Highlighter>().GetRenderersInChildren();
     }
 }
