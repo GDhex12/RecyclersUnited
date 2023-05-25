@@ -143,6 +143,10 @@ public class VehicleCooldown : MonoBehaviour
             }
         }
     }
+    public void FastenTimer(float seconds)
+    {
+        timeLeft -= seconds;
+    }
 
     //private IEnumerator CountdownLoop ()
     //{
