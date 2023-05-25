@@ -7,7 +7,8 @@ public static class SoundManager
     public enum Sound
     {
        PickUp,
-       TruckEngine
+       TruckEngine,
+       CoinCollect
     }
 
     public static AudioClip GetAudioClip(Sound sound)
@@ -22,13 +23,14 @@ public static class SoundManager
         return null;
     }
 
-    public static void PlaySound(Sound sound,float vol)
+    public static void PlaySound(Sound sound, float vol, float pitch)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.volume = vol;
+        audioSource.pitch = pitch;
         audioSource.PlayOneShot(GetAudioClip(sound));
-        GameObject.Destroy(soundGameObject, 5f);
+        Object.Destroy(soundGameObject, 5f);
     }
 
     

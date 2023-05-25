@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class TrashController : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class TrashController : MonoBehaviour
     [SerializeField] int maxTotalTrashAmount = 1000;
     [SerializeField] int currentTotalTrashAmount = 0;
     [SerializeField] int completionPercentage = 100;
+    [SerializeField] Slider meterUI;
+    [SerializeField] UnityEvent onLocationComplete;
 
     bool _isCompleted = false;
 
@@ -27,11 +31,12 @@ public class TrashController : MonoBehaviour
     {
         Instance = this;
 
-        if (!_isCompleted && currentTotalTrashAmount == 0)
-        {
-            currentTotalTrashAmount = maxTotalTrashAmount;
-            SaveTotalGarbageCount();
-        }
+        //if (!_isCompleted && currentTotalTrashAmount == 0)
+        //{
+        //    currentTotalTrashAmount = maxTotalTrashAmount;
+        //    SaveTotalGarbageCount();
+        //    UpdateMeterUI();
+        //}
     }
 
     public int GetCount()
@@ -42,7 +47,14 @@ public class TrashController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (!_isCompleted && currentTotalTrashAmount == 0)
+        {
+            currentTotalTrashAmount = maxTotalTrashAmount;
+            SaveTotalGarbageCount();
+        }
+
+        UpdateMeterUI();
+
         trashPiles = FindObjectsOfType<TrashPile>().ToList();
 
 
@@ -50,6 +62,7 @@ public class TrashController : MonoBehaviour
         if (_isCompleted)
         {
             DestroyAllPiles();
+            OnLocationCompletion();
         }
         else
         {
@@ -139,8 +152,18 @@ public class TrashController : MonoBehaviour
                 UnlockTrashCompletionAchievements();
             }
             SaveTotalGarbageCount();
+            UpdateMeterUI();
         }
     }
+
+    void UpdateMeterUI()
+    {
+        float max = maxTotalTrashAmount;
+        float curr = currentTotalTrashAmount;
+        float percentige = 1-(curr / max);
+        meterUI.value = percentige;
+    }
+
     private void UnlockTrashCompletionAchievements()
     {
         switch(SceneManager.GetActiveScene().name)
@@ -208,5 +231,11 @@ public class TrashController : MonoBehaviour
         completionPercentage = GetCompletionPercentage();
         _isCompleted = false;
         SaveTotalGarbageCount();
+        UpdateMeterUI();
+    }
+
+    public void OnLocationCompletion()
+    {
+        onLocationComplete.Invoke();
     }
 }

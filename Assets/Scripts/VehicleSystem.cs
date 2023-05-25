@@ -22,7 +22,7 @@ public class VehicleSystem : MonoBehaviour
     {
         currentGarbageCount = PersistantData.Instance.sceneData.VehicleGarbageCount;
 
-       
+        
     }
 
     public int GetGarbageCount()
@@ -68,7 +68,7 @@ public class VehicleSystem : MonoBehaviour
 
             UpdateGarbage();
         }
-        
+        GameManager.Instance.vehicleCooldown.GetComponent<VehicleOutliner>().UpdateOutlineOnFullness();
     }
 
     public void RemoveGarbage(int amount)

@@ -20,5 +20,9 @@ public class AnimationButton : MonoBehaviour
         //int currentIdx = vehicleSelection.arrayIdx;
         //truck.GetComponent<Animator>().Play(string.Format("{0}GoesAway", truck.name));
         truck.GetComponent<Animator>().Play("TruckGoesAway");
+        if (GameManager.Instance.vehicleCooldown.vehicleReturned)
+        {
+            GameManager.Instance.VehiclePrefab.GetComponent<Animator>().SetTrigger("Press_in");
+        }
     }
 }

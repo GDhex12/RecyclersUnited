@@ -364,8 +364,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -15.349
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7564620462300048095, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
+    - {fileID: 3692597789770236491, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
+--- !u!1 &3491621652232366320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2269518087017468476, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
+  m_PrefabInstance: {fileID: 3389602794290772684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1920279160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491621652232366320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2aea14a1fb54149b114b7ef3c9041e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refToCoinPileRoot: {fileID: 0}
+  initialCoinPos: []
+  initialCoinRot: []
+  refToCoinUI: {fileID: 0}
+  refToMainUICanvas: {fileID: 0}
+  flightDelay: 0
 --- !u!4 &3695807120344306364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2035747114379913328, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
@@ -434,8 +459,33 @@ PrefabInstance:
       propertyPath: moveDirection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7564620462300048095, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
+    - {fileID: 3692597789770236491, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
+--- !u!1 &3491621652094579476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2269518087017468476, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}
+  m_PrefabInstance: {fileID: 3389602794421412136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8450368856838903029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491621652094579476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2aea14a1fb54149b114b7ef3c9041e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refToCoinPileRoot: {fileID: 0}
+  initialCoinPos: []
+  initialCoinRot: []
+  refToCoinUI: {fileID: 0}
+  refToMainUICanvas: {fileID: 0}
+  flightDelay: 0
 --- !u!4 &3695807120471279960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2035747114379913328, guid: 4fdd8beadb0eb0144a60e6c2aea0a97d, type: 3}

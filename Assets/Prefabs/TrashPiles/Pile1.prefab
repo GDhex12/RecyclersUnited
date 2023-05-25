@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4116942801788225376}
   - component: {fileID: 1760494208674635943}
-  - component: {fileID: 1981951065}
+  - component: {fileID: 8159128064169707407}
+  - component: {fileID: 7644256939986861653}
   m_Layer: 0
   m_Name: Pile1
-  m_TagString: Untagged
+  m_TagString: Pile
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,22 +81,39 @@ MonoBehaviour:
   - {fileID: 4117602699828406225}
   trashAmount: 30
   trashSpawner: {fileID: 0}
---- !u!111 &1981951065
-Animation:
+--- !u!65 &8159128064169707407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4116942801788225377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.1344764, y: 1.678504, z: 2.1449745}
+  m_Center: {x: -0.24737075, y: 0.63609713, z: 1.2085844}
+--- !u!95 &7644256939986861653
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4116942801788225377}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 956210e81aac2e84f83de004757e938a, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 956210e81aac2e84f83de004757e938a, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11c20011bf0cb974bb9f2011091a0f29, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &984945983352673184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,6 +124,10 @@ PrefabInstance:
     - target: {fileID: 1683859609866480, guid: 5993b5ceea45442ecaf0164cb4e9b739, type: 3}
       propertyPath: m_Name
       value: garbage-bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1683859609866480, guid: 5993b5ceea45442ecaf0164cb4e9b739, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4616205988002150, guid: 5993b5ceea45442ecaf0164cb4e9b739, type: 3}
       propertyPath: m_RootOrder
@@ -246,6 +268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wine-bottle-red
       objectReference: {fileID: 0}
+    - target: {fileID: 9172805919927763937, guid: dce2a4860555e144ca8e283c6a7ee476, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dce2a4860555e144ca8e283c6a7ee476, type: 3}
 --- !u!1 &6999613615371335647 stripped
@@ -268,6 +294,10 @@ PrefabInstance:
     - target: {fileID: 1281245557861440, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
       propertyPath: m_Name
       value: water-cooling-bottle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281245557861440, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4395992482967920, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
       propertyPath: m_RootOrder
@@ -352,6 +382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: water-bottle
       objectReference: {fileID: 0}
+    - target: {fileID: 1875389735474708, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4607707179994006, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -431,6 +465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tire (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4653328658019758, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -497,6 +535,10 @@ PrefabInstance:
     - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_Name
       value: tire (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4653328658019758, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_RootOrder
@@ -565,6 +607,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tire (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4653328658019758, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -631,6 +677,10 @@ PrefabInstance:
     - target: {fileID: 8764347774696888438, guid: addccbe70e65722438a27aa337d52539, type: 3}
       propertyPath: m_Name
       value: carbon-fiber (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764347774696888438, guid: addccbe70e65722438a27aa337d52539, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8764347774696981590, guid: addccbe70e65722438a27aa337d52539, type: 3}
       propertyPath: m_RootOrder
@@ -719,6 +769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tire (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4653328658019758, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -785,6 +839,10 @@ PrefabInstance:
     - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_Name
       value: tire (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4653328658019758, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_RootOrder
@@ -853,6 +911,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tire (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4653328658019758, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -919,6 +981,10 @@ PrefabInstance:
     - target: {fileID: 1281245557861440, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
       propertyPath: m_Name
       value: water-cooling-bottle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281245557861440, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4395992482967920, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
       propertyPath: m_RootOrder
@@ -1002,6 +1068,10 @@ PrefabInstance:
     - target: {fileID: 8764347774696888438, guid: addccbe70e65722438a27aa337d52539, type: 3}
       propertyPath: m_Name
       value: carbon-fiber
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764347774696888438, guid: addccbe70e65722438a27aa337d52539, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8764347774696981590, guid: addccbe70e65722438a27aa337d52539, type: 3}
       propertyPath: m_RootOrder
@@ -1090,6 +1160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: water-bottle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1875389735474708, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4607707179994006, guid: 051a30049c31948d8956ef9fc0b81c13, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1168,6 +1242,10 @@ PrefabInstance:
     - target: {fileID: 1281245557861440, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
       propertyPath: m_Name
       value: water-cooling-bottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281245557861440, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4395992482967920, guid: 43b96e626f45d4248909b59db52c4a84, type: 3}
       propertyPath: m_RootOrder
@@ -1251,6 +1329,10 @@ PrefabInstance:
     - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_Name
       value: tire (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962065186221128, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4653328658019758, guid: 299ec837aa8cf492ba50313ca204c569, type: 3}
       propertyPath: m_RootOrder
