@@ -3804,7 +3804,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh63908
+  m_Name: pb_Mesh37934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6078,6 +6078,10 @@ PrefabInstance:
       propertyPath: vehicleManager
       value: 
       objectReference: {fileID: 1338726065}
+    - target: {fileID: 996083844, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1343300748, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: refToVolunteers
       value: 
