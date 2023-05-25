@@ -9,6 +9,8 @@ TagManager:
   - Crate
   - Helicopter
   - Plane
+  - Pile
+  - Storage
   layers:
   - Default
   - TransparentFX

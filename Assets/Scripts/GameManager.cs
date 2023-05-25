@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public VehicleCooldown vehicleCooldown;
     public SpawnObject spawner;
     public Transform volunteerRoot;
+    public GameObject VehiclePrefab;
 
     private void Awake()
     {
