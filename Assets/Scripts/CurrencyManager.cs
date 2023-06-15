@@ -134,6 +134,7 @@ public class CurrencyManager : MonoBehaviour
 
     private void UnlockCurrencyAchievements()
     {
+#if UNITY_ANDROID
         if(currencyAmount > 10000)
         {
             GooglePlayLogin.Instance.UnlockAchievement(GPGSIds.achievement_money_hoarder_1);
@@ -146,5 +147,6 @@ public class CurrencyManager : MonoBehaviour
                 }
             }
         }
+#endif
     }
 }

@@ -57,15 +57,19 @@ public class PowerUpsManager : MonoBehaviour
     #region AchivementUnlocking
     private void UnlockCrateAchievements()
     {
+#if UNITY_ANDROID
         GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_crate_collector_1);
         GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_crate_collector_2);
         GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_crate_collector_3);
+#endif
     }
     private void UnlockPowerupAchievements()
     {
+#if UNITY_ANDROID
         GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_1);
         GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_2);
         GooglePlayLogin.Instance.IncrementAchievement(GPGSIds.achievement_hands_on_3);
+#endif
     }
     #endregion
     public void SpeedUpVolunteers()
