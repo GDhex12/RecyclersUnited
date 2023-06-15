@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class GooglePlayLogin : MonoBehaviour
 {
+#if UNITY_ANDROID
     public static GooglePlayLogin Instance { get; private set; }
 
     public void Awake()
@@ -79,4 +80,5 @@ public class GooglePlayLogin : MonoBehaviour
     }
 
     #endregion
+#endif
 }

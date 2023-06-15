@@ -8,7 +8,7 @@ public class Vehicle : ScriptableObject
 {
 	[SerializeField]private GameObject VehiclePrefab;
 	[SerializeField] private int id;
-    [SerializeField] private string name;
+    [SerializeField] private string Name;
     [SerializeField] private Sprite image;
     [SerializeField] private int price;
 	[SerializeField] private int levelRequired;
@@ -37,7 +37,7 @@ public class Vehicle : ScriptableObject
 	}
     public string GetName()
     {
-        return name;
+        return Name;
     }
 
 	public Sprite GetImage()

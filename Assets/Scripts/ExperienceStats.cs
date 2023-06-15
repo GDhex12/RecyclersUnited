@@ -90,8 +90,10 @@ public class ExperienceStats : MonoBehaviour
             // Determine new value
             CalculateNewLimit();
             UpdateWithNewValues();
+#if UNITY_ANDROID
             UnlockLevelAchievements(level);
             GooglePlayLogin.Instance.PostLeaderboardLevelToGPS(level);
+#endif
         }
         else
         {
@@ -109,6 +111,7 @@ public class ExperienceStats : MonoBehaviour
     }
     private void UnlockLevelAchievements(int levelReached)
     {
+#if UNITY_ANDROID
         switch (levelReached)
         {
             case 5:
@@ -123,5 +126,6 @@ public class ExperienceStats : MonoBehaviour
             default:
                 break;
         }
+#endif
     }
 }

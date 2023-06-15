@@ -164,6 +164,7 @@ public class Location : MonoBehaviour
     }
     private void UnlockLocationAchievements()
     {
+#if UNITY_ANDROID
         switch(sceneName)
         {
             case "ValleyScene_02":
@@ -175,6 +176,7 @@ public class Location : MonoBehaviour
             default:
                 break;
         }
+#endif
     }
     public void OnLocationPress()
     {

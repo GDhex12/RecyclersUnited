@@ -166,6 +166,7 @@ public class TrashController : MonoBehaviour
 
     private void UnlockTrashCompletionAchievements()
     {
+#if UNITY_ANDROID
         switch(SceneManager.GetActiveScene().name)
         {
             case "BeachScene_01":
@@ -180,6 +181,7 @@ public class TrashController : MonoBehaviour
             default:
                 break;
         }
+#endif
     }
 
     public void DecreaseTotalTrashAmount()

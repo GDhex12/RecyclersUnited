@@ -23,10 +23,14 @@ public class MenuActions : MonoBehaviour
     }
     public void OpenLeaderboard()
     {
+#if UNITY_ANDROID
         GooglePlayLogin.Instance.ShowLeaderboard();
+#endif
     }
     public void OpenAchievements()
     {
+#if UNITY_ANDROID
         GooglePlayLogin.Instance.ShowAchievements();
+#endif
     }
 }
