@@ -1406,82 +1406,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &265363451264192961
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6253121181473453389}
-  - component: {fileID: 8249579627591844897}
-  - component: {fileID: 8836292874236468169}
-  m_Layer: 5
-  m_Name: Icon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6253121181473453389
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265363451264192961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5128234969559127280}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117, y: 10}
-  m_SizeDelta: {x: 75, y: 75}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8249579627591844897
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265363451264192961}
-  m_CullTransparentMesh: 1
---- !u!114 &8836292874236468169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265363451264192961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82a23985382108a41bb8a33bc9eb6a3b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &281746953443619117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,8 +1767,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 0
-  initPrice: 100
-  priceMultiplier: 2
+  initPrice: 200
+  priceMultiplier: 1.5
   btnText: {fileID: 7657598235846875556}
   volunteerType: 0
 --- !u!1 &486857984909494041
@@ -3383,82 +3307,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &1695614344563960184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6335888972592056964}
-  - component: {fileID: 5528102168748892709}
-  - component: {fileID: 1820862847642556058}
-  m_Layer: 5
-  m_Name: Icon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6335888972592056964
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695614344563960184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7901486835015319509}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 117, y: 10}
-  m_SizeDelta: {x: 75, y: 75}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5528102168748892709
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695614344563960184}
-  m_CullTransparentMesh: 1
---- !u!114 &1820862847642556058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695614344563960184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82a23985382108a41bb8a33bc9eb6a3b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1811786471381716528
 GameObject:
   m_ObjectHideFlags: 0
@@ -3864,7 +3712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 0
-  initPrice: 100
+  initPrice: 200
   priceMultiplier: 2
   btnText: {fileID: 4241038921662153317}
   volunteerType: 1
@@ -6575,7 +6423,7 @@ MonoBehaviour:
     priceMultiplier: 2
     currentLvl: 1
     maxLvl: 10
-    initPrice: 50
+    initPrice: 250
     price: 10
   vehicleCapacityUI:
     TitleText: {fileID: 2490080235935541698}
@@ -6586,7 +6434,7 @@ MonoBehaviour:
     priceMultiplier: 2
     currentLvl: 1
     maxLvl: 10
-    initPrice: 25
+    initPrice: 200
     price: 10
   storageCapacityUI:
     TitleText: {fileID: 3049865190205400728}
@@ -6597,7 +6445,7 @@ MonoBehaviour:
     priceMultiplier: 2
     currentLvl: 1
     maxLvl: 10
-    initPrice: 100
+    initPrice: 300
     price: 10
   pickerSpeedUI:
     TitleText: {fileID: 4031874203082468384}
@@ -6608,7 +6456,7 @@ MonoBehaviour:
     priceMultiplier: 2.5
     currentLvl: 1
     maxLvl: 10
-    initPrice: 100
+    initPrice: 300
     price: 10
   loaderSpeedUI:
     TitleText: {fileID: 6483346167358381995}
@@ -6616,10 +6464,10 @@ MonoBehaviour:
   loaderSpeedIncrement: 1
   loaderBagData:
     UpgradeName: Loader Bag Size
-    priceMultiplier: 2
+    priceMultiplier: 3
     currentLvl: 1
-    maxLvl: 10
-    initPrice: 300
+    maxLvl: 5
+    initPrice: 1000
     price: 10
   loaderBagUI:
     TitleText: {fileID: 4072257688893974067}
@@ -9177,7 +9025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 0
-  initPrice: 100
+  initPrice: 200
   priceMultiplier: 2
   btnText: {fileID: 7925974185625435455}
   volunteerType: 1
@@ -11347,7 +11195,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4879440665797670506}
-  - {fileID: 6253121181473453389}
   m_Father: {fileID: 2613235439838891280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12728,8 +12575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 0
-  initPrice: 100
-  priceMultiplier: 2
+  initPrice: 200
+  priceMultiplier: 1.5
   btnText: {fileID: 1713311647495986540}
   volunteerType: 0
 --- !u!1 &5811157576300630833
@@ -13726,8 +13573,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -65, y: -284.52893}
-  m_SizeDelta: {x: 130, y: 569.0579}
+  m_AnchoredPosition: {x: -87.88501, y: -297.60608}
+  m_SizeDelta: {x: 175.77, y: 595.2122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704960064617146032
 MonoBehaviour:
@@ -15136,7 +14983,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 110, y: 182.174}
+  m_SizeDelta: {x: 162.98, y: 249.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7590702588938022237
 CanvasRenderer:
@@ -19000,7 +18847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1933489554938339180
@@ -19031,7 +18878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.99e
+  m_text: "1.99 \u20AC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 696228130d4205a499585a4f0a1cc955, type: 2}
   m_sharedMaterial: {fileID: -1309413584385281642, guid: 696228130d4205a499585a4f0a1cc955, type: 2}
@@ -19058,8 +18905,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.15
-  m_fontSizeBase: 42.15
+  m_fontSize: 56.6
+  m_fontSizeBase: 56.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19371,7 +19218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &495535419748967831
@@ -19402,9 +19249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0.99e
-
-'
+  m_text: "0.99 \u20AC\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 696228130d4205a499585a4f0a1cc955, type: 2}
   m_sharedMaterial: {fileID: -1309413584385281642, guid: 696228130d4205a499585a4f0a1cc955, type: 2}
@@ -19431,8 +19276,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.15
-  m_fontSizeBase: 42.15
+  m_fontSize: 56.6
+  m_fontSizeBase: 56.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -20334,7 +20179,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2730677229811148381}
-  - {fileID: 6335888972592056964}
   m_Father: {fileID: 4092109353517819269}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20767,7 +20611,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Get 2500 coins!
+  m_text: 'Get 3000 coins!
 
 '
   m_isRightToLeft: 0

@@ -51,7 +51,7 @@ public class SetUpVehicleRow : MonoBehaviour
         }
         else if (!data.isUnlocked)
 		{
-            buttonText.text = vehicle.GetPrice().ToString();
+            buttonText.text = "-"+CurrencyManager.instance.CurrencyStringFormat(vehicle.GetPrice());
             buyButton.onClick.AddListener(() => { vehicleShop.BuyNewVehicle(vehicle.GetId()); });
             buyButton.enabled = true;
             buyButton.interactable = true;

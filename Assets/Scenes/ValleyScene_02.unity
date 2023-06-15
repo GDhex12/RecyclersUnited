@@ -565,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMesh: {fileID: 0}
   trashPiles: []
-  maxTotalTrashAmount: 400
+  maxTotalTrashAmount: 1000000
   currentTotalTrashAmount: 0
   completionPercentage: 100
   meterUI: {fileID: 1343300756}
@@ -1229,6 +1229,7 @@ MonoBehaviour:
   spawner: {fileID: 471543196}
   volunteerRoot: {fileID: 471543195}
   VehiclePrefab: {fileID: 24022150}
+  upgradeManager: {fileID: 0}
 --- !u!4 &351914033
 Transform:
   m_ObjectHideFlags: 0
@@ -31064,10 +31065,6 @@ PrefabInstance:
       propertyPath: storageUI
       value: 
       objectReference: {fileID: 596634631}
-    - target: {fileID: 6264980204922629233, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
-      propertyPath: maxGarbageCount
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 7329764626915423711, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 1

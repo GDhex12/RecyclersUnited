@@ -131,6 +131,11 @@ public class VehicleSystem : MonoBehaviour
         return !(currentGarbageCount < maxGarbageCount);
     }
 
+    public bool IsEmpty()
+    {
+        return currentGarbageCount == 0;
+    }
+
     void UpdateGarbage()
     {
         // Update storage UI
