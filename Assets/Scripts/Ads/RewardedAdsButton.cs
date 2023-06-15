@@ -6,8 +6,11 @@ using UnityEngine.Events;
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] Button _showAdButton;
+#if UNITY_ANDROID
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
+#elif UNITY_IOS
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
+#endif
     //[SerializeField] AdsInitializer adsInitializer;
     string _adUnitId = null; // This will remain null for unsupported platforms
 
