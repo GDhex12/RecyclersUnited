@@ -22,7 +22,7 @@ public class IAPManager : MonoBehaviour
                 CurrencyManager.instance.AddCurrency(1000);
                 break;
             case coins2500:
-                CurrencyManager.instance.AddCurrency(2500);
+                CurrencyManager.instance.AddCurrency(3000);
                 break;
             default:
                 break;

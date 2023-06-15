@@ -650,7 +650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMesh: {fileID: 0}
   trashPiles: []
-  maxTotalTrashAmount: 400
+  maxTotalTrashAmount: 1000000
   currentTotalTrashAmount: 0
   completionPercentage: 100
   meterUI: {fileID: 1343300756}
@@ -1798,6 +1798,7 @@ MonoBehaviour:
   spawner: {fileID: 471543196}
   volunteerRoot: {fileID: 471543195}
   VehiclePrefab: {fileID: 24022150}
+  upgradeManager: {fileID: 0}
 --- !u!4 &351914033
 Transform:
   m_ObjectHideFlags: 0
@@ -6111,6 +6112,22 @@ PrefabInstance:
       propertyPath: m_lineSpacing
       value: 2.58
       objectReference: {fileID: 0}
+    - target: {fileID: 1965691766332962582, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965691766332962582, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965691766332962582, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965691766332962582, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2381805767091327196, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_fontColor.b
       value: 1
@@ -6142,6 +6159,22 @@ PrefabInstance:
     - target: {fileID: 2488791762414363647, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613235439838891280, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613235439838891280, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613235439838891280, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613235439838891280, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2731978181870917867, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_fontColor.b
@@ -6229,6 +6262,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4037254397157447105, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092109353517819269, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092109353517819269, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092109353517819269, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092109353517819269, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4748999128110206680, guid: 20a19a287e2b8d648bf2a327ebc2d1ec, type: 3}
@@ -8920,10 +8969,6 @@ PrefabInstance:
       propertyPath: storageUI
       value: 
       objectReference: {fileID: 7545578003902227858}
-    - target: {fileID: 6264980204922629233, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
-      propertyPath: maxGarbageCount
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 7329764626915423711, guid: 5f4c86d21ca1e204695c3debd42f2bfd, type: 3}
       propertyPath: m_Materials.Array.size
       value: 3
